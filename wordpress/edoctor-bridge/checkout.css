@@ -1,0 +1,44 @@
+body.woocommerce-checkout,
+body.woocommerce-account {
+  background: #fcfbfe;
+  color: #242033;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.woocommerce {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px;
+}
+.woocommerce input.input-text,
+.woocommerce select,
+.woocommerce textarea {
+  min-height: 48px;
+  border: 1px solid #898092;
+  border-radius: 8px;
+  padding: 12px;
+  background: white;
+}
+.woocommerce button.button,
+.woocommerce a.button,
+.woocommerce #payment #place_order {
+  background: #6840c6;
+  color: white;
+  border-radius: 10px;
+  min-height: 48px;
+  padding: 14px 22px;
+}
+.woocommerce #payment {
+  background: #f2edfc;
+  border-radius: 16px;
+}
+.woocommerce table.shop_table {
+  border-color: #ddd7e6;
+  border-radius: 12px;
+}
+.woocommerce a {
+  color: #6840c6;
+}
+.woocommerce :focus-visible {
+  outline: 3px solid #6840c6;
+  outline-offset: 3px;
+}

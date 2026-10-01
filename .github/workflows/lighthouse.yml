@@ -1,65 +1,30 @@
-name: Lighthouse CI
-on: [push, pull_request]
-
+name: EDoctor mobile performance
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v7
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '24'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v6
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install --ignore-scripts
-
-      - name: Build project
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build
         env:
-          NEXT_PUBLIC_GRAPHQL_URL: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URL }}
-          NEXT_PUBLIC_PLACEHOLDER_SMALL_IMAGE_URL: "https://via.placeholder.com/200"
-          NEXT_PUBLIC_PLACEHOLDER_LARGE_IMAGE_URL: "https://via.placeholder.com/600"
-        run: pnpm build
-
-      - name: Start server
-        env:
-          NEXT_PUBLIC_GRAPHQL_URL: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URL }}
-          NEXT_PUBLIC_PLACEHOLDER_SMALL_IMAGE_URL: "https://via.placeholder.com/200"
-          NEXT_PUBLIC_PLACEHOLDER_LARGE_IMAGE_URL: "https://via.placeholder.com/600"
-        run: |
-          pnpm start &
-          echo "Waiting for server to be ready..."
-          while ! nc -z localhost 3000; do
-            sleep 5
-          done
-          # Additional wait to ensure full initialization
-          sleep 20
-
-      - name: Run Lighthouse CI
-        run: |
-          pnpm lhci:perf
-          pnpm lhci:desktop
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Stop server
+          NEXT_PUBLIC_SITE_URL: http://localhost:3109
+      - run: npm run lhci
+      - uses: actions/upload-artifact@v4
         if: always()
-        run: |
-          pkill -f "next start" || true
+        with:
+          name: lighthouse-local-reports
+          path: |
+            .lighthouseci/
+            lighthouse-reports/

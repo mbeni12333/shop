@@ -1,0 +1,394 @@
+{
+  "status": "research_in_progress",
+  "targetTotal": 126,
+  "categoryTarget": 9,
+  "method": "Candidats fabricant vérifiés au 1 octobre 2026. Gammes éditoriales provisoires selon interface, capacité et usage ; prix, approvisionnement export et essais indépendants à compléter. Les débits sont des maxima fabricant, pas des mesures en usage réel.",
+  "products": [
+    {
+      "sku": "SNV3S/1000G",
+      "manufacturerPartNumber": "SNV3S/1000G",
+      "gtin": null,
+      "name": "Kingston NV3 1 To",
+      "category": "ssd",
+      "tier": "entree",
+      "descriptionFr": "Stockage M.2 2280 PCIe 4.0 pour une configuration généraliste.",
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe",
+        "Lecture séquentielle maximale": "6000 Mo/s",
+        "Écriture séquentielle maximale": "4000 Mo/s"
+      },
+      "sources": [
+        {
+          "url": "https://www.kingston.com/en/memory/search?partid=SNV3S%2F1000G",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Option généraliste à comparer au coût des SSD TLC concurrents ; ne pas inférer le type exact de NAND depuis une autre capacité.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Type exact de NAND",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    },
+    {
+      "sku": "WDS100T4B0E",
+      "manufacturerPartNumber": "WDS100T4B0E",
+      "gtin": null,
+      "name": "WD Blue SN5000 1 To",
+      "category": "ssd",
+      "tier": "entree",
+      "descriptionFr": "SSD TLC M.2 2280 destiné au stockage quotidien sur une plateforme PCIe 4.0.",
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe",
+        "NAND": "3D TLC",
+        "Lecture séquentielle maximale": "5150 Mo/s",
+        "Écriture séquentielle maximale": "4900 Mo/s",
+        "Endurance annoncée": "600 TBW",
+        "Dimensions du produit": "80 × 22 × 2.38 mm",
+        "Poids du produit": "5.7 g ± 0.5 g"
+      },
+      "sources": [
+        {
+          "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-blue-nvme-ssd/data-sheet-wd-blue-sn5000-nvme-ssd.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat TLC généraliste ; la version 4 To emploie une NAND différente et ne doit pas être confondue avec ce modèle.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    },
+    {
+      "sku": "MZ-77E1T0BW",
+      "manufacturerPartNumber": "MZ-77E1T0BW",
+      "gtin": null,
+      "name": "Samsung 870 EVO 1 To",
+      "category": "ssd",
+      "tier": "entree",
+      "descriptionFr": "SSD SATA 2,5 pouces pour un ordinateur dépourvu d’emplacement NVMe compatible.",
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "2.5 pouces",
+        "Interface": "SATA 6 Gb/s",
+        "Cache DRAM": "1 Go DDR4",
+        "Dimensions du produit": "100 × 69.85 × 6.8 mm",
+        "Poids du produit": "45 g environ"
+      },
+      "sources": [
+        {
+          "url": "https://www.samsung.com/ae/memory-storage/sata-ssd/870-evo-1tb-sata-3-2-5-ssd-mz-77e1t0bw/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Répond à un besoin de compatibilité SATA ; sa gamme d’entrée correspond à l’usage de mise à niveau, sans supposer un prix inférieur aux NVMe.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    },
+    {
+      "sku": "MZ-V9S1T0BW",
+      "manufacturerPartNumber": "MZ-V9S1T0BW",
+      "gtin": null,
+      "name": "Samsung 990 EVO Plus 1 To",
+      "category": "ssd",
+      "tier": "milieu",
+      "descriptionFr": "SSD NVMe 1 To compatible PCIe 4.0 x4 ou 5.0 x2, à distinguer du 990 EVO sans Plus.",
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 / 5.0 x2 NVMe 2.0",
+        "NAND": "V-NAND TLC",
+        "Cache": "HMB",
+        "Lecture séquentielle maximale": "7150 Mo/s",
+        "Écriture séquentielle maximale": "6300 Mo/s",
+        "Endurance annoncée": "600 TBW"
+      },
+      "sources": [
+        {
+          "url": "https://www.samsung.com/dk/memory-storage/nvme-ssd/990-evo-plus-1tb-nvme-pcie-gen-4-mz-v9s1t0bw/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat polyvalent à comparer au prix du 990 PRO ; utiliser les chiffres spécifiques à 1 To, pas le maximum commercial de toute la famille.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    },
+    {
+      "sku": "WDS100T3X0E",
+      "manufacturerPartNumber": "WDS100T3X0E",
+      "gtin": null,
+      "name": "WD_BLACK SN770 1 To",
+      "category": "ssd",
+      "tier": "milieu",
+      "descriptionFr": "SSD M.2 PCIe 4.0 de 1 To pour une bibliothèque de jeux et les applications courantes.",
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe",
+        "Lecture séquentielle maximale": "5150 Mo/s",
+        "Écriture séquentielle maximale": "4900 Mo/s",
+        "Endurance annoncée": "600 TBW",
+        "Dimensions du produit": "80 × 22 × 2.38 mm",
+        "Poids du produit": "5.5 g ± 0.5 g"
+      },
+      "sources": [
+        {
+          "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-ssd/product-brief-wd-black-sn770-nvme-ssd.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Référence à retenir seulement si prix et approvisionnement restent compétitifs face aux générations suivantes ; un positionnement gaming ne prouve pas une supériorité en usage réel.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Comparaison aux successeurs disponibles",
+        "Garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    },
+    {
+      "sku": "MZ-V9P1T0BW",
+      "manufacturerPartNumber": "MZ-V9P1T0BW",
+      "gtin": null,
+      "name": "Samsung 990 PRO 1 To",
+      "category": "ssd",
+      "tier": "milieu",
+      "descriptionFr": "SSD TLC PCIe 4.0 avec cache DRAM pour un poste de jeu ou de création.",
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe 2.0",
+        "NAND": "V-NAND TLC",
+        "Cache DRAM": "1 Go DDR4",
+        "Lecture séquentielle maximale": "7450 Mo/s",
+        "Écriture séquentielle maximale": "6900 Mo/s",
+        "Endurance annoncée": "600 TBW"
+      },
+      "sources": [
+        {
+          "url": "https://www.samsung.com/in/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Option PCIe 4.0 avec DRAM ; la sélection réserve ici le haut de gamme à 2 To et/ou PCIe 5.0. Vérifier firmware et refroidissement avant vente.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    },
+    {
+      "sku": "WDS200T2X0E",
+      "manufacturerPartNumber": "WDS200T2X0E",
+      "gtin": null,
+      "name": "WD_BLACK SN850X 2 To sans dissipateur",
+      "category": "ssd",
+      "tier": "haut",
+      "descriptionFr": "Stockage TLC PCIe 4.0 de 2 To ; cette référence ne comprend pas de dissipateur.",
+      "attributes": {
+        "Capacité": "2000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe",
+        "NAND": "3D TLC",
+        "Lecture séquentielle maximale": "7300 Mo/s",
+        "Écriture séquentielle maximale": "6600 Mo/s",
+        "Endurance annoncée": "1200 TBW",
+        "Dissipateur inclus": "Non",
+        "Dimensions du produit": "80 × 22 × 2.38 mm",
+        "Poids du produit": "7.5 g ± 1 g"
+      },
+      "sources": [
+        {
+          "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-ssd/data-sheet-wd-black-sn850x-nvme-ssd.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Capacité pour bibliothèques volumineuses sans exiger PCIe 5.0 ; vérifier le dissipateur du système et ne pas utiliser une photo de la variante XHE.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    },
+    {
+      "sku": "MZ-VAP2T0BW",
+      "manufacturerPartNumber": "MZ-VAP2T0BW",
+      "gtin": null,
+      "name": "Samsung 9100 PRO 2 To sans dissipateur",
+      "category": "ssd",
+      "tier": "haut",
+      "descriptionFr": "SSD PCIe 5.0 TLC de 2 To avec cache DRAM, pour une plateforme compatible et refroidie.",
+      "attributes": {
+        "Capacité": "2000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 5.0 x4 NVMe 2.0",
+        "NAND": "V-NAND TLC",
+        "Cache DRAM": "2 Go DDR4X",
+        "Lecture séquentielle maximale": "14700 Mo/s",
+        "Écriture séquentielle maximale": "13400 Mo/s",
+        "Endurance annoncée": "1200 TBW",
+        "Dissipateur inclus": "Non",
+        "Dimensions maximales du produit": "80.15 × 22.15 × 2.38 mm",
+        "Poids maximal du produit": "9 g"
+      },
+      "sources": [
+        {
+          "url": "https://www.samsung.com/sg/memory-storage/nvme-ssd/9100-pro-2tb-nvme-pcie-gen-5-mz-vap2t0bw/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        },
+        {
+          "url": "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_9100_PRO_Datasheet_Rev.2.0_10149814992944.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_model_codes"
+        }
+      ],
+      "selectionRationale": "Choix PCIe 5.0 à proposer si les transferts lourds et la plateforme le justifient ; pas de promesse de gain proportionnel en jeu.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    },
+    {
+      "sku": "SFYR2S/2T0",
+      "manufacturerPartNumber": "SFYR2S/2T0",
+      "gtin": null,
+      "name": "Kingston FURY Renegade G5 2048 Go",
+      "category": "ssd",
+      "tier": "haut",
+      "descriptionFr": "SSD NVMe PCIe 5.0 simple face de 2048 Go, destiné à une configuration compatible.",
+      "attributes": {
+        "Capacité": "2048 Go",
+        "Format": "M.2",
+        "Interface": "PCIe 5.0 NVMe",
+        "Lecture séquentielle maximale": "14700 Mo/s",
+        "Écriture séquentielle maximale": "14000 Mo/s",
+        "Implantation": "Simple face"
+      },
+      "sources": [
+        {
+          "url": "https://www.kingston.com/en/memory/search?partid=SFYR2S%2F2T0",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Alternative PCIe 5.0 au 9100 PRO ; préserver la capacité réelle 2048 Go et confirmer dimensions, endurance et besoin de refroidissement dans la fiche technique exacte.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Dimensions exactes",
+        "Endurance",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha",
+        "Essais indépendants"
+      ]
+    }
+  ]
+}

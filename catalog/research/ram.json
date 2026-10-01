@@ -1,0 +1,434 @@
+{
+  "status": "research_in_progress",
+  "targetTotal": 126,
+  "categoryTarget": 9,
+  "method": "Neuf candidats avec fiches fabricant consultées le 1 octobre 2026. Entrée : DDR4 16/32 Go et extension portable ; milieu : kits DDR5 32 Go ; haut : DDR5 64/96 Go pour création et multitâche lourd. Gammes éditoriales provisoires, disponibilité et prix à comparer. Les profils testés XMP/EXPO ne garantissent pas leur vitesse sur toute plateforme.",
+  "products": [
+    {
+      "sku": "KF432C16BBK2/16",
+      "manufacturerPartNumber": "KF432C16BBK2/16",
+      "gtin": null,
+      "name": "Kingston FURY Beast DDR4 16 Go (2 × 8 Go) 3200 CL16",
+      "category": "ram",
+      "tier": "entree",
+      "descriptionFr": "Kit de deux modules DDR4 de 8 Go pour une configuration de bureau compatible XMP 2.0.",
+      "attributes": {
+        "Type mémoire": "DDR4",
+        "Capacité": "16 Go",
+        "Modules": "2 × 8 Go",
+        "Format": "DIMM 288 broches",
+        "Débit testé": "3200 MT/s",
+        "Latence": "CL16-18-18",
+        "Tension profil": "1.35 V",
+        "Profil": "Intel XMP 2.0",
+        "Débit JEDEC": "2400 MT/s",
+        "Latence JEDEC": "CL17-17-17",
+        "Tension JEDEC": "1.2 V",
+        "Hauteur": "34 mm"
+      },
+      "sources": [
+        {
+          "url": "https://www.kingston.com/datasheets/KF432C16BBK2_16.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Kit DDR4 d’accès pour AM4 ou une carte mère Intel DDR4 ; ne pas l’associer à une carte mère DDR5 et vérifier la liste de compatibilité.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    },
+    {
+      "sku": "KF432C16BBK2/32",
+      "manufacturerPartNumber": "KF432C16BBK2/32",
+      "gtin": null,
+      "name": "Kingston FURY Beast DDR4 32 Go (2 × 16 Go) 3200 CL16",
+      "category": "ram",
+      "tier": "entree",
+      "descriptionFr": "Kit DDR4 de 32 Go pour prolonger une plateforme compatible sans changer de type de mémoire.",
+      "attributes": {
+        "Type mémoire": "DDR4",
+        "Capacité": "32 Go",
+        "Modules": "2 × 16 Go",
+        "Format": "DIMM 288 broches",
+        "Débit testé": "3200 MT/s",
+        "Latence": "CL16-20-20",
+        "Tension profil": "1.35 V",
+        "Profil": "Intel XMP 2.0",
+        "Débit JEDEC": "2400 MT/s",
+        "Latence JEDEC": "CL17-17-17",
+        "Tension JEDEC": "1.2 V",
+        "Hauteur": "34 mm"
+      },
+      "sources": [
+        {
+          "url": "https://www.kingston.com/datasheets/KF432C16BBK2_32.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Capacité supplémentaire pour une plateforme DDR4 existante ; les timings ne sont pas ceux du kit 16 Go et doivent conserver cette référence exacte.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    },
+    {
+      "sku": "KVR32S22S8/16",
+      "manufacturerPartNumber": "KVR32S22S8/16",
+      "gtin": null,
+      "name": "Kingston ValueRAM SO-DIMM DDR4 16 Go 3200 CL22",
+      "category": "ram",
+      "tier": "entree",
+      "descriptionFr": "Un module SO-DIMM DDR4 de 16 Go pour un portable avec emplacement mémoire accessible et compatible.",
+      "attributes": {
+        "Type mémoire": "DDR4",
+        "Capacité": "16 Go",
+        "Modules": "1 × 16 Go",
+        "Format": "SO-DIMM 260 broches",
+        "Débit testé": "3200 MT/s",
+        "Débit JEDEC": "3200 MT/s",
+        "Latence": "CL22-22-22",
+        "Tension JEDEC": "1.2 V",
+        "Organisation": "1Rx8",
+        "ECC": "Non",
+        "Hauteur PCB": "30 mm"
+      },
+      "sources": [
+        {
+          "url": "https://www.kingston.com/dataSheets/KVR32S22S8_16.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        },
+        {
+          "url": "https://www.kingston.com/en/memory/search?partid=KVR32S22S8%2F16",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Couvre les extensions de portables DDR4 ; un emplacement libre et le support de 16 Go par module doivent être confirmés. Ce n’est pas un kit de deux modules.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    },
+    {
+      "sku": "KF560C30BBEK2-32",
+      "manufacturerPartNumber": "KF560C30BBEK2-32",
+      "gtin": null,
+      "name": "Kingston FURY Beast DDR5 32 Go (2 × 16 Go) 6000 CL30",
+      "category": "ram",
+      "tier": "milieu",
+      "descriptionFr": "Kit DDR5 32 Go avec profils AMD EXPO et Intel XMP, destiné à une plateforme compatible.",
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "32 Go",
+        "Modules": "2 × 16 Go",
+        "Format": "DIMM 288 broches",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30-36-36",
+        "Tension profil": "1.4 V",
+        "Profil": "AMD EXPO 1.1 / Intel XMP 3.0",
+        "Débit JEDEC": "4800 MT/s",
+        "Latence JEDEC": "CL40-39-39",
+        "Tension JEDEC": "1.1 V",
+        "Hauteur": "34.9 mm"
+      },
+      "sources": [
+        {
+          "url": "https://www.kingston.com/datasheets/KF560C30BBEK2-32.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat pour jeu et usage polyvalent en DDR5 ; vérifier carte mère, BIOS et refroidisseur avant d’activer un profil, sans promettre une vitesse garantie.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    },
+    {
+      "sku": "CMK32GX5M2B6000Z30",
+      "manufacturerPartNumber": "CMK32GX5M2B6000Z30",
+      "gtin": null,
+      "name": "Corsair VENGEANCE DDR5 32 Go (2 × 16 Go) 6000 CL30",
+      "category": "ram",
+      "tier": "milieu",
+      "descriptionFr": "Kit DDR5 UDIMM de 32 Go avec profils EXPO et XMP pour une plateforme compatible.",
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "32 Go",
+        "Modules": "2 × 16 Go",
+        "Format": "UDIMM 288 broches",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30",
+        "Tension profil": "1.4 V",
+        "Profil": "AMD EXPO / Intel XMP",
+        "Débit JEDEC": "4800 MT/s",
+        "Latence JEDEC": "CL40",
+        "Tension JEDEC": "1.1 V",
+        "Dissipateur": "Aluminium"
+      },
+      "sources": [
+        {
+          "url": "https://www.corsair.com/ww/en/p/memory/cmk32gx5m2b6000z30/vengeance-32gb-2x16gb-ddr5-dram-6000mt-s-cl30-amd-expo-memory-black-cmk32gx5m2b6000z30",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Alternative de marque pour comparer prix et approvisionnement ; le champ fabricant de poids égal à 0 kg n’est pas exploité, et la couleur doit être confirmée avec la photo du fournisseur.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Timings complets",
+        "Couleur exacte du lot",
+        "Hauteur",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    },
+    {
+      "sku": "F5-6000J3038F16GX2-FX5",
+      "manufacturerPartNumber": "F5-6000J3038F16GX2-FX5",
+      "gtin": null,
+      "name": "G.SKILL Flare X5 DDR5 32 Go (2 × 16 Go) 6000 CL30",
+      "category": "ram",
+      "tier": "milieu",
+      "descriptionFr": "Kit DDR5 32 Go avec profil AMD EXPO, à valider sur la carte mère et le BIOS choisis.",
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "32 Go",
+        "Modules": "2 × 16 Go",
+        "Format": "UDIMM",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30-38-38-96",
+        "Tension profil": "1.35 V",
+        "Profil": "AMD EXPO 1.0",
+        "Débit JEDEC": "4800 MT/s",
+        "ECC": "Non"
+      },
+      "sources": [
+        {
+          "url": "https://www.gskill.com/_upload/files/F5-6000J3038F16GX2-FX5.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_profile_certification"
+        }
+      ],
+      "selectionRationale": "Troisième option de kit 32 Go pour comparer les offres ; le rapport EXPO est une auto-certification fabricant, pas une preuve de stabilité sur toutes les cartes mères.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Hauteur",
+        "Tension JEDEC",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    },
+    {
+      "sku": "KF560C30BBEK2-64",
+      "manufacturerPartNumber": "KF560C30BBEK2-64",
+      "gtin": null,
+      "name": "Kingston FURY Beast DDR5 64 Go (2 × 32 Go) 6000 CL30",
+      "category": "ram",
+      "tier": "haut",
+      "descriptionFr": "Kit DDR5 64 Go pour un poste de création ou de multitâche nécessitant davantage de mémoire.",
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "64 Go",
+        "Modules": "2 × 32 Go",
+        "Format": "DIMM 288 broches",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30-36-36",
+        "Tension profil": "1.4 V",
+        "Profil": "AMD EXPO 1.1 / Intel XMP 3.0",
+        "Débit JEDEC": "4800 MT/s",
+        "Latence JEDEC": "CL40-39-39",
+        "Tension JEDEC": "1.1 V",
+        "Organisation": "2Rx8",
+        "Hauteur": "34.9 mm"
+      },
+      "sources": [
+        {
+          "url": "https://www.kingston.com/datasheets/KF560C30BBEK2-64.pdf",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Capacité élevée plutôt qu’un gain de vitesse systématique ; la charge mémoire de deux modules 32 Go doit être validée dans la configuration finale.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    },
+    {
+      "sku": "CMK64GX5M2B6000Z30",
+      "manufacturerPartNumber": "CMK64GX5M2B6000Z30",
+      "gtin": null,
+      "name": "Corsair VENGEANCE DDR5 64 Go (2 × 32 Go) 6000 CL30",
+      "category": "ram",
+      "tier": "haut",
+      "descriptionFr": "Kit DDR5 de 64 Go avec profils EXPO et XMP pour une station de travail compatible.",
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "64 Go",
+        "Modules": "2 × 32 Go",
+        "Format": "UDIMM 288 broches",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30",
+        "Tension profil": "1.4 V",
+        "Profil": "AMD EXPO / Intel XMP",
+        "Débit JEDEC": "4800 MT/s",
+        "Latence JEDEC": "CL40",
+        "Tension JEDEC": "1.1 V",
+        "Couleur": "Gris",
+        "Dissipateur": "Aluminium"
+      },
+      "sources": [
+        {
+          "url": "https://www.corsair.com/ww/en/p/memory/cmk64gx5m2b6000z30/vengeance-64gb-2x32gb-ddr5-dram-6000mt-s-cl30-amd-expo-memory-kit-cmk64gx5m2b6000z30",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Alternative 64 Go à comparer au Kingston sur prix, lot et disponibilité ; la valeur de poids 0 kg affichée par le fabricant reste une donnée manquante.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Timings complets",
+        "Hauteur",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    },
+    {
+      "sku": "F5-6400J3239F48GX2-TZ5RK",
+      "manufacturerPartNumber": "F5-6400J3239F48GX2-TZ5RK",
+      "gtin": null,
+      "name": "G.SKILL Trident Z5 RGB DDR5 96 Go (2 × 48 Go) 6400 CL32",
+      "category": "ram",
+      "tier": "haut",
+      "descriptionFr": "Kit DDR5 96 Go avec profil Intel XMP 3.0, destiné aux usages qui nécessitent réellement cette capacité.",
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "96 Go",
+        "Modules": "2 × 48 Go",
+        "Format": "UDIMM",
+        "Débit testé": "6400 MT/s",
+        "Latence": "CL32-39-39-102",
+        "Tension profil": "1.35 V",
+        "Profil": "Intel XMP 3.0",
+        "Débit JEDEC": "5600 MT/s",
+        "Tension JEDEC": "1.1 V",
+        "ECC": "Non",
+        "Éclairage": "RGB"
+      },
+      "sources": [
+        {
+          "url": "https://www.gskill.com/specification/165/374/1681113538/F5-6400J3239F48GX2-TZ5RK-Specification",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Option de grande capacité pour création et machines virtuelles ; confirmer le support des modules 48 Go et consulter la QVL. Ne pas présenter 6400 MT/s comme garanti sur AM5.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Hauteur",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Comparaison indépendante"
+      ]
+    }
+  ]
+}

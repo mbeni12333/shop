@@ -1,63 +1,53 @@
-const config = {
-  content: ['./src/components/**/*.tsx', './src/pages/**/*.tsx'],
-  safelist: [
-    // Dynamic color classes used in ProductFilters for color swatches
-    {
-      pattern:
-        /bg-(red|blue|green|yellow|pink|purple|orange|teal|cyan|gray)-500/,
-    },
-  ],
+import type { Config } from 'tailwindcss';
+
+/** EDoctor tokens mirror website/edoctor-design-system/theme.css. */
+const config: Config = {
+  content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
-      backgroundImage: {
-        'hero-background': "url('/images/hero.jpg')",
-      },
       colors: {
-        primary: {
-          DEFAULT: '#3B6B8A',
-          light: '#5A8BA8',
-          dark: '#254D6B',
+        ed: {
+          bg: '#FCFBFE',
+          surface: '#FFFFFF',
+          soft: '#F2EDFC',
+          ink: '#242033',
+          muted: '#686274',
+          purple: '#6840C6',
+          'purple-hover': '#5330A6',
+          pale: '#E8DFF9',
+          border: '#DDD7E6',
+          control: '#898092',
+          green: '#27634B',
+          'green-bg': '#E9F3ED',
+          red: '#AC3045',
+          'red-bg': '#FFF0F2',
         },
-        accent: '#4A8F8F',
-        surface: {
-          DEFAULT: '#FAF9F7',
-          alt: '#F3F1ED',
-        },
-        border: '#E5E2DC',
-        text: {
-          DEFAULT: '#2C2C2C',
-          muted: '#6B6862',
-          light: '#9C9890',
-        },
-        overlay: '#2C2C2C',
-        success: '#2D8A5E',
-        warning: '#C4882A',
-        error: '#B83B2A',
+        // Aliases retain compatibility with the repository's shared components.
+        primary: { DEFAULT: '#6840C6', light: '#E8DFF9', dark: '#5330A6' },
+        surface: { DEFAULT: '#FFFFFF', alt: '#F2EDFC' },
+        border: '#DDD7E6',
+        text: { DEFAULT: '#242033', muted: '#686274' },
+        success: '#27634B',
+        error: '#AC3045',
       },
+      fontFamily: { sans: ['Segoe UI', 'Arial', 'sans-serif'] },
       fontSize: {
-        xs: ['0.75rem', { lineHeight: '1rem' }],
-        sm: ['0.875rem', { lineHeight: '1.25rem' }],
-        base: ['1rem', { lineHeight: '1.5rem' }],
-        lg: ['1.125rem', { lineHeight: '1.75rem' }],
-        xl: ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-        '5xl': ['3rem', { lineHeight: '1.15' }],
+        xs: ['0.75rem', { lineHeight: '1.5' }],
+        sm: ['0.875rem', { lineHeight: '1.5' }],
+        base: ['1rem', { lineHeight: '1.65' }],
+        lg: ['1.125rem', { lineHeight: '1.65' }],
+        xl: ['1.5rem', { lineHeight: '1.25' }],
+        '2xl': ['2rem', { lineHeight: '1.2' }],
+        '3xl': ['3rem', { lineHeight: '1.1' }],
+        hero: ['clamp(2.6rem, 4.6vw, 4.5rem)', { lineHeight: '1.08' }],
       },
-      borderRadius: {
-        sm: '0.25rem',
-        md: '0.5rem',
-        lg: '0.75rem',
-      },
-      boxShadow: {
-        sm: '0 1px 2px 0 rgba(44, 44, 44, 0.05)',
-        md: '0 4px 6px -1px rgba(44, 44, 44, 0.08), 0 2px 4px -2px rgba(44, 44, 44, 0.05)',
-        lg: '0 10px 15px -3px rgba(44, 44, 44, 0.08), 0 4px 6px -4px rgba(44, 44, 44, 0.05)',
-      },
+      maxWidth: { page: '1920px', reading: '700px' },
+      minHeight: { touch: '44px', control: '48px' },
+      borderRadius: { control: '8px', card: '16px', section: '24px' },
+      transitionDuration: { ed: '160ms' },
+      boxShadow: { float: '0 12px 32px rgb(36 32 51 / 8%)' },
     },
   },
   plugins: [],
 };
-
 export default config;

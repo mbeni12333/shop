@@ -1,0 +1,409 @@
+{
+  "status": "research_in_progress",
+  "targetTotal": 126,
+  "categoryTarget": 9,
+  "method": "Caractéristiques fabricant vérifiées ; niveaux éditoriaux provisoires, sans classement de ventes ni preuve de fiabilité indépendante.",
+  "products": [
+    {
+      "sku": "100-100000927BOX",
+      "manufacturerPartNumber": "100-100000927BOX",
+      "gtin": null,
+      "name": "AMD Ryzen 5 5600",
+      "category": "processeurs",
+      "tier": "entree",
+      "descriptionFr": "6 cœurs pour une configuration AM4 orientée budget.",
+      "attributes": {
+        "Cœurs": "6",
+        "Threads": "12",
+        "Fréquence boost maximale": "4.4 GHz",
+        "Enveloppe thermique (TDP)": "65 W",
+        "Socket": "AM4",
+        "Architecture": "Zen 3",
+        "Mémoire": "DDR4",
+        "Fréquence de base": "3.5 GHz",
+        "Cache L3": "32 MB",
+        "Refroidissement inclus": "Wraith Stealth"
+      },
+      "sources": [
+        {
+          "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-5-5600.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Socle AM4 à comparer avec les coûts carte mère et mémoire ; prix fournisseur à vérifier.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    },
+    {
+      "sku": "100-100001488BOX",
+      "manufacturerPartNumber": "100-100001488BOX",
+      "gtin": null,
+      "name": "AMD Ryzen 5 5600GT",
+      "category": "processeurs",
+      "tier": "entree",
+      "descriptionFr": "Processeur AM4 avec circuit graphique Radeon intégré.",
+      "attributes": {
+        "Cœurs": "6",
+        "Threads": "12",
+        "Fréquence boost maximale": "4.6 GHz",
+        "Enveloppe thermique (TDP)": "65 W",
+        "Socket": "AM4",
+        "Architecture": "Zen 3",
+        "Mémoire": "DDR4",
+        "Fréquence de base": "3.6 GHz",
+        "Cache L3": "16 MB",
+        "Graphique intégré": "Radeon Graphics",
+        "Refroidissement inclus": "Wraith Stealth"
+      },
+      "sources": [
+        {
+          "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-5-5600gt.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Option bureautique sans carte graphique dédiée ; ne pas assimiler son graphique intégré à une carte gaming récente.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    },
+    {
+      "sku": "BX8071514100",
+      "manufacturerPartNumber": "BX8071514100",
+      "gtin": null,
+      "name": "Intel Core i3-14100",
+      "category": "processeurs",
+      "tier": "entree",
+      "descriptionFr": "Processeur à 4 cœurs et 8 threads avec UHD Graphics 730.",
+      "attributes": {
+        "Cœurs": "4",
+        "Threads": "8",
+        "Fréquence boost maximale": "4.7 GHz",
+        "Puissance de base": "60 W",
+        "Graphique intégré": "UHD Graphics 730",
+        "Mémoire": "DDR4 / DDR5",
+        "Fréquence de base P-core": "3.5 GHz",
+        "Puissance turbo maximale": "110 W"
+      },
+      "sources": [
+        {
+          "url": "https://www.intel.com/content/www/us/en/products/sku/236774/intel-core-i3-processor-14100-12m-cache-up-to-4-70-ghz/specifications.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        },
+        {
+          "url": "https://www.intel.com/content/www/us/en/products/sku/236774/intel-core-i3-processor-14100-12m-cache-up-to-4-70-ghz/ordering.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_reference"
+        }
+      ],
+      "selectionRationale": "Option bureautique ; vérifier le coût et la compatibilité de la carte mère et du BIOS.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    },
+    {
+      "sku": "100-100001015BOX",
+      "manufacturerPartNumber": "100-100001015BOX",
+      "gtin": null,
+      "name": "AMD Ryzen 5 7600",
+      "category": "processeurs",
+      "tier": "milieu",
+      "descriptionFr": "Processeur AM5 à 6 cœurs, fourni avec Wraith Stealth.",
+      "attributes": {
+        "Cœurs": "6",
+        "Threads": "12",
+        "Fréquence boost maximale": "5.1 GHz",
+        "Enveloppe thermique (TDP)": "65 W",
+        "Socket": "AM5",
+        "Architecture": "Zen 4",
+        "Mémoire": "DDR5",
+        "Fréquence de base": "3.8 GHz",
+        "Cache L3": "32 MB",
+        "Refroidissement inclus": "Wraith Stealth"
+      },
+      "sources": [
+        {
+          "url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Entrée dans la plateforme AM5/DDR5, à comparer au coût total de configuration.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    },
+    {
+      "sku": "100-100001405WOF",
+      "manufacturerPartNumber": "100-100001405WOF",
+      "gtin": null,
+      "name": "AMD Ryzen 5 9600X",
+      "category": "processeurs",
+      "tier": "milieu",
+      "descriptionFr": "Processeur Zen 5 pour une configuration AM5 à 6 cœurs.",
+      "attributes": {
+        "Cœurs": "6",
+        "Threads": "12",
+        "Fréquence boost maximale": "5.4 GHz",
+        "Enveloppe thermique (TDP)": "65 W",
+        "Socket": "AM5",
+        "Architecture": "Zen 5",
+        "Fréquence de base": "3.9 GHz",
+        "Cache L3": "32 MB",
+        "Refroidissement inclus": "Non"
+      },
+      "sources": [
+        {
+          "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9600x.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Option AM5 récente ; inclure un refroidisseur séparé dans le budget.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    },
+    {
+      "sku": "BX80768250K",
+      "manufacturerPartNumber": "BX80768250K",
+      "gtin": null,
+      "name": "Intel Core Ultra 5 250K Plus",
+      "category": "processeurs",
+      "tier": "milieu",
+      "descriptionFr": "Processeur à 6 cœurs Performance et 12 cœurs Efficient, pour plateforme LGA1851.",
+      "attributes": {
+        "Cœurs": "18",
+        "Threads": "18",
+        "Fréquence boost maximale": "5.3 GHz",
+        "Puissance de base": "125 W",
+        "Socket": "LGA1851",
+        "Mémoire": "DDR5",
+        "Cœurs Performance": "6",
+        "Cœurs Efficient": "12",
+        "Fréquence de base P-core": "4.2 GHz",
+        "Cache Smart Cache": "30 MB",
+        "Puissance turbo maximale": "159 W",
+        "Graphique intégré": "Intel Graphics"
+      },
+      "sources": [
+        {
+          "url": "https://www.intel.com/content/www/us/en/products/sku/245694/intel-core-ultra-5-processor-250k-plus-30m-cache-up-to-5-30-ghz/specifications.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        },
+        {
+          "url": "https://www.intel.com/content/www/us/en/products/sku/245694/intel-core-ultra-5-processor-250k-plus-30m-cache-up-to-5-30-ghz/ordering.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_reference"
+        }
+      ],
+      "selectionRationale": "Remplace le candidat 245K dont le SKU boîte universel est indiqué comme retiré par Intel. Confirmer prix européen et BIOS.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    },
+    {
+      "sku": "100-100001084WOF",
+      "manufacturerPartNumber": "100-100001084WOF",
+      "gtin": null,
+      "name": "AMD Ryzen 7 9800X3D",
+      "category": "processeurs",
+      "tier": "haut",
+      "descriptionFr": "Processeur AM5 à 8 cœurs avec 96 MB de cache L3.",
+      "attributes": {
+        "Cœurs": "8",
+        "Threads": "16",
+        "Fréquence boost maximale": "5.2 GHz",
+        "Enveloppe thermique (TDP)": "120 W",
+        "Socket": "AM5",
+        "Architecture": "Zen 5",
+        "Fréquence de base": "4.7 GHz",
+        "Cache L3": "96 MB",
+        "Refroidissement inclus": "Non"
+      },
+      "sources": [
+        {
+          "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat gaming haut de gamme ; comparer prix et essais indépendants au 9850X3D avant de figer l'assortiment.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    },
+    {
+      "sku": "100-100000719WOF",
+      "manufacturerPartNumber": "100-100000719WOF",
+      "gtin": null,
+      "name": "AMD Ryzen 9 9950X3D",
+      "category": "processeurs",
+      "tier": "haut",
+      "descriptionFr": "Processeur AM5 à 16 cœurs et 32 threads avec cache 3D.",
+      "attributes": {
+        "Cœurs": "16",
+        "Threads": "32",
+        "Fréquence boost maximale": "5.7 GHz",
+        "Enveloppe thermique (TDP)": "170 W",
+        "Socket": "AM5",
+        "Architecture": "Zen 5",
+        "Fréquence de base": "4.3 GHz",
+        "Cache L3": "128 MB",
+        "Refroidissement inclus": "Non"
+      },
+      "sources": [
+        {
+          "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat création et gaming exigeants ; prévoir refroidissement, alimentation et coût complet.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    },
+    {
+      "sku": "BX80768285K",
+      "manufacturerPartNumber": "BX80768285K",
+      "gtin": null,
+      "name": "Intel Core Ultra 9 285K",
+      "category": "processeurs",
+      "tier": "haut",
+      "descriptionFr": "Processeur à 8 cœurs Performance et 16 cœurs Efficient.",
+      "attributes": {
+        "Cœurs": "24",
+        "Threads": "24",
+        "Fréquence boost maximale": "5.7 GHz",
+        "Puissance de base": "125 W",
+        "Cœurs Performance": "8",
+        "Cœurs Efficient": "16",
+        "Mémoire": "DDR5",
+        "Fréquence de base P-core": "3.7 GHz",
+        "Cache Smart Cache": "36 MB",
+        "Puissance turbo maximale": "250 W",
+        "Graphique intégré": "Intel Graphics"
+      },
+      "sources": [
+        {
+          "url": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/specifications.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        },
+        {
+          "url": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/ordering.html",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_reference"
+        }
+      ],
+      "selectionRationale": "Alternative Intel pour travaux fortement parallèles ; choix à confirmer avec les logiciels visés et les prix fournisseurs.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix revendeur France et TVA associée",
+        "Disponibilité fournisseur pour export",
+        "Conditions de garantie territoriale",
+        "Dimensions/poids emballés",
+        "Photo exacte autorisée avec alpha"
+      ]
+    }
+  ]
+}

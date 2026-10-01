@@ -8,14 +8,14 @@ After addressing the 6 critical issues, the codebase is in significantly better 
 
 ## ✅ Previously Critical — Now Fixed
 
-| # | Issue | Status |
-|---|-------|--------|
-| 1 | Shared object reference bug in [`getFormattedCart()`](src/utils/functions/functions.tsx:145) | ✅ Fixed — each product is now a new object per iteration |
-| 2 | Deprecated `process.browser` in 3 files | ✅ Fixed — all use `typeof window !== 'undefined'` |
-| 3 | [`ApolloClient.js`](src/utils/apollo/ApolloClient.ts) was untyped JS with misleading naming | ✅ Converted to TypeScript with `SessionData` interface, `isServerSide` naming |
-| 4 | Hardcoded `transactionId: 'fhggdfjgfi'` | ✅ Fixed — now uses `uuidv4()` |
-| 5 | `setTimeout` refetch calls | ✅ Kept with explanatory comments — required by WooCommerce backend latency; added `refetchQueries` to AddToCart mutation |
-| 6 | README version mismatch | ✅ Updated to Next.js 16.1.6 / React 19.2.4 |
+| #   | Issue                                                                                        | Status                                                                                                                    |
+| --- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Shared object reference bug in [`getFormattedCart()`](src/utils/functions/functions.tsx:145) | ✅ Fixed — each product is now a new object per iteration                                                                 |
+| 2   | Deprecated `process.browser` in 3 files                                                      | ✅ Fixed — all use `typeof window !== 'undefined'`                                                                        |
+| 3   | [`ApolloClient.js`](src/utils/apollo/ApolloClient.ts) was untyped JS with misleading naming  | ✅ Converted to TypeScript with `SessionData` interface, `isServerSide` naming                                            |
+| 4   | Hardcoded `transactionId: 'fhggdfjgfi'`                                                      | ✅ Fixed — now uses `uuidv4()`                                                                                            |
+| 5   | `setTimeout` refetch calls                                                                   | ✅ Kept with explanatory comments — required by WooCommerce backend latency; added `refetchQueries` to AddToCart mutation |
+| 6   | README version mismatch                                                                      | ✅ Updated to Next.js 16.1.6 / React 19.2.4                                                                               |
 
 ---
 
@@ -31,12 +31,12 @@ The `onCompleted` callback references `data` from the outer scope instead of usi
 // Current — data may be stale
 onCompleted: () => {
   const updatedCart = getFormattedCart(data);
-}
+};
 
 // Better — use the fresh data from the callback
 onCompleted: (freshData) => {
   const updatedCart = getFormattedCart(freshData);
-}
+};
 ```
 
 **Risk:** Low-to-medium. Works in practice because `notifyOnNetworkStatusChange: true` forces re-renders, but it's technically incorrect and an interviewer who knows Apollo well could question it.
@@ -44,6 +44,7 @@ onCompleted: (freshData) => {
 ### 2. Duplicate Type Definitions
 
 Types are defined multiple times instead of being shared from a central location:
+
 - `IImage` defined in [`functions.tsx:18`](src/utils/functions/functions.tsx:18), [`AddToCart.component.tsx:19`](src/components/Product/AddToCart.component.tsx:19), and [`DisplayProducts.component.tsx:7`](src/components/Product/DisplayProducts.component.tsx:7)
 - `Product` interface exists in both [`cartStore.ts:4`](src/stores/cartStore.ts:4) and [`product.ts:32`](src/types/product.ts:32) with different shapes
 - Multiple `IProductRootObject` interfaces with different shapes
@@ -104,10 +105,12 @@ No React Error Boundary exists. If any component throws during render, the entir
 ### 9. Limited Test Coverage
 
 Only 2 Playwright test files with 3 total tests:
+
 - [`Index.spec.ts`](src/tests/Index/Index.spec.ts) — 1 test checking for h1 element
 - [`Categories.spec.ts`](src/tests/Categories/Categories.spec.ts) — 2 tests for navigation
 
 No unit tests exist for:
+
 - Utility functions ([`getFormattedCart`](src/utils/functions/functions.tsx:145), [`filteredVariantPrice`](src/utils/functions/functions.tsx:132), [`paddedPrice`](src/utils/functions/functions.tsx:111))
 - Custom hooks ([`useProductFilters`](src/hooks/useProductFilters.ts))
 - Zustand store logic
@@ -138,33 +141,35 @@ export const getUpdatedItems = (products, newQty, cartKey) =>
 
 ## 🟢 Strengths (Good Interview Talking Points)
 
-| Area | Assessment |
-|------|-----------|
-| **Project Structure** | Well-organized component directory with clear `.component.tsx` naming convention |
-| **Zustand Store** | Clean implementation with `persist` middleware, `partialize`, and proper typing |
-| **TypeScript** | Strict mode enabled, path aliases configured, now fully TypeScript |
-| **Apollo Client** | Properly typed with `SessionData` interface, clear middleware/afterware separation |
-| **GraphQL Architecture** | Separate query/mutation files, good separation of concerns |
-| **CI/CD Pipeline** | Lighthouse CI, Playwright CI, CodeQL, 5 code quality badges |
-| **Custom Hook** | [`useProductFilters`](src/hooks/useProductFilters.ts) demonstrates clean hook extraction |
-| **Product Filtering** | Full-featured with sizes, colors, price range, sorting, and product type filters |
-| **Form Handling** | React Hook Form with `FormProvider` pattern for checkout billing |
-| **Protected Routes** | HOC pattern with [`withAuth`](src/components/User/withAuth.component.tsx) for authenticated pages |
-| **Accessibility** | `lang="nb-NO"` on HTML, ARIA labels on filters, semantic HTML structure |
-| **Code Quality Tooling** | ESLint, Prettier, CodeClimate, Codacy, SonarCloud, CodeFactor |
-| **SEO** | Meta tags, Open Graph, proper `<title>` per page |
-| **Cart Architecture** | Zustand + WooCommerce session sync with persist middleware |
+| Area                     | Assessment                                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------------- |
+| **Project Structure**    | Well-organized component directory with clear `.component.tsx` naming convention                  |
+| **Zustand Store**        | Clean implementation with `persist` middleware, `partialize`, and proper typing                   |
+| **TypeScript**           | Strict mode enabled, path aliases configured, now fully TypeScript                                |
+| **Apollo Client**        | Properly typed with `SessionData` interface, clear middleware/afterware separation                |
+| **GraphQL Architecture** | Separate query/mutation files, good separation of concerns                                        |
+| **CI/CD Pipeline**       | Lighthouse CI, Playwright CI, CodeQL, 5 code quality badges                                       |
+| **Custom Hook**          | [`useProductFilters`](src/hooks/useProductFilters.ts) demonstrates clean hook extraction          |
+| **Product Filtering**    | Full-featured with sizes, colors, price range, sorting, and product type filters                  |
+| **Form Handling**        | React Hook Form with `FormProvider` pattern for checkout billing                                  |
+| **Protected Routes**     | HOC pattern with [`withAuth`](src/components/User/withAuth.component.tsx) for authenticated pages |
+| **Accessibility**        | `lang="nb-NO"` on HTML, ARIA labels on filters, semantic HTML structure                           |
+| **Code Quality Tooling** | ESLint, Prettier, CodeClimate, Codacy, SonarCloud, CodeFactor                                     |
+| **SEO**                  | Meta tags, Open Graph, proper `<title>` per page                                                  |
+| **Cart Architecture**    | Zustand + WooCommerce session sync with persist middleware                                        |
 
 ---
 
 ## Remaining Fix Priority
 
 ### Should Fix Before Interview
+
 - [ ] Fix `uuidv4()` React keys in [`DisplayProducts.component.tsx:78`](src/components/Product/DisplayProducts.component.tsx:78)
 - [ ] Use `onCompleted` parameter instead of outer `data` scope in `useQuery` callbacks
 - [ ] Fix deprecated `layout`/`objectFit` Image props in [`CartContents.component.tsx:105`](src/components/Cart/CartContents.component.tsx:105)
 
 ### Good to Fix if Time Allows
+
 - [ ] Add an Error Boundary component wrapping Layout
 - [ ] Consolidate duplicate type definitions into `src/types/`
 - [ ] Add unit tests for utility functions

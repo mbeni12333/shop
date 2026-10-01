@@ -1,0 +1,454 @@
+{
+  "status": "research_in_progress",
+  "targetTotal": 126,
+  "categoryTarget": 9,
+  "method": "Neuf candidats vérifiés chez les fabricants le 1 octobre 2026. Entrée : tours à air compactes ; milieu : double tour, tour silencieuse et AIO 240 mm ; haut : grosse double tour et AIO 360 mm. Gammes éditoriales provisoires. Comparer les mesures à bruit égal, le coût, les sockets et la place disponible. Les valeurs fabricant de débit, bruit ou puissance thermique ne sont pas des performances garanties dans un boîtier.",
+  "products": [
+    {
+      "sku": "EDO-COOL-THERMALRIGHT-AX120-REFINED-SE",
+      "manufacturerPartNumber": null,
+      "gtin": null,
+      "name": "Thermalright Assassin X 120 Refined SE",
+      "category": "refroidissement",
+      "tier": "entree",
+      "descriptionFr": "Ventirad à tour simple et quatre caloducs, pour une configuration avec espace et socket compatibles.",
+      "attributes": {
+        "Type": "Ventirad tour simple",
+        "Modèle": "Assassin X 120 Refined SE",
+        "Socket": "AM4 / AM5 / LGA115x / LGA1200 / LGA1700 / LGA1851",
+        "Dimensions dissipateur seul": "120 × 46 × 148 mm",
+        "Poids dissipateur seul": "630 g",
+        "Caloducs": "4 × 6 mm",
+        "Ventilateur": "TL-C12C 120 × 120 × 25 mm",
+        "Vitesse ventilateur maximale": "1550 tr/min ±10 %",
+        "Connecteur ventilateur": "PWM 4 broches",
+        "Roulement": "S-FDB"
+      },
+      "sources": [
+        {
+          "url": "https://www.thermalright.com/product/assassin-x-120-refined-se/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat d’accès à comparer par mesures et disponibilité. Le champ ARGB de la fiche semble générique : ne pas promettre l’éclairage ni employer une photo de la version ARGB.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Référence fabricant régionale",
+        "GTIN",
+        "Dimensions ventilateur inclus",
+        "Éclairage exact du lot",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais thermiques indépendants"
+      ]
+    },
+    {
+      "sku": "ACFRE00121A",
+      "manufacturerPartNumber": "ACFRE00121A",
+      "gtin": null,
+      "name": "ARCTIC Freezer 36 Standard",
+      "category": "refroidissement",
+      "tier": "entree",
+      "descriptionFr": "Ventirad à quatre caloducs et deux ventilateurs PWM, dans la variante Standard.",
+      "attributes": {
+        "Type": "Ventirad tour simple",
+        "Socket": "AM4 / AM5 / LGA1700 / LGA1851",
+        "Dimensions ventilateurs inclus": "104 × 126 × 159 mm",
+        "Hauteur": "159 mm",
+        "Poids produit": "890 g",
+        "Caloducs": "4 × 6 mm",
+        "Ventilateurs": "2 × P12 PWM PST",
+        "Vitesse ventilateur": "200–1800 tr/min",
+        "Mode ventilation": "Arrêt sous 5 % PWM",
+        "Pâte incluse": "MX-6 0.8 g",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.arctic.de/en/Freezer-36/ACFRE00121A",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat polyvalent à air ; vérifier les 159 mm disponibles et les fixations du lot. La variante Black et les anciens kits ne doivent pas remplacer cette référence.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais thermiques indépendants"
+      ]
+    },
+    {
+      "sku": "BK039",
+      "manufacturerPartNumber": "BK039",
+      "gtin": "4260052192481",
+      "name": "be quiet! Pure Rock 3 Black",
+      "category": "refroidissement",
+      "tier": "entree",
+      "descriptionFr": "Ventirad noir à tour simple de 154 mm de haut, avec un ventilateur Pure Wings 3 PWM de 120 mm.",
+      "attributes": {
+        "Type": "Ventirad tour simple",
+        "Socket": "AM4 / AM5 / LGA1150 / LGA1151 / LGA1155 / LGA1200 / LGA1700 / LGA1851",
+        "Dimensions hors fixation": "71 × 124 × 154 mm",
+        "Hauteur": "154 mm",
+        "Poids produit": "570 g",
+        "Ventilateur": "1 × Pure Wings 3 120 mm PWM",
+        "Couleur": "Noir",
+        "Dimensions emballées": "133 × 163 × 210 mm",
+        "Poids emballé": "0.9 kg",
+        "Garantie fabricant annoncée": "3 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.bequiet.com/fr/cpucooler/5591",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "manufacturerSuggestedPrice": {
+        "amount": 34.9,
+        "currency": "EUR",
+        "taxBasis": "TTC",
+        "verifiedAt": "2026-10-01",
+        "isObservedRetailPrice": false
+      },
+      "selectionRationale": "Alternative relativement légère pour le transport et moins haute que les grandes tours. Le chiffre thermique marketing n’est pas assimilé à une compatibilité garantie avec tout processeur de même TDP.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Prix détaillant France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Photo exacte autorisée avec alpha",
+        "Essais thermiques indépendants"
+      ]
+    },
+    {
+      "sku": "EDO-COOL-THERMALRIGHT-PHANTOM-SPIRIT-120-SE",
+      "manufacturerPartNumber": null,
+      "gtin": null,
+      "name": "Thermalright Phantom Spirit 120 SE",
+      "category": "refroidissement",
+      "tier": "milieu",
+      "descriptionFr": "Ventirad double tour à sept caloducs, avec une base en cuivre nickelé.",
+      "attributes": {
+        "Type": "Ventirad double tour",
+        "Modèle": "Phantom Spirit 120 SE",
+        "Socket": "AM4 / AM5 / LGA115x / LGA1200 / LGA1700 / LGA1851",
+        "Dimensions dissipateur seul": "110 × 125 × 154 mm",
+        "Poids dissipateur seul": "765 g",
+        "Caloducs": "7 × 6 mm",
+        "Base": "Cuivre C1100 nickelé",
+        "Ventilateur indiqué": "TL-C12B V2 120 × 120 × 25 mm",
+        "Vitesse ventilateur maximale": "1500 tr/min ±10 %",
+        "Connecteur ventilateur": "PWM 4 broches",
+        "Roulement": "S-FDB"
+      },
+      "sources": [
+        {
+          "url": "https://www.thermalright.com/product/phantom-spirit-120-se/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat double tour à comparer à bruit égal. La révision du ventilateur indiquée par la fiche actuelle doit être confirmée avec le fournisseur ; les dimensions du dissipateur seul ne suffisent pas à valider la RAM et le boîtier.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Référence fabricant régionale",
+        "GTIN",
+        "Nombre de ventilateurs du lot",
+        "Dimensions ventilateurs inclus",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais thermiques indépendants"
+      ]
+    },
+    {
+      "sku": "NH-U12S-CHROMAX-BLACK",
+      "manufacturerPartNumber": "NH-U12S chromax.black",
+      "gtin": "9010018000177",
+      "name": "Noctua NH-U12S chromax.black",
+      "category": "refroidissement",
+      "tier": "milieu",
+      "descriptionFr": "Ventirad noir à tour simple, avec ventilateur NF-F12 PWM et pâte thermique NT-H1.",
+      "attributes": {
+        "Type": "Ventirad tour simple",
+        "Socket": "AM4 / AM5 / LGA1150 / LGA1151 / LGA1155 / LGA1156 / LGA1200 / LGA1700 / LGA1851 / LGA1954",
+        "Dimensions ventilateur inclus": "71 × 125 × 158 mm",
+        "Hauteur": "158 mm",
+        "Poids produit": "755 g",
+        "Caloducs": "5 × 6 mm",
+        "Ventilateur": "1 × NF-F12 PWM chromax.black 120 mm",
+        "Vitesse ventilateur": "0–1500 tr/min",
+        "Pâte incluse": "NT-H1",
+        "Dimensions emballées": "212 × 169 × 142 mm",
+        "Poids emballé": "1.3 kg",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.noctua.at/en/products/nh-u12s-chromax-black/specifications",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat pour un montage à air peu profond ; vérifier la liste de compatibilité CPU, carte mère et le kit fourni. Le socket figurant sur le site ne prouve pas que tous les anciens lots contiennent son kit.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [
+        {
+          "path": "catalog/images/refroidissement/NH-U12S-CHROMAX-BLACK/principal.png",
+          "sourceUrl": "https://cdn.noctua.at/media/nh_u12s_chromax_black_1.png",
+          "rightsUrl": "https://www.noctua.at/en/press",
+          "provenancePath": "catalog/images/refroidissement/NH-U12S-CHROMAX-BLACK/provenance.json"
+        }
+      ],
+      "imageStatus": "official_original_transparent_png_reviewed",
+      "missing": [
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Kits de fixation du lot",
+        "Essais thermiques indépendants"
+      ]
+    },
+    {
+      "sku": "ACFRE00178A",
+      "manufacturerPartNumber": "ACFRE00178A",
+      "gtin": null,
+      "name": "ARCTIC Liquid Freezer III Pro 240 Black",
+      "category": "refroidissement",
+      "tier": "milieu",
+      "descriptionFr": "Refroidissement liquide tout-en-un noir de 240 mm, avec deux ventilateurs P12 Pro et radiateur de 38 mm d’épaisseur.",
+      "attributes": {
+        "Type": "AIO",
+        "Socket vérifié dans les spécifications": "AM4 / AM5 / LGA1700 / LGA1851",
+        "Radiateur": "240 mm",
+        "Dimensions radiateur seul": "277 × 120 × 38 mm",
+        "Ventilateurs": "2 × P12 Pro",
+        "Vitesse ventilateur": "600–3000 tr/min",
+        "Vitesse pompe": "800–2800 tr/min PWM",
+        "Longueur tubes": "450 mm",
+        "Poids produit": "1675 g",
+        "Pâte incluse": "MX-6 0.8 g",
+        "Éclairage": "Aucun",
+        "Dimensions emballées": "294 × 171 × 142 mm",
+        "Poids emballé": "2.065 kg",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.arctic.de/en/Liquid-Freezer-III-Pro-240/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs_and_store"
+        }
+      ],
+      "selectionRationale": "Candidat AIO 240 mm ; vérifier l’épaisseur totale avec ventilateurs et les composants autour du socket. Les anciens sockets listés dans les métadonnées commerciales ne sont pas repris : la section technique ne les confirme pas.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [
+        {
+          "amount": 83.99,
+          "currency": "EUR",
+          "taxBasis": "VAT_included_rate_not_verified",
+          "market": "manufacturer_EU_store_FR_delivery_unverified",
+          "observedAt": "2026-10-01",
+          "seller": "ARCTIC",
+          "availabilityText": "Bouton d’ajout au panier présent, disponibilité non confirmée",
+          "verification": "manufacturer_store_page_only_checkout_and_export_unverified",
+          "url": "https://www.arctic.de/en/Liquid-Freezer-III-Pro-240/"
+        }
+      ],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Épaisseur radiateur avec ventilateurs",
+        "Livraison France et TVA applicable",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Photo exacte autorisée avec alpha",
+        "Essais thermiques indépendants"
+      ]
+    },
+    {
+      "sku": "NH-D15-G2",
+      "manufacturerPartNumber": "NH-D15 G2",
+      "gtin": "9010018000405",
+      "name": "Noctua NH-D15 G2 Standard",
+      "category": "refroidissement",
+      "tier": "haut",
+      "descriptionFr": "Ventirad double tour à huit caloducs et deux ventilateurs de 140 mm, dans la variante Standard.",
+      "attributes": {
+        "Type": "Ventirad double tour",
+        "Socket": "AM4 / AM5 / LGA1150 / LGA1151 / LGA1155 / LGA1156 / LGA1200 / LGA1700 / LGA1851 / LGA1954",
+        "Dimensions ventilateurs inclus": "152 × 150 × 168 mm",
+        "Hauteur": "168 mm",
+        "Poids produit": "1525 g",
+        "Caloducs": "8 × 6 mm",
+        "Ventilateurs": "2 × NF-A14x25r G2 PWM 140 mm",
+        "Vitesse ventilateur": "0–1500 tr/min",
+        "Convexité base": "Standard",
+        "Pâte incluse": "NT-H2",
+        "Dimensions emballées": "188 × 188 × 239 mm",
+        "Poids emballé": "2.46 kg",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.noctua.at/en/products/nh-d15-g2/specifications",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat haut de gamme à air sans pompe. Confirmer les dégagements RAM et PCIe ainsi que la variante Standard, distincte de HBC/LBC ; relever le ventilateur peut augmenter la hauteur nécessaire.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [
+        {
+          "path": "catalog/images/refroidissement/NH-D15-G2/principal.png",
+          "sourceUrl": "https://cdn.noctua.at/media/nh_d15_g2_11-improved.png",
+          "rightsUrl": "https://www.noctua.at/en/press",
+          "provenancePath": "catalog/images/refroidissement/NH-D15-G2/provenance.json"
+        }
+      ],
+      "imageStatus": "official_original_transparent_png_reviewed",
+      "missing": [
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Kits de fixation du lot",
+        "Essais thermiques indépendants"
+      ]
+    },
+    {
+      "sku": "ACFRE00180A",
+      "manufacturerPartNumber": "ACFRE00180A",
+      "gtin": null,
+      "name": "ARCTIC Liquid Freezer III Pro 360 Black",
+      "category": "refroidissement",
+      "tier": "haut",
+      "descriptionFr": "AIO noir de 360 mm avec trois ventilateurs P12 Pro, destiné à un boîtier acceptant le radiateur et son épaisseur.",
+      "attributes": {
+        "Type": "AIO",
+        "Socket vérifié dans les spécifications": "AM4 / AM5 / LGA1700 / LGA1851",
+        "Radiateur": "360 mm",
+        "Dimensions radiateur seul": "398 × 120 × 38 mm",
+        "Ventilateurs": "3 × P12 Pro",
+        "Vitesse ventilateur": "600–3000 tr/min",
+        "Vitesse pompe": "800–2800 tr/min PWM",
+        "Longueur tubes": "450 mm",
+        "Poids produit": "2020 g",
+        "Pâte incluse": "MX-6 0.8 g",
+        "Dimensions emballées": "414 × 167 × 142 mm",
+        "Poids emballé": "2.465 kg",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.arctic.de/en/Liquid-Freezer-III-Pro-360/ACFRE00180A",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat pour charge CPU prolongée, sous réserve de mesures et de compatibilité. Transporter dans son emballage et vérifier l’installation ; ne pas promettre une température ou un silence universels.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Épaisseur radiateur avec ventilateurs",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Photo exacte autorisée avec alpha",
+        "Essais thermiques indépendants"
+      ]
+    },
+    {
+      "sku": "CW-9060089-WW",
+      "manufacturerPartNumber": "CW-9060089-WW",
+      "gtin": null,
+      "name": "Corsair NAUTILUS 360 RS Black",
+      "category": "refroidissement",
+      "tier": "haut",
+      "descriptionFr": "AIO de 360 mm avec commande PWM directement depuis la carte mère, sans contrôleur supplémentaire.",
+      "attributes": {
+        "Type": "AIO",
+        "Socket": "AM4 / AM5 / LGA1700 / LGA1851",
+        "Radiateur": "360 mm",
+        "Ventilateurs": "RS120",
+        "Vitesse ventilateur maximale": "2100 tr/min",
+        "Commande ventilateur": "PWM avec mode Zero RPM",
+        "Matériau radiateur": "Aluminium",
+        "Matériau plaque froide": "Cuivre",
+        "Longueur tubes": "450 mm",
+        "Couleur": "Noir",
+        "Garantie fabricant annoncée": "5 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.corsair.com/uk/en/p/cpu-coolers/cw-9060089-ww/nautilus-360-rs-liquid-cpu-cooler-cw-90",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Alternative 360 mm avec raccordement PWM simple. Ne pas confondre avec les modèles RS ARGB, LCD ou blancs ; les dimensions ambiguës de la fiche ne sont pas utilisées comme encombrement réel du radiateur.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Nombre de ventilateurs confirmé",
+        "Dimensions radiateur vérifiées",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais thermiques indépendants"
+      ]
+    }
+  ]
+}

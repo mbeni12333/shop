@@ -1,0 +1,490 @@
+{
+  "status": "research_in_progress",
+  "targetTotal": 126,
+  "categoryTarget": 9,
+  "method": "Neuf candidats vérifiés sur les fiches fabricant le 1 octobre 2026. Entrée : 550 W ; milieu : 750 W modulaires ; haut : 1000 W pour configurations exigeantes. Gammes éditoriales provisoires à confronter au marché. Dimensionner selon les composants et les pointes de charge ; une certification de rendement ne prouve pas à elle seule la qualité électrique ou la fiabilité.",
+  "products": [
+    {
+      "sku": "CP-9020277-EU",
+      "manufacturerPartNumber": "CP-9020277-EU",
+      "gtin": null,
+      "name": "Corsair CX550 550 W (EU)",
+      "category": "alimentations",
+      "tier": "entree",
+      "descriptionFr": "Alimentation ATX non modulaire de 550 W, pour une configuration dont la consommation et les connecteurs ont été vérifiés.",
+      "attributes": {
+        "Puissance": "550 W",
+        "Format": "ATX",
+        "Version ATX": "2.31",
+        "Certification rendement": "80 PLUS Bronze",
+        "Modularité": "Non modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "47–63 Hz",
+        "Puissance 12 V": "528 W",
+        "Ventilateur": "120 mm",
+        "Longueur": "125 mm",
+        "PCIe 6+2": "2",
+        "SATA": "3",
+        "Garantie fabricant annoncée": "5 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.corsair.com/fr/fr/p/psu/cp-9020277-eu/cx-series-cx550-550-watt-80-plus-bronze-atx-power-supply-eu-cp-9020277-eu",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs_and_store"
+        }
+      ],
+      "selectionRationale": "Candidat compact pour une configuration modeste ; ne pas le confondre avec les anciennes révisions CX550 ou la CX550M.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [
+        {
+          "amount": 59.9,
+          "currency": "EUR",
+          "taxBasis": "not_verified",
+          "market": "FR",
+          "observedAt": "2026-10-01",
+          "seller": "Corsair",
+          "availabilityText": "En stock",
+          "verification": "manufacturer_store_page_only_checkout_and_export_unverified",
+          "url": "https://www.corsair.com/fr/fr/p/psu/cp-9020277-eu/cx-series-cx550-550-watt-80-plus-bronze-atx-power-supply-eu-cp-9020277-eu"
+        }
+      ],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Dimensions complètes",
+        "Prix HT confirmé",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    },
+    {
+      "sku": "EDO-PSU-MSI-MAG-A550BN",
+      "manufacturerPartNumber": null,
+      "gtin": null,
+      "name": "MSI MAG A550BN 550 W",
+      "category": "alimentations",
+      "tier": "entree",
+      "descriptionFr": "Alimentation ATX de 550 W avec deux connecteurs PCIe 6+2 broches, pour une configuration de consommation adaptée.",
+      "attributes": {
+        "Modèle": "MAG A550BN",
+        "Puissance": "550 W",
+        "Format": "ATX",
+        "Certification rendement": "80 PLUS Bronze",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "50–60 Hz",
+        "Ventilateur": "120 mm",
+        "Dimensions": "140 × 150 × 86 mm",
+        "PCIe 6+2": "2",
+        "EPS 4+4": "1",
+        "SATA": "5",
+        "Protections": "OCP / OVP / OPP / OTP / SCP"
+      },
+      "sources": [
+        {
+          "url": "https://sg.msi.com/Power-Supply/MAG-A550BN/Specification",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Alternative 550 W à comparer par prix et essais électriques. SKU interne explicite : la référence de commande régionale n’est pas documentée par cette fiche.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Référence fabricant régionale",
+        "GTIN",
+        "Version ATX",
+        "Modularité",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    },
+    {
+      "sku": "BP010EU",
+      "manufacturerPartNumber": "BP010EU",
+      "gtin": "4260052191866",
+      "name": "be quiet! System Power 11 550 W (EU)",
+      "category": "alimentations",
+      "tier": "entree",
+      "descriptionFr": "Alimentation ATX 3.1 non modulaire de 550 W avec câble 12V-2x6 limité à 300 W.",
+      "attributes": {
+        "Puissance": "550 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Bronze",
+        "Modularité": "Non modulaire",
+        "Tension entrée": "200–240 V AC",
+        "Fréquence entrée": "50 Hz",
+        "Ventilateur": "120 mm",
+        "Puissance 12 V": "550 W",
+        "Puissance câble 12V-2x6": "300 W",
+        "Dimensions emballées": "268 × 195 × 97 mm",
+        "Poids emballé": "2.3 kg"
+      },
+      "sources": [
+        {
+          "url": "https://www.bequiet.com/fr/powersupply/5904",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "manufacturerSuggestedPrice": {
+        "amount": 59.9,
+        "currency": "EUR",
+        "taxBasis": "TTC",
+        "verifiedAt": "2026-10-01",
+        "isObservedRetailPrice": false
+      },
+      "selectionRationale": "Ajoute un connecteur moderne au niveau d’accès ; son entrée 200–240 V et la limite de câble 300 W doivent rester visibles. Ne pas promettre la prise en charge de toute carte graphique.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Prix détaillant France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    },
+    {
+      "sku": "CP-9020295-WW",
+      "manufacturerPartNumber": "CP-9020295-WW",
+      "gtin": null,
+      "name": "Corsair RM750e 750 W ATX 3.1 (WW)",
+      "category": "alimentations",
+      "tier": "milieu",
+      "descriptionFr": "Alimentation de 750 W entièrement modulaire avec câble 12V-2x6, dans la révision ATX 3.1.",
+      "attributes": {
+        "Puissance": "750 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "Cybenetics Gold",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "47–63 Hz",
+        "Dimensions": "140 × 150 × 86 mm",
+        "Mode ventilation": "Zero RPM",
+        "Câbles": "Corsair Type 4",
+        "EPS 4+4": "2",
+        "SATA": "6",
+        "Garantie fabricant annoncée": "7 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.corsair.com/ww/fr/p/psu/cp-9020295-ww/rme-series-rm750e-fully-modular-low-noise-atx-power-supply-ww-cp-9020295-ww",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat pour une configuration polyvalente avec GPU dédié ; vérifier le cordon secteur du lot WW. La table de sortie consultée comporte une incohérence courant/puissance 12 V, non reprise.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Confirmation cordon secteur WW",
+        "Table de sortie 12 V corrigée",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    },
+    {
+      "sku": "EDO-PSU-MSI-MAG-A750GL-PCIE5-II",
+      "manufacturerPartNumber": null,
+      "gtin": null,
+      "name": "MSI MAG A750GL PCIE5 II 750 W",
+      "category": "alimentations",
+      "tier": "milieu",
+      "descriptionFr": "Alimentation ATX 3.1 de 750 W entièrement modulaire, avec connecteur PCIe 5.1 de 450 W.",
+      "attributes": {
+        "Modèle": "MAG A750GL PCIE5 II",
+        "Puissance": "750 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Gold",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "47–63 Hz",
+        "Ventilateur": "120 mm FDB",
+        "Dimensions": "140 × 150 × 86 mm",
+        "PCIe 5.1 16 broches": "1 × 450 W",
+        "PCIe 6+2": "3",
+        "EPS 4+4": "2",
+        "SATA": "8",
+        "Protections": "OCP / OVP / OPP / OTP / SCP / UVP"
+      },
+      "sources": [
+        {
+          "url": "https://www.msi.com/Power-Supply/MAG-A750GL-PCIE5-II/Specification",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        },
+        {
+          "url": "https://www.msi.com/Power-Supply/MAG-A750GL-PCIE5-II/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Alternative modulaire compacte ; la version II doit être confirmée sur le produit et la facture. Ne pas appliquer les caractéristiques de la précédente A750GL PCIE5.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Référence fabricant régionale",
+        "GTIN",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    },
+    {
+      "sku": "BP026EU",
+      "manufacturerPartNumber": "BP026EU",
+      "gtin": "4260052192184",
+      "name": "be quiet! Pure Power 13 M 750 W (EU)",
+      "category": "alimentations",
+      "tier": "milieu",
+      "descriptionFr": "Alimentation modulaire ATX 3.1 de 750 W avec refroidissement semi-passif et câble 12V-2x6 de 600 W.",
+      "attributes": {
+        "Puissance": "750 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Gold",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "50–60 Hz",
+        "Ventilateur": "120 mm",
+        "Mode ventilation": "Semi-passif",
+        "Puissance câble 12V-2x6": "600 W",
+        "PCIe 6+2": "4",
+        "Dimensions": "160 × 150 × 86 mm",
+        "Dimensions emballées": "320 × 210 × 133 mm",
+        "Poids emballé": "3.2 kg",
+        "Garantie fabricant annoncée": "10 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.bequiet.com/fr/powersupply/5934",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "manufacturerSuggestedPrice": {
+        "amount": 119.9,
+        "currency": "EUR",
+        "taxBasis": "TTC",
+        "verifiedAt": "2026-10-01",
+        "isObservedRetailPrice": false
+      },
+      "selectionRationale": "Candidat silencieux pour une configuration 750 W vérifiée ; l’encombrement et le poids emballé sont renseignés pour préparer le montage et le transport.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Prix détaillant France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    },
+    {
+      "sku": "CP-9020271-EU",
+      "manufacturerPartNumber": "CP-9020271-EU",
+      "gtin": null,
+      "name": "Corsair RM1000x 1000 W ATX 3.1 (EU)",
+      "category": "alimentations",
+      "tier": "haut",
+      "descriptionFr": "Alimentation ATX 3.1 de 1000 W entièrement modulaire, avec ventilateur de 140 mm et câble 12V-2x6.",
+      "attributes": {
+        "Puissance": "1000 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "Cybenetics Gold",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "47–63 Hz",
+        "Ventilateur": "140 mm FDB",
+        "Dimensions": "160 × 150 × 86 mm",
+        "Mode ventilation": "Zero RPM et commande manuelle",
+        "Câbles": "Corsair Type 4",
+        "PCIe 6+2": "4",
+        "SATA": "12",
+        "Garantie fabricant annoncée": "10 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.corsair.com/fr/fr/p/psu/cp-9020271-eu/rmx-series-rm1000x-fully-modular-power-supply-eu-cp-9020271-eu",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs_and_store"
+        }
+      ],
+      "selectionRationale": "Candidat 1000 W pour GPU et processeur exigeants ; la référence EU ATX 3.1 distingue ce modèle des anciennes RM1000x.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [
+        {
+          "amount": 189.9,
+          "currency": "EUR",
+          "taxBasis": "not_verified",
+          "market": "FR",
+          "observedAt": "2026-10-01",
+          "seller": "Corsair",
+          "availabilityText": "En réapprovisionnement",
+          "verification": "manufacturer_store_page_only_checkout_and_export_unverified",
+          "url": "https://www.corsair.com/fr/fr/p/psu/cp-9020271-eu/rmx-series-rm1000x-fully-modular-power-supply-eu-cp-9020271-eu"
+        }
+      ],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "GTIN",
+        "Prix HT confirmé",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    },
+    {
+      "sku": "EDO-PSU-SEASONIC-FOCUS-GX-1000-V5",
+      "manufacturerPartNumber": null,
+      "gtin": null,
+      "name": "Seasonic FOCUS GX 1000 W ATX 3.1 v5",
+      "category": "alimentations",
+      "tier": "haut",
+      "descriptionFr": "Version v5 de la FOCUS GX 1000 W, modulaire et équipée d’un câble natif 12V-2x6.",
+      "attributes": {
+        "Modèle": "FOCUS GX 1000 W ATX 3.1 v5",
+        "Puissance": "1000 W",
+        "Format": "ATX/EPS",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Gold / Cybenetics Platinum",
+        "Certification bruit": "Cybenetics A",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "50–60 Hz",
+        "Ventilateur": "135 mm FDB",
+        "Longueur": "140 mm",
+        "Puissance 12 V": "996 W",
+        "Protections": "OCP / OPP / OTP / OVP / SCP / UVP",
+        "Garantie fabricant annoncée": "10 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://seasonic.com/focus-gx-atx-3-1/",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "selectionRationale": "Candidat compact de la nouvelle version v5. Ses certifications diffèrent de la v4 : exiger la révision exacte du fournisseur. SKU interne, référence commerciale fabricant encore à confirmer.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Référence fabricant régionale",
+        "GTIN",
+        "Dimensions complètes",
+        "Prix France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Poids emballé",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    },
+    {
+      "sku": "BP020EU",
+      "manufacturerPartNumber": "BP020EU",
+      "gtin": "4260052192023",
+      "name": "be quiet! Dark Power 14 1000 W (EU)",
+      "category": "alimentations",
+      "tier": "haut",
+      "descriptionFr": "Alimentation ATX 3.1 modulaire de 1000 W, avec ventilateur de 135 mm et refroidissement actif ou semi-passif.",
+      "attributes": {
+        "Puissance": "1000 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Titanium / Cybenetics Titanium",
+        "Modularité": "Modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "50–60 Hz",
+        "Ventilateur": "135 mm FDB",
+        "Mode ventilation": "Actif ou semi-passif",
+        "Puissance câble 12V-2x6": "600 W",
+        "PCIe 6+2": "4",
+        "Dimensions": "175 × 150 × 86 mm",
+        "Dimensions emballées": "355 × 230 × 126 mm",
+        "Poids emballé": "4.51 kg",
+        "Garantie fabricant annoncée": "10 ans, conditions territoriales à vérifier"
+      },
+      "sources": [
+        {
+          "url": "https://www.bequiet.com/fr/powersupply/5789",
+          "verifiedAt": "2026-10-01",
+          "kind": "manufacturer_specs"
+        }
+      ],
+      "manufacturerSuggestedPrice": {
+        "amount": 274.9,
+        "currency": "EUR",
+        "taxBasis": "TTC",
+        "verifiedAt": "2026-10-01",
+        "isObservedRetailPrice": false
+      },
+      "selectionRationale": "Candidat premium à comparer par mesures de bruit et régulation. Le volume et les 4.51 kg emballés sont une contrainte de transport à intégrer au coût complet.",
+      "selectionStatus": "provisional_pending_market_research",
+      "priceObservations": [],
+      "edoctorSalePrice": null,
+      "edoctorStock": null,
+      "images": [],
+      "imageStatus": "pending_exact_photo_and_reuse_rights",
+      "missing": [
+        "Prix détaillant France et régime de TVA",
+        "Disponibilité fournisseur export",
+        "Garantie territoriale",
+        "Photo exacte autorisée avec alpha",
+        "Essais électriques indépendants"
+      ]
+    }
+  ]
+}

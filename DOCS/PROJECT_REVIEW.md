@@ -19,6 +19,7 @@ The project demonstrates solid engineering practices with a well-structured code
 ## Recommended Improvements
 
 ### 1. State Management Refinements
+
 - Currently exposes raw `setCart` function in CartProvider, which could lead to inconsistent state
 - Recommendation: Replace with specific action functions:
   ```typescript
@@ -31,6 +32,7 @@ The project demonstrates solid engineering practices with a well-structured code
   ```
 
 ### 2. Security Enhancements
+
 - Session tokens stored in localStorage are vulnerable to XSS
 - Consider implementing:
   - HttpOnly cookies for session management
@@ -38,6 +40,7 @@ The project demonstrates solid engineering practices with a well-structured code
   - Rate limiting on checkout endpoints
 
 ### 3. Payment System Flexibility
+
 - Currently hardcoded to Cash on Delivery
 - Suggested improvements:
   - Abstract payment method selection
@@ -45,24 +48,28 @@ The project demonstrates solid engineering practices with a well-structured code
   - Add support for multiple payment providers
 
 ### 4. Error Handling
+
 - Add comprehensive error boundaries
 - Implement retry logic for failed GraphQL operations
 - Add detailed error logging and monitoring
 - Consider implementing offline support/queue for cart operations
 
 ### 5. Performance Optimizations
+
 - Implement cart item quantity debouncing
 - Add product list virtualization for large catalogs
 - Consider implementing optimistic UI updates
 - Add prefetching for common user paths
 
 ### 6. Developer Experience
+
 - Add more comprehensive TypeScript types
 - Consider implementing Storybook for component development
 - Add unit tests for critical business logic
 - Implement automated accessibility testing
 
 ### 7. User Experience
+
 - Add toast notifications for cart operations
 - Implement better loading skeletons
 - Add offline support indicators

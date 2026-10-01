@@ -28,8 +28,8 @@ rules:
     languages: [javascript, typescript]
     paths:
       include:
-        - "**/pages/api/**"
-        - "**/app/api/**"
+        - '**/pages/api/**'
+        - '**/app/api/**'
     metadata:
       owasp: A01:2021
       cwe: CWE-749
@@ -78,8 +78,8 @@ rules:
     languages: [javascript, typescript]
     paths:
       include:
-        - "**/pages/api/**"
-        - "**/app/api/**"
+        - '**/pages/api/**'
+        - '**/app/api/**'
     metadata:
       owasp: A01:2021
       cwe: CWE-862
@@ -107,9 +107,9 @@ rules:
     languages: [javascript, typescript]
     paths:
       include:
-        - "**/pages/**"
-        - "**/app/**"
-        - "**/components/**"
+        - '**/pages/**'
+        - '**/app/**'
+        - '**/components/**'
     metadata:
       owasp: A03:2021
       cwe: CWE-79
@@ -131,8 +131,8 @@ rules:
     languages: [generic]
     paths:
       include:
-        - "**/.env*"
-        - "**/next.config.*"
+        - '**/.env*'
+        - '**/next.config.*'
     metadata:
       owasp: A05:2021
       cwe: CWE-200
@@ -152,7 +152,7 @@ rules:
     languages: [javascript, typescript]
     paths:
       include:
-        - "**/next.config.*"
+        - '**/next.config.*'
     metadata:
       owasp: A05:2021
       cwe: CWE-693
@@ -168,7 +168,7 @@ rules:
     languages: [javascript, typescript]
     paths:
       include:
-        - "**/next.config.*"
+        - '**/next.config.*'
     metadata:
       owasp: A05:2021
       cwe: CWE-918
@@ -222,8 +222,8 @@ rules:
     languages: [javascript, typescript]
     paths:
       include:
-        - "**/pages/api/**"
-        - "**/app/api/**"
+        - '**/pages/api/**'
+        - '**/app/api/**'
     metadata:
       owasp: A09:2021
       cwe: CWE-209
@@ -256,7 +256,7 @@ rules:
     languages: [javascript, typescript]
     paths:
       include:
-        - "**/pages/**"
+        - '**/pages/**'
     metadata:
       owasp: A10:2021
       cwe: CWE-918

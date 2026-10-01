@@ -1,0 +1,2299 @@
+{
+  "sourceFiles": [
+    "alimentations.json",
+    "processeurs.json",
+    "ram.json",
+    "refroidissement.json",
+    "ssd.json"
+  ],
+  "products": [
+    {
+      "id": 64382370532646,
+      "slug": "recherche-amd-ryzen-5-5600-100-100000927box",
+      "name": "AMD Ryzen 5 5600",
+      "sku": "100-100000927BOX",
+      "category": "processeurs",
+      "brand": "AMD",
+      "tier": "Entrée de gamme",
+      "description": "6 cœurs pour une configuration AM4 orientée budget.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "6",
+        "Threads": "12",
+        "Fréquence boost maximale": "4.4 GHz",
+        "TDP": "65 W",
+        "Socket": "AM4",
+        "Architecture": "Zen 3",
+        "Mémoire": "DDR4",
+        "Fréquence de base": "3.5 GHz",
+        "Cache L3": "32 MB",
+        "Refroidissement inclus": "Wraith Stealth"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "100-100000927BOX",
+        "sources": [
+          {
+            "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-5-5600.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Socle AM4 à comparer avec les coûts carte mère et mémoire ; prix fournisseur à vérifier.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 16230837008418,
+      "slug": "recherche-kingston-fury-beast-ddr4-16-go-2-8-go-3200-cl16-kf432c16bbk2-16",
+      "name": "Kingston FURY Beast DDR4 16 Go (2 × 8 Go) 3200 CL16",
+      "sku": "KF432C16BBK2/16",
+      "category": "ram",
+      "brand": "Kingston",
+      "tier": "Entrée de gamme",
+      "description": "Kit de deux modules DDR4 de 8 Go pour une configuration de bureau compatible XMP 2.0.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR4",
+        "Capacité": "16 Go",
+        "Modules": "2 × 8 Go",
+        "Format": "DIMM 288 broches",
+        "Débit testé": "3200 MT/s",
+        "Latence": "CL16-18-18",
+        "Tension profil": "1.35 V",
+        "Profil": "Intel XMP 2.0",
+        "Débit JEDEC": "2400 MT/s",
+        "Latence JEDEC": "CL17-17-17",
+        "Tension JEDEC": "1.2 V",
+        "Hauteur": "34 mm"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "KF432C16BBK2/16",
+        "sources": [
+          {
+            "url": "https://www.kingston.com/datasheets/KF432C16BBK2_16.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Kit DDR4 d’accès pour AM4 ou une carte mère Intel DDR4 ; ne pas l’associer à une carte mère DDR5 et vérifier la liste de compatibilité.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 53188097429828,
+      "slug": "recherche-kingston-nv3-1-to-snv3s-1000g",
+      "name": "Kingston NV3 1 To",
+      "sku": "SNV3S/1000G",
+      "category": "ssd",
+      "brand": "Kingston",
+      "tier": "Entrée de gamme",
+      "description": "Stockage M.2 2280 PCIe 4.0 pour une configuration généraliste.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe",
+        "Lecture séquentielle maximale": "6000 Mo/s",
+        "Écriture séquentielle maximale": "4000 Mo/s"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "SNV3S/1000G",
+        "sources": [
+          {
+            "url": "https://www.kingston.com/en/memory/search?partid=SNV3S%2F1000G",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Option généraliste à comparer au coût des SSD TLC concurrents ; ne pas inférer le type exact de NAND depuis une autre capacité.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Type exact de NAND",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 31867454315624,
+      "slug": "recherche-corsair-cx550-550-w-eu-cp-9020277-eu",
+      "name": "Corsair CX550 550 W (EU)",
+      "sku": "CP-9020277-EU",
+      "category": "alimentations",
+      "brand": "Corsair",
+      "tier": "Entrée de gamme",
+      "description": "Alimentation ATX non modulaire de 550 W, pour une configuration dont la consommation et les connecteurs ont été vérifiés.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Puissance": "550 W",
+        "Format": "ATX",
+        "Version ATX": "2.31",
+        "Certification rendement": "80 PLUS Bronze",
+        "Modularité": "Non modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "47–63 Hz",
+        "Puissance 12 V": "528 W",
+        "Ventilateur": "120 mm",
+        "Longueur": "125 mm",
+        "PCIe 6+2": "2",
+        "SATA": "3",
+        "Garantie fabricant annoncée": "5 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "CP-9020277-EU",
+        "sources": [
+          {
+            "url": "https://www.corsair.com/fr/fr/p/psu/cp-9020277-eu/cx-series-cx550-550-watt-80-plus-bronze-atx-power-supply-eu-cp-9020277-eu",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs_and_store"
+          }
+        ],
+        "rationale": "Candidat compact pour une configuration modeste ; ne pas le confondre avec les anciennes révisions CX550 ou la CX550M.",
+        "missing": [
+          "GTIN",
+          "Dimensions complètes",
+          "Prix HT confirmé",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 163653740485736,
+      "slug": "recherche-noctua-nh-u12s-chromax-black-nh-u12s-chromax-black",
+      "name": "Noctua NH-U12S chromax.black",
+      "sku": "NH-U12S-CHROMAX-BLACK",
+      "category": "refroidissement",
+      "brand": "Noctua",
+      "tier": "Milieu de gamme",
+      "description": "Ventirad noir à tour simple, avec ventilateur NF-F12 PWM et pâte thermique NT-H1.",
+      "image": "/research-products/recherche-noctua-nh-u12s-chromax-black-nh-u12s-chromax-black.png",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "Ventirad tour simple",
+        "Socket": "AM4 / AM5 / LGA1150 / LGA1151 / LGA1155 / LGA1156 / LGA1200 / LGA1700 / LGA1851 / LGA1954",
+        "Dimensions ventilateur inclus": "71 × 125 × 158 mm",
+        "Hauteur": "158 mm",
+        "Poids produit": "755 g",
+        "Caloducs": "5 × 6 mm",
+        "Ventilateur": "1 × NF-F12 PWM chromax.black 120 mm",
+        "Vitesse ventilateur": "0–1500 tr/min",
+        "Pâte incluse": "NT-H1",
+        "Dimensions emballées": "212 × 169 × 142 mm",
+        "Poids emballé": "1.3 kg",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "NH-U12S chromax.black",
+        "sources": [
+          {
+            "url": "https://www.noctua.at/en/products/nh-u12s-chromax-black/specifications",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat pour un montage à air peu profond ; vérifier la liste de compatibilité CPU, carte mère et le kit fourni. Le socket figurant sur le site ne prouve pas que tous les anciens lots contiennent son kit.",
+        "missing": [
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Kits de fixation du lot",
+          "Essais thermiques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 209527432254277,
+      "slug": "recherche-amd-ryzen-5-5600gt-100-100001488box",
+      "name": "AMD Ryzen 5 5600GT",
+      "sku": "100-100001488BOX",
+      "category": "processeurs",
+      "brand": "AMD",
+      "tier": "Entrée de gamme",
+      "description": "Processeur AM4 avec circuit graphique Radeon intégré.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "6",
+        "Threads": "12",
+        "Fréquence boost maximale": "4.6 GHz",
+        "TDP": "65 W",
+        "Socket": "AM4",
+        "Architecture": "Zen 3",
+        "Mémoire": "DDR4",
+        "Fréquence de base": "3.6 GHz",
+        "Cache L3": "16 MB",
+        "Graphique intégré": "Radeon Graphics",
+        "Refroidissement inclus": "Wraith Stealth"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "100-100001488BOX",
+        "sources": [
+          {
+            "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-5-5600gt.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Option bureautique sans carte graphique dédiée ; ne pas assimiler son graphique intégré à une carte gaming récente.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 82412808489923,
+      "slug": "recherche-kingston-fury-beast-ddr4-32-go-2-16-go-3200-cl16-kf432c16bbk2-32",
+      "name": "Kingston FURY Beast DDR4 32 Go (2 × 16 Go) 3200 CL16",
+      "sku": "KF432C16BBK2/32",
+      "category": "ram",
+      "brand": "Kingston",
+      "tier": "Entrée de gamme",
+      "description": "Kit DDR4 de 32 Go pour prolonger une plateforme compatible sans changer de type de mémoire.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR4",
+        "Capacité": "32 Go",
+        "Modules": "2 × 16 Go",
+        "Format": "DIMM 288 broches",
+        "Débit testé": "3200 MT/s",
+        "Latence": "CL16-20-20",
+        "Tension profil": "1.35 V",
+        "Profil": "Intel XMP 2.0",
+        "Débit JEDEC": "2400 MT/s",
+        "Latence JEDEC": "CL17-17-17",
+        "Tension JEDEC": "1.2 V",
+        "Hauteur": "34 mm"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "KF432C16BBK2/32",
+        "sources": [
+          {
+            "url": "https://www.kingston.com/datasheets/KF432C16BBK2_32.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Capacité supplémentaire pour une plateforme DDR4 existante ; les timings ne sont pas ceux du kit 16 Go et doivent conserver cette référence exacte.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 204214480890624,
+      "slug": "recherche-wd-blue-sn5000-1-to-wds100t4b0e",
+      "name": "WD Blue SN5000 1 To",
+      "sku": "WDS100T4B0E",
+      "category": "ssd",
+      "brand": "WD",
+      "tier": "Entrée de gamme",
+      "description": "SSD TLC M.2 2280 destiné au stockage quotidien sur une plateforme PCIe 4.0.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe",
+        "NAND": "3D TLC",
+        "Lecture séquentielle maximale": "5150 Mo/s",
+        "Écriture séquentielle maximale": "4900 Mo/s",
+        "Endurance annoncée": "600 TBW",
+        "Dimensions du produit": "80 × 22 × 2.38 mm",
+        "Poids du produit": "5.7 g ± 0.5 g"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "WDS100T4B0E",
+        "sources": [
+          {
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-blue-nvme-ssd/data-sheet-wd-blue-sn5000-nvme-ssd.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat TLC généraliste ; la version 4 To emploie une NAND différente et ne doit pas être confondue avec ce modèle.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 196737673303281,
+      "slug": "recherche-msi-mag-a550bn-550-w-edo-psu-msi-mag-a550bn",
+      "name": "MSI MAG A550BN 550 W",
+      "sku": "EDO-PSU-MSI-MAG-A550BN",
+      "category": "alimentations",
+      "brand": "MSI",
+      "tier": "Entrée de gamme",
+      "description": "Alimentation ATX de 550 W avec deux connecteurs PCIe 6+2 broches, pour une configuration de consommation adaptée.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Modèle": "MAG A550BN",
+        "Puissance": "550 W",
+        "Format": "ATX",
+        "Certification rendement": "80 PLUS Bronze",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "50–60 Hz",
+        "Ventilateur": "120 mm",
+        "Dimensions": "140 × 150 × 86 mm",
+        "PCIe 6+2": "2",
+        "EPS 4+4": "1",
+        "SATA": "5",
+        "Protections": "OCP / OVP / OPP / OTP / SCP"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": null,
+        "sources": [
+          {
+            "url": "https://sg.msi.com/Power-Supply/MAG-A550BN/Specification",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Alternative 550 W à comparer par prix et essais électriques. SKU interne explicite : la référence de commande régionale n’est pas documentée par cette fiche.",
+        "missing": [
+          "Référence fabricant régionale",
+          "GTIN",
+          "Version ATX",
+          "Modularité",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 115785334802670,
+      "slug": "recherche-noctua-nh-d15-g2-standard-nh-d15-g2",
+      "name": "Noctua NH-D15 G2 Standard",
+      "sku": "NH-D15-G2",
+      "category": "refroidissement",
+      "brand": "Noctua",
+      "tier": "Haut de gamme",
+      "description": "Ventirad double tour à huit caloducs et deux ventilateurs de 140 mm, dans la variante Standard.",
+      "image": "/research-products/recherche-noctua-nh-d15-g2-standard-nh-d15-g2.png",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "Ventirad double tour",
+        "Socket": "AM4 / AM5 / LGA1150 / LGA1151 / LGA1155 / LGA1156 / LGA1200 / LGA1700 / LGA1851 / LGA1954",
+        "Dimensions ventilateurs inclus": "152 × 150 × 168 mm",
+        "Hauteur": "168 mm",
+        "Poids produit": "1525 g",
+        "Caloducs": "8 × 6 mm",
+        "Ventilateurs": "2 × NF-A14x25r G2 PWM 140 mm",
+        "Vitesse ventilateur": "0–1500 tr/min",
+        "Convexité base": "Standard",
+        "Pâte incluse": "NT-H2",
+        "Dimensions emballées": "188 × 188 × 239 mm",
+        "Poids emballé": "2.46 kg",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "NH-D15 G2",
+        "sources": [
+          {
+            "url": "https://www.noctua.at/en/products/nh-d15-g2/specifications",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat haut de gamme à air sans pompe. Confirmer les dégagements RAM et PCIe ainsi que la variante Standard, distincte de HBC/LBC ; relever le ventilateur peut augmenter la hauteur nécessaire.",
+        "missing": [
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Kits de fixation du lot",
+          "Essais thermiques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 92153024276240,
+      "slug": "recherche-intel-core-i3-14100-bx8071514100",
+      "name": "Intel Core i3-14100",
+      "sku": "BX8071514100",
+      "category": "processeurs",
+      "brand": "Intel",
+      "tier": "Entrée de gamme",
+      "description": "Processeur à 4 cœurs et 8 threads avec UHD Graphics 730.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "4",
+        "Threads": "8",
+        "Fréquence boost maximale": "4.7 GHz",
+        "Puissance de base": "60 W",
+        "Graphique intégré": "UHD Graphics 730",
+        "Mémoire": "DDR4 / DDR5",
+        "Fréquence de base P-core": "3.5 GHz",
+        "Puissance turbo maximale": "110 W"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "BX8071514100",
+        "sources": [
+          {
+            "url": "https://www.intel.com/content/www/us/en/products/sku/236774/intel-core-i3-processor-14100-12m-cache-up-to-4-70-ghz/specifications.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          },
+          {
+            "url": "https://www.intel.com/content/www/us/en/products/sku/236774/intel-core-i3-processor-14100-12m-cache-up-to-4-70-ghz/ordering.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_reference"
+          }
+        ],
+        "rationale": "Option bureautique ; vérifier le coût et la compatibilité de la carte mère et du BIOS.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 151251462840742,
+      "slug": "recherche-kingston-valueram-so-dimm-ddr4-16-go-3200-cl22-kvr32s22s8-16",
+      "name": "Kingston ValueRAM SO-DIMM DDR4 16 Go 3200 CL22",
+      "sku": "KVR32S22S8/16",
+      "category": "ram",
+      "brand": "Kingston",
+      "tier": "Entrée de gamme",
+      "description": "Un module SO-DIMM DDR4 de 16 Go pour un portable avec emplacement mémoire accessible et compatible.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR4",
+        "Capacité": "16 Go",
+        "Modules": "1 × 16 Go",
+        "Format": "SO-DIMM 260 broches",
+        "Débit testé": "3200 MT/s",
+        "Débit JEDEC": "3200 MT/s",
+        "Latence": "CL22-22-22",
+        "Tension JEDEC": "1.2 V",
+        "Organisation": "1Rx8",
+        "ECC": "Non",
+        "Hauteur PCB": "30 mm"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "KVR32S22S8/16",
+        "sources": [
+          {
+            "url": "https://www.kingston.com/dataSheets/KVR32S22S8_16.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          },
+          {
+            "url": "https://www.kingston.com/en/memory/search?partid=KVR32S22S8%2F16",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Couvre les extensions de portables DDR4 ; un emplacement libre et le support de 16 Go par module doivent être confirmés. Ce n’est pas un kit de deux modules.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 169234859419987,
+      "slug": "recherche-samsung-870-evo-1-to-mz-77e1t0bw",
+      "name": "Samsung 870 EVO 1 To",
+      "sku": "MZ-77E1T0BW",
+      "category": "ssd",
+      "brand": "Samsung",
+      "tier": "Entrée de gamme",
+      "description": "SSD SATA 2,5 pouces pour un ordinateur dépourvu d’emplacement NVMe compatible.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "2.5 pouces",
+        "Interface": "SATA 6 Gb/s",
+        "Cache DRAM": "1 Go DDR4",
+        "Dimensions du produit": "100 × 69.85 × 6.8 mm",
+        "Poids du produit": "45 g environ"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "MZ-77E1T0BW",
+        "sources": [
+          {
+            "url": "https://www.samsung.com/ae/memory-storage/sata-ssd/870-evo-1tb-sata-3-2-5-ssd-mz-77e1t0bw/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Répond à un besoin de compatibilité SATA ; sa gamme d’entrée correspond à l’usage de mise à niveau, sans supposer un prix inférieur aux NVMe.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 3107334031921,
+      "slug": "recherche-be-quiet-system-power-11-550-w-eu-bp010eu",
+      "name": "be quiet! System Power 11 550 W (EU)",
+      "sku": "BP010EU",
+      "category": "alimentations",
+      "brand": "be quiet!",
+      "tier": "Entrée de gamme",
+      "description": "Alimentation ATX 3.1 non modulaire de 550 W avec câble 12V-2x6 limité à 300 W.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Puissance": "550 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Bronze",
+        "Modularité": "Non modulaire",
+        "Tension entrée": "200–240 V AC",
+        "Fréquence entrée": "50 Hz",
+        "Ventilateur": "120 mm",
+        "Puissance 12 V": "550 W",
+        "Puissance câble 12V-2x6": "300 W",
+        "Dimensions emballées": "268 × 195 × 97 mm",
+        "Poids emballé": "2.3 kg"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "BP010EU",
+        "sources": [
+          {
+            "url": "https://www.bequiet.com/fr/powersupply/5904",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Ajoute un connecteur moderne au niveau d’accès ; son entrée 200–240 V et la limite de câble 300 W doivent rester visibles. Ne pas promettre la prise en charge de toute carte graphique.",
+        "missing": [
+          "Prix détaillant France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 70666818954758,
+      "slug": "recherche-thermalright-assassin-x-120-refined-se-edo-cool-thermalright-ax120-refined-se",
+      "name": "Thermalright Assassin X 120 Refined SE",
+      "sku": "EDO-COOL-THERMALRIGHT-AX120-REFINED-SE",
+      "category": "refroidissement",
+      "brand": "Thermalright",
+      "tier": "Entrée de gamme",
+      "description": "Ventirad à tour simple et quatre caloducs, pour une configuration avec espace et socket compatibles.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "Ventirad tour simple",
+        "Modèle": "Assassin X 120 Refined SE",
+        "Socket": "AM4 / AM5 / LGA115x / LGA1200 / LGA1700 / LGA1851",
+        "Dimensions dissipateur seul": "120 × 46 × 148 mm",
+        "Poids dissipateur seul": "630 g",
+        "Caloducs": "4 × 6 mm",
+        "Ventilateur": "TL-C12C 120 × 120 × 25 mm",
+        "Vitesse ventilateur maximale": "1550 tr/min ±10 %",
+        "Connecteur ventilateur": "PWM 4 broches",
+        "Roulement": "S-FDB"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": null,
+        "sources": [
+          {
+            "url": "https://www.thermalright.com/product/assassin-x-120-refined-se/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat d’accès à comparer par mesures et disponibilité. Le champ ARGB de la fiche semble générique : ne pas promettre l’éclairage ni employer une photo de la version ARGB.",
+        "missing": [
+          "Référence fabricant régionale",
+          "GTIN",
+          "Dimensions ventilateur inclus",
+          "Éclairage exact du lot",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais thermiques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 130168955278554,
+      "slug": "recherche-amd-ryzen-5-7600-100-100001015box",
+      "name": "AMD Ryzen 5 7600",
+      "sku": "100-100001015BOX",
+      "category": "processeurs",
+      "brand": "AMD",
+      "tier": "Milieu de gamme",
+      "description": "Processeur AM5 à 6 cœurs, fourni avec Wraith Stealth.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "6",
+        "Threads": "12",
+        "Fréquence boost maximale": "5.1 GHz",
+        "TDP": "65 W",
+        "Socket": "AM5",
+        "Architecture": "Zen 4",
+        "Mémoire": "DDR5",
+        "Fréquence de base": "3.8 GHz",
+        "Cache L3": "32 MB",
+        "Refroidissement inclus": "Wraith Stealth"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "100-100001015BOX",
+        "sources": [
+          {
+            "url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Entrée dans la plateforme AM5/DDR5, à comparer au coût total de configuration.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 267793105262257,
+      "slug": "recherche-kingston-fury-beast-ddr5-32-go-2-16-go-6000-cl30-kf560c30bbek2-32",
+      "name": "Kingston FURY Beast DDR5 32 Go (2 × 16 Go) 6000 CL30",
+      "sku": "KF560C30BBEK2-32",
+      "category": "ram",
+      "brand": "Kingston",
+      "tier": "Milieu de gamme",
+      "description": "Kit DDR5 32 Go avec profils AMD EXPO et Intel XMP, destiné à une plateforme compatible.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "32 Go",
+        "Modules": "2 × 16 Go",
+        "Format": "DIMM 288 broches",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30-36-36",
+        "Tension profil": "1.4 V",
+        "Profil": "AMD EXPO 1.1 / Intel XMP 3.0",
+        "Débit JEDEC": "4800 MT/s",
+        "Latence JEDEC": "CL40-39-39",
+        "Tension JEDEC": "1.1 V",
+        "Hauteur": "34.9 mm"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "KF560C30BBEK2-32",
+        "sources": [
+          {
+            "url": "https://www.kingston.com/datasheets/KF560C30BBEK2-32.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat pour jeu et usage polyvalent en DDR5 ; vérifier carte mère, BIOS et refroidisseur avant d’activer un profil, sans promettre une vitesse garantie.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 101046966193597,
+      "slug": "recherche-samsung-990-evo-plus-1-to-mz-v9s1t0bw",
+      "name": "Samsung 990 EVO Plus 1 To",
+      "sku": "MZ-V9S1T0BW",
+      "category": "ssd",
+      "brand": "Samsung",
+      "tier": "Milieu de gamme",
+      "description": "SSD NVMe 1 To compatible PCIe 4.0 x4 ou 5.0 x2, à distinguer du 990 EVO sans Plus.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 / 5.0 x2 NVMe 2.0",
+        "NAND": "V-NAND TLC",
+        "Cache": "HMB",
+        "Lecture séquentielle maximale": "7150 Mo/s",
+        "Écriture séquentielle maximale": "6300 Mo/s",
+        "Endurance annoncée": "600 TBW"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "MZ-V9S1T0BW",
+        "sources": [
+          {
+            "url": "https://www.samsung.com/dk/memory-storage/nvme-ssd/990-evo-plus-1tb-nvme-pcie-gen-4-mz-v9s1t0bw/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat polyvalent à comparer au prix du 990 PRO ; utiliser les chiffres spécifiques à 1 To, pas le maximum commercial de toute la famille.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 214982516447173,
+      "slug": "recherche-corsair-rm750e-750-w-atx-3-1-ww-cp-9020295-ww",
+      "name": "Corsair RM750e 750 W ATX 3.1 (WW)",
+      "sku": "CP-9020295-WW",
+      "category": "alimentations",
+      "brand": "Corsair",
+      "tier": "Milieu de gamme",
+      "description": "Alimentation de 750 W entièrement modulaire avec câble 12V-2x6, dans la révision ATX 3.1.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Puissance": "750 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "Cybenetics Gold",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "47–63 Hz",
+        "Dimensions": "140 × 150 × 86 mm",
+        "Mode ventilation": "Zero RPM",
+        "Câbles": "Corsair Type 4",
+        "EPS 4+4": "2",
+        "SATA": "6",
+        "Garantie fabricant annoncée": "7 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "CP-9020295-WW",
+        "sources": [
+          {
+            "url": "https://www.corsair.com/ww/fr/p/psu/cp-9020295-ww/rme-series-rm750e-fully-modular-low-noise-atx-power-supply-ww-cp-9020295-ww",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat pour une configuration polyvalente avec GPU dédié ; vérifier le cordon secteur du lot WW. La table de sortie consultée comporte une incohérence courant/puissance 12 V, non reprise.",
+        "missing": [
+          "GTIN",
+          "Confirmation cordon secteur WW",
+          "Table de sortie 12 V corrigée",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 205539880696134,
+      "slug": "recherche-arctic-freezer-36-standard-acfre00121a",
+      "name": "ARCTIC Freezer 36 Standard",
+      "sku": "ACFRE00121A",
+      "category": "refroidissement",
+      "brand": "ARCTIC",
+      "tier": "Entrée de gamme",
+      "description": "Ventirad à quatre caloducs et deux ventilateurs PWM, dans la variante Standard.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "Ventirad tour simple",
+        "Socket": "AM4 / AM5 / LGA1700 / LGA1851",
+        "Dimensions ventilateurs inclus": "104 × 126 × 159 mm",
+        "Hauteur": "159 mm",
+        "Poids produit": "890 g",
+        "Caloducs": "4 × 6 mm",
+        "Ventilateurs": "2 × P12 PWM PST",
+        "Vitesse ventilateur": "200–1800 tr/min",
+        "Mode ventilation": "Arrêt sous 5 % PWM",
+        "Pâte incluse": "MX-6 0.8 g",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "ACFRE00121A",
+        "sources": [
+          {
+            "url": "https://www.arctic.de/en/Freezer-36/ACFRE00121A",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat polyvalent à air ; vérifier les 159 mm disponibles et les fixations du lot. La variante Black et les anciens kits ne doivent pas remplacer cette référence.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais thermiques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 281304823210440,
+      "slug": "recherche-amd-ryzen-5-9600x-100-100001405wof",
+      "name": "AMD Ryzen 5 9600X",
+      "sku": "100-100001405WOF",
+      "category": "processeurs",
+      "brand": "AMD",
+      "tier": "Milieu de gamme",
+      "description": "Processeur Zen 5 pour une configuration AM5 à 6 cœurs.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "6",
+        "Threads": "12",
+        "Fréquence boost maximale": "5.4 GHz",
+        "TDP": "65 W",
+        "Socket": "AM5",
+        "Architecture": "Zen 5",
+        "Fréquence de base": "3.9 GHz",
+        "Cache L3": "32 MB",
+        "Refroidissement inclus": "Non"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "100-100001405WOF",
+        "sources": [
+          {
+            "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9600x.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Option AM5 récente ; inclure un refroidisseur séparé dans le budget.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 134078231778692,
+      "slug": "recherche-corsair-vengeance-ddr5-32-go-2-16-go-6000-cl30-cmk32gx5m2b6000z30",
+      "name": "Corsair VENGEANCE DDR5 32 Go (2 × 16 Go) 6000 CL30",
+      "sku": "CMK32GX5M2B6000Z30",
+      "category": "ram",
+      "brand": "Corsair",
+      "tier": "Milieu de gamme",
+      "description": "Kit DDR5 UDIMM de 32 Go avec profils EXPO et XMP pour une plateforme compatible.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "32 Go",
+        "Modules": "2 × 16 Go",
+        "Format": "UDIMM 288 broches",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30",
+        "Tension profil": "1.4 V",
+        "Profil": "AMD EXPO / Intel XMP",
+        "Débit JEDEC": "4800 MT/s",
+        "Latence JEDEC": "CL40",
+        "Tension JEDEC": "1.1 V",
+        "Dissipateur": "Aluminium"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "CMK32GX5M2B6000Z30",
+        "sources": [
+          {
+            "url": "https://www.corsair.com/ww/en/p/memory/cmk32gx5m2b6000z30/vengeance-32gb-2x16gb-ddr5-dram-6000mt-s-cl30-amd-expo-memory-black-cmk32gx5m2b6000z30",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Alternative de marque pour comparer prix et approvisionnement ; le champ fabricant de poids égal à 0 kg n’est pas exploité, et la couleur doit être confirmée avec la photo du fournisseur.",
+        "missing": [
+          "GTIN",
+          "Timings complets",
+          "Couleur exacte du lot",
+          "Hauteur",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 175964071836270,
+      "slug": "recherche-wd-black-sn770-1-to-wds100t3x0e",
+      "name": "WD_BLACK SN770 1 To",
+      "sku": "WDS100T3X0E",
+      "category": "ssd",
+      "brand": "WD_BLACK",
+      "tier": "Milieu de gamme",
+      "description": "SSD M.2 PCIe 4.0 de 1 To pour une bibliothèque de jeux et les applications courantes.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe",
+        "Lecture séquentielle maximale": "5150 Mo/s",
+        "Écriture séquentielle maximale": "4900 Mo/s",
+        "Endurance annoncée": "600 TBW",
+        "Dimensions du produit": "80 × 22 × 2.38 mm",
+        "Poids du produit": "5.5 g ± 0.5 g"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "WDS100T3X0E",
+        "sources": [
+          {
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-ssd/product-brief-wd-black-sn770-nvme-ssd.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Référence à retenir seulement si prix et approvisionnement restent compétitifs face aux générations suivantes ; un positionnement gaming ne prouve pas une supériorité en usage réel.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Comparaison aux successeurs disponibles",
+          "Garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 65040915929998,
+      "slug": "recherche-msi-mag-a750gl-pcie5-ii-750-w-edo-psu-msi-mag-a750gl-pcie5-ii",
+      "name": "MSI MAG A750GL PCIE5 II 750 W",
+      "sku": "EDO-PSU-MSI-MAG-A750GL-PCIE5-II",
+      "category": "alimentations",
+      "brand": "MSI",
+      "tier": "Milieu de gamme",
+      "description": "Alimentation ATX 3.1 de 750 W entièrement modulaire, avec connecteur PCIe 5.1 de 450 W.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Modèle": "MAG A750GL PCIE5 II",
+        "Puissance": "750 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Gold",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "47–63 Hz",
+        "Ventilateur": "120 mm FDB",
+        "Dimensions": "140 × 150 × 86 mm",
+        "PCIe 5.1 16 broches": "1 × 450 W",
+        "PCIe 6+2": "3",
+        "EPS 4+4": "2",
+        "SATA": "8",
+        "Protections": "OCP / OVP / OPP / OTP / SCP / UVP"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": null,
+        "sources": [
+          {
+            "url": "https://www.msi.com/Power-Supply/MAG-A750GL-PCIE5-II/Specification",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          },
+          {
+            "url": "https://www.msi.com/Power-Supply/MAG-A750GL-PCIE5-II/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Alternative modulaire compacte ; la version II doit être confirmée sur le produit et la facture. Ne pas appliquer les caractéristiques de la précédente A750GL PCIE5.",
+        "missing": [
+          "Référence fabricant régionale",
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 25125143444827,
+      "slug": "recherche-be-quiet-pure-rock-3-black-bk039",
+      "name": "be quiet! Pure Rock 3 Black",
+      "sku": "BK039",
+      "category": "refroidissement",
+      "brand": "be quiet!",
+      "tier": "Entrée de gamme",
+      "description": "Ventirad noir à tour simple de 154 mm de haut, avec un ventilateur Pure Wings 3 PWM de 120 mm.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "Ventirad tour simple",
+        "Socket": "AM4 / AM5 / LGA1150 / LGA1151 / LGA1155 / LGA1200 / LGA1700 / LGA1851",
+        "Dimensions hors fixation": "71 × 124 × 154 mm",
+        "Hauteur": "154 mm",
+        "Poids produit": "570 g",
+        "Ventilateur": "1 × Pure Wings 3 120 mm PWM",
+        "Couleur": "Noir",
+        "Dimensions emballées": "133 × 163 × 210 mm",
+        "Poids emballé": "0.9 kg",
+        "Garantie fabricant annoncée": "3 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "BK039",
+        "sources": [
+          {
+            "url": "https://www.bequiet.com/fr/cpucooler/5591",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Alternative relativement légère pour le transport et moins haute que les grandes tours. Le chiffre thermique marketing n’est pas assimilé à une compatibilité garantie avec tout processeur de même TDP.",
+        "missing": [
+          "Prix détaillant France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Photo exacte autorisée avec alpha",
+          "Essais thermiques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 12479965467530,
+      "slug": "recherche-intel-core-ultra-5-250k-plus-bx80768250k",
+      "name": "Intel Core Ultra 5 250K Plus",
+      "sku": "BX80768250K",
+      "category": "processeurs",
+      "brand": "Intel",
+      "tier": "Milieu de gamme",
+      "description": "Processeur à 6 cœurs Performance et 12 cœurs Efficient, pour plateforme LGA1851.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "18",
+        "Threads": "18",
+        "Fréquence boost maximale": "5.3 GHz",
+        "Puissance de base": "125 W",
+        "Socket": "LGA1851",
+        "Mémoire": "DDR5",
+        "Cœurs Performance": "6",
+        "Cœurs Efficient": "12",
+        "Fréquence de base P-core": "4.2 GHz",
+        "Cache Smart Cache": "30 MB",
+        "Puissance turbo maximale": "159 W",
+        "Graphique intégré": "Intel Graphics"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "BX80768250K",
+        "sources": [
+          {
+            "url": "https://www.intel.com/content/www/us/en/products/sku/245694/intel-core-ultra-5-processor-250k-plus-30m-cache-up-to-5-30-ghz/specifications.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          },
+          {
+            "url": "https://www.intel.com/content/www/us/en/products/sku/245694/intel-core-ultra-5-processor-250k-plus-30m-cache-up-to-5-30-ghz/ordering.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_reference"
+          }
+        ],
+        "rationale": "Remplace le candidat 245K dont le SKU boîte universel est indiqué comme retiré par Intel. Confirmer prix européen et BIOS.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 242231518882698,
+      "slug": "recherche-g-skill-flare-x5-ddr5-32-go-2-16-go-6000-cl30-f5-6000j3038f16gx2-fx5",
+      "name": "G.SKILL Flare X5 DDR5 32 Go (2 × 16 Go) 6000 CL30",
+      "sku": "F5-6000J3038F16GX2-FX5",
+      "category": "ram",
+      "brand": "G.SKILL",
+      "tier": "Milieu de gamme",
+      "description": "Kit DDR5 32 Go avec profil AMD EXPO, à valider sur la carte mère et le BIOS choisis.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "32 Go",
+        "Modules": "2 × 16 Go",
+        "Format": "UDIMM",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30-38-38-96",
+        "Tension profil": "1.35 V",
+        "Profil": "AMD EXPO 1.0",
+        "Débit JEDEC": "4800 MT/s",
+        "ECC": "Non"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "F5-6000J3038F16GX2-FX5",
+        "sources": [
+          {
+            "url": "https://www.gskill.com/_upload/files/F5-6000J3038F16GX2-FX5.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_profile_certification"
+          }
+        ],
+        "rationale": "Troisième option de kit 32 Go pour comparer les offres ; le rapport EXPO est une auto-certification fabricant, pas une preuve de stabilité sur toutes les cartes mères.",
+        "missing": [
+          "GTIN",
+          "Hauteur",
+          "Tension JEDEC",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 70807180804782,
+      "slug": "recherche-samsung-990-pro-1-to-mz-v9p1t0bw",
+      "name": "Samsung 990 PRO 1 To",
+      "sku": "MZ-V9P1T0BW",
+      "category": "ssd",
+      "brand": "Samsung",
+      "tier": "Milieu de gamme",
+      "description": "SSD TLC PCIe 4.0 avec cache DRAM pour un poste de jeu ou de création.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "1000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe 2.0",
+        "NAND": "V-NAND TLC",
+        "Cache DRAM": "1 Go DDR4",
+        "Lecture séquentielle maximale": "7450 Mo/s",
+        "Écriture séquentielle maximale": "6900 Mo/s",
+        "Endurance annoncée": "600 TBW"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "MZ-V9P1T0BW",
+        "sources": [
+          {
+            "url": "https://www.samsung.com/in/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Option PCIe 4.0 avec DRAM ; la sélection réserve ici le haut de gamme à 2 To et/ou PCIe 5.0. Vérifier firmware et refroidissement avant vente.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 59884287841614,
+      "slug": "recherche-be-quiet-pure-power-13-m-750-w-eu-bp026eu",
+      "name": "be quiet! Pure Power 13 M 750 W (EU)",
+      "sku": "BP026EU",
+      "category": "alimentations",
+      "brand": "be quiet!",
+      "tier": "Milieu de gamme",
+      "description": "Alimentation modulaire ATX 3.1 de 750 W avec refroidissement semi-passif et câble 12V-2x6 de 600 W.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Puissance": "750 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Gold",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "50–60 Hz",
+        "Ventilateur": "120 mm",
+        "Mode ventilation": "Semi-passif",
+        "Puissance câble 12V-2x6": "600 W",
+        "PCIe 6+2": "4",
+        "Dimensions": "160 × 150 × 86 mm",
+        "Dimensions emballées": "320 × 210 × 133 mm",
+        "Poids emballé": "3.2 kg",
+        "Garantie fabricant annoncée": "10 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "BP026EU",
+        "sources": [
+          {
+            "url": "https://www.bequiet.com/fr/powersupply/5934",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat silencieux pour une configuration 750 W vérifiée ; l’encombrement et le poids emballé sont renseignés pour préparer le montage et le transport.",
+        "missing": [
+          "Prix détaillant France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 75189234771880,
+      "slug": "recherche-thermalright-phantom-spirit-120-se-edo-cool-thermalright-phantom-spirit-120-se",
+      "name": "Thermalright Phantom Spirit 120 SE",
+      "sku": "EDO-COOL-THERMALRIGHT-PHANTOM-SPIRIT-120-SE",
+      "category": "refroidissement",
+      "brand": "Thermalright",
+      "tier": "Milieu de gamme",
+      "description": "Ventirad double tour à sept caloducs, avec une base en cuivre nickelé.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "Ventirad double tour",
+        "Modèle": "Phantom Spirit 120 SE",
+        "Socket": "AM4 / AM5 / LGA115x / LGA1200 / LGA1700 / LGA1851",
+        "Dimensions dissipateur seul": "110 × 125 × 154 mm",
+        "Poids dissipateur seul": "765 g",
+        "Caloducs": "7 × 6 mm",
+        "Base": "Cuivre C1100 nickelé",
+        "Ventilateur indiqué": "TL-C12B V2 120 × 120 × 25 mm",
+        "Vitesse ventilateur maximale": "1500 tr/min ±10 %",
+        "Connecteur ventilateur": "PWM 4 broches",
+        "Roulement": "S-FDB"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": null,
+        "sources": [
+          {
+            "url": "https://www.thermalright.com/product/phantom-spirit-120-se/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat double tour à comparer à bruit égal. La révision du ventilateur indiquée par la fiche actuelle doit être confirmée avec le fournisseur ; les dimensions du dissipateur seul ne suffisent pas à valider la RAM et le boîtier.",
+        "missing": [
+          "Référence fabricant régionale",
+          "GTIN",
+          "Nombre de ventilateurs du lot",
+          "Dimensions ventilateurs inclus",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais thermiques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 193331941349344,
+      "slug": "recherche-amd-ryzen-7-9800x3d-100-100001084wof",
+      "name": "AMD Ryzen 7 9800X3D",
+      "sku": "100-100001084WOF",
+      "category": "processeurs",
+      "brand": "AMD",
+      "tier": "Haut de gamme",
+      "description": "Processeur AM5 à 8 cœurs avec 96 MB de cache L3.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "8",
+        "Threads": "16",
+        "Fréquence boost maximale": "5.2 GHz",
+        "TDP": "120 W",
+        "Socket": "AM5",
+        "Architecture": "Zen 5",
+        "Fréquence de base": "4.7 GHz",
+        "Cache L3": "96 MB",
+        "Refroidissement inclus": "Non"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "100-100001084WOF",
+        "sources": [
+          {
+            "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat gaming haut de gamme ; comparer prix et essais indépendants au 9850X3D avant de figer l'assortiment.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 115047428660211,
+      "slug": "recherche-kingston-fury-beast-ddr5-64-go-2-32-go-6000-cl30-kf560c30bbek2-64",
+      "name": "Kingston FURY Beast DDR5 64 Go (2 × 32 Go) 6000 CL30",
+      "sku": "KF560C30BBEK2-64",
+      "category": "ram",
+      "brand": "Kingston",
+      "tier": "Haut de gamme",
+      "description": "Kit DDR5 64 Go pour un poste de création ou de multitâche nécessitant davantage de mémoire.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "64 Go",
+        "Modules": "2 × 32 Go",
+        "Format": "DIMM 288 broches",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30-36-36",
+        "Tension profil": "1.4 V",
+        "Profil": "AMD EXPO 1.1 / Intel XMP 3.0",
+        "Débit JEDEC": "4800 MT/s",
+        "Latence JEDEC": "CL40-39-39",
+        "Tension JEDEC": "1.1 V",
+        "Organisation": "2Rx8",
+        "Hauteur": "34.9 mm"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "KF560C30BBEK2-64",
+        "sources": [
+          {
+            "url": "https://www.kingston.com/datasheets/KF560C30BBEK2-64.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Capacité élevée plutôt qu’un gain de vitesse systématique ; la charge mémoire de deux modules 32 Go doit être validée dans la configuration finale.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 59550984789152,
+      "slug": "recherche-wd-black-sn850x-2-to-sans-dissipateur-wds200t2x0e",
+      "name": "WD_BLACK SN850X 2 To sans dissipateur",
+      "sku": "WDS200T2X0E",
+      "category": "ssd",
+      "brand": "WD_BLACK",
+      "tier": "Haut de gamme",
+      "description": "Stockage TLC PCIe 4.0 de 2 To ; cette référence ne comprend pas de dissipateur.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "2000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 4.0 x4 NVMe",
+        "NAND": "3D TLC",
+        "Lecture séquentielle maximale": "7300 Mo/s",
+        "Écriture séquentielle maximale": "6600 Mo/s",
+        "Endurance annoncée": "1200 TBW",
+        "Dissipateur inclus": "Non",
+        "Dimensions du produit": "80 × 22 × 2.38 mm",
+        "Poids du produit": "7.5 g ± 1 g"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "WDS200T2X0E",
+        "sources": [
+          {
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-ssd/data-sheet-wd-black-sn850x-nvme-ssd.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Capacité pour bibliothèques volumineuses sans exiger PCIe 5.0 ; vérifier le dissipateur du système et ne pas utiliser une photo de la variante XHE.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 208614325147693,
+      "slug": "recherche-corsair-rm1000x-1000-w-atx-3-1-eu-cp-9020271-eu",
+      "name": "Corsair RM1000x 1000 W ATX 3.1 (EU)",
+      "sku": "CP-9020271-EU",
+      "category": "alimentations",
+      "brand": "Corsair",
+      "tier": "Haut de gamme",
+      "description": "Alimentation ATX 3.1 de 1000 W entièrement modulaire, avec ventilateur de 140 mm et câble 12V-2x6.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Puissance": "1000 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "Cybenetics Gold",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "47–63 Hz",
+        "Ventilateur": "140 mm FDB",
+        "Dimensions": "160 × 150 × 86 mm",
+        "Mode ventilation": "Zero RPM et commande manuelle",
+        "Câbles": "Corsair Type 4",
+        "PCIe 6+2": "4",
+        "SATA": "12",
+        "Garantie fabricant annoncée": "10 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "CP-9020271-EU",
+        "sources": [
+          {
+            "url": "https://www.corsair.com/fr/fr/p/psu/cp-9020271-eu/rmx-series-rm1000x-fully-modular-power-supply-eu-cp-9020271-eu",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs_and_store"
+          }
+        ],
+        "rationale": "Candidat 1000 W pour GPU et processeur exigeants ; la référence EU ATX 3.1 distingue ce modèle des anciennes RM1000x.",
+        "missing": [
+          "GTIN",
+          "Prix HT confirmé",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 85762989790472,
+      "slug": "recherche-arctic-liquid-freezer-iii-pro-240-black-acfre00178a",
+      "name": "ARCTIC Liquid Freezer III Pro 240 Black",
+      "sku": "ACFRE00178A",
+      "category": "refroidissement",
+      "brand": "ARCTIC",
+      "tier": "Milieu de gamme",
+      "description": "Refroidissement liquide tout-en-un noir de 240 mm, avec deux ventilateurs P12 Pro et radiateur de 38 mm d’épaisseur.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "AIO",
+        "Socket vérifié dans les spécifications": "AM4 / AM5 / LGA1700 / LGA1851",
+        "Radiateur": "240 mm",
+        "Dimensions radiateur seul": "277 × 120 × 38 mm",
+        "Ventilateurs": "2 × P12 Pro",
+        "Vitesse ventilateur": "600–3000 tr/min",
+        "Vitesse pompe": "800–2800 tr/min PWM",
+        "Longueur tubes": "450 mm",
+        "Poids produit": "1675 g",
+        "Pâte incluse": "MX-6 0.8 g",
+        "Éclairage": "Aucun",
+        "Dimensions emballées": "294 × 171 × 142 mm",
+        "Poids emballé": "2.065 kg",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "ACFRE00178A",
+        "sources": [
+          {
+            "url": "https://www.arctic.de/en/Liquid-Freezer-III-Pro-240/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs_and_store"
+          }
+        ],
+        "rationale": "Candidat AIO 240 mm ; vérifier l’épaisseur totale avec ventilateurs et les composants autour du socket. Les anciens sockets listés dans les métadonnées commerciales ne sont pas repris : la section technique ne les confirme pas.",
+        "missing": [
+          "GTIN",
+          "Épaisseur radiateur avec ventilateurs",
+          "Livraison France et TVA applicable",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Photo exacte autorisée avec alpha",
+          "Essais thermiques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 220149105151945,
+      "slug": "recherche-amd-ryzen-9-9950x3d-100-100000719wof",
+      "name": "AMD Ryzen 9 9950X3D",
+      "sku": "100-100000719WOF",
+      "category": "processeurs",
+      "brand": "AMD",
+      "tier": "Haut de gamme",
+      "description": "Processeur AM5 à 16 cœurs et 32 threads avec cache 3D.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "16",
+        "Threads": "32",
+        "Fréquence boost maximale": "5.7 GHz",
+        "TDP": "170 W",
+        "Socket": "AM5",
+        "Architecture": "Zen 5",
+        "Fréquence de base": "4.3 GHz",
+        "Cache L3": "128 MB",
+        "Refroidissement inclus": "Non"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "100-100000719WOF",
+        "sources": [
+          {
+            "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat création et gaming exigeants ; prévoir refroidissement, alimentation et coût complet.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 260972156084840,
+      "slug": "recherche-corsair-vengeance-ddr5-64-go-2-32-go-6000-cl30-cmk64gx5m2b6000z30",
+      "name": "Corsair VENGEANCE DDR5 64 Go (2 × 32 Go) 6000 CL30",
+      "sku": "CMK64GX5M2B6000Z30",
+      "category": "ram",
+      "brand": "Corsair",
+      "tier": "Haut de gamme",
+      "description": "Kit DDR5 de 64 Go avec profils EXPO et XMP pour une station de travail compatible.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "64 Go",
+        "Modules": "2 × 32 Go",
+        "Format": "UDIMM 288 broches",
+        "Débit testé": "6000 MT/s",
+        "Latence": "CL30",
+        "Tension profil": "1.4 V",
+        "Profil": "AMD EXPO / Intel XMP",
+        "Débit JEDEC": "4800 MT/s",
+        "Latence JEDEC": "CL40",
+        "Tension JEDEC": "1.1 V",
+        "Couleur": "Gris",
+        "Dissipateur": "Aluminium"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "CMK64GX5M2B6000Z30",
+        "sources": [
+          {
+            "url": "https://www.corsair.com/ww/en/p/memory/cmk64gx5m2b6000z30/vengeance-64gb-2x32gb-ddr5-dram-6000mt-s-cl30-amd-expo-memory-kit-cmk64gx5m2b6000z30",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Alternative 64 Go à comparer au Kingston sur prix, lot et disponibilité ; la valeur de poids 0 kg affichée par le fabricant reste une donnée manquante.",
+        "missing": [
+          "GTIN",
+          "Timings complets",
+          "Hauteur",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 213303399087434,
+      "slug": "recherche-samsung-9100-pro-2-to-sans-dissipateur-mz-vap2t0bw",
+      "name": "Samsung 9100 PRO 2 To sans dissipateur",
+      "sku": "MZ-VAP2T0BW",
+      "category": "ssd",
+      "brand": "Samsung",
+      "tier": "Haut de gamme",
+      "description": "SSD PCIe 5.0 TLC de 2 To avec cache DRAM, pour une plateforme compatible et refroidie.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "2000 Go",
+        "Format": "M.2 2280",
+        "Interface": "PCIe 5.0 x4 NVMe 2.0",
+        "NAND": "V-NAND TLC",
+        "Cache DRAM": "2 Go DDR4X",
+        "Lecture séquentielle maximale": "14700 Mo/s",
+        "Écriture séquentielle maximale": "13400 Mo/s",
+        "Endurance annoncée": "1200 TBW",
+        "Dissipateur inclus": "Non",
+        "Dimensions maximales du produit": "80.15 × 22.15 × 2.38 mm",
+        "Poids maximal du produit": "9 g"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "MZ-VAP2T0BW",
+        "sources": [
+          {
+            "url": "https://www.samsung.com/sg/memory-storage/nvme-ssd/9100-pro-2tb-nvme-pcie-gen-5-mz-vap2t0bw/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          },
+          {
+            "url": "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_9100_PRO_Datasheet_Rev.2.0_10149814992944.pdf",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_model_codes"
+          }
+        ],
+        "rationale": "Choix PCIe 5.0 à proposer si les transferts lourds et la plateforme le justifient ; pas de promesse de gain proportionnel en jeu.",
+        "missing": [
+          "GTIN",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 21019758599742,
+      "slug": "recherche-seasonic-focus-gx-1000-w-atx-3-1-v5-edo-psu-seasonic-focus-gx-1000-v5",
+      "name": "Seasonic FOCUS GX 1000 W ATX 3.1 v5",
+      "sku": "EDO-PSU-SEASONIC-FOCUS-GX-1000-V5",
+      "category": "alimentations",
+      "brand": "Seasonic",
+      "tier": "Haut de gamme",
+      "description": "Version v5 de la FOCUS GX 1000 W, modulaire et équipée d’un câble natif 12V-2x6.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Modèle": "FOCUS GX 1000 W ATX 3.1 v5",
+        "Puissance": "1000 W",
+        "Format": "ATX/EPS",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Gold / Cybenetics Platinum",
+        "Certification bruit": "Cybenetics A",
+        "Modularité": "Entièrement modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "50–60 Hz",
+        "Ventilateur": "135 mm FDB",
+        "Longueur": "140 mm",
+        "Puissance 12 V": "996 W",
+        "Protections": "OCP / OPP / OTP / OVP / SCP / UVP",
+        "Garantie fabricant annoncée": "10 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": null,
+        "sources": [
+          {
+            "url": "https://seasonic.com/focus-gx-atx-3-1/",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat compact de la nouvelle version v5. Ses certifications diffèrent de la v4 : exiger la révision exacte du fournisseur. SKU interne, référence commerciale fabricant encore à confirmer.",
+        "missing": [
+          "Référence fabricant régionale",
+          "GTIN",
+          "Dimensions complètes",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 68324077329057,
+      "slug": "recherche-arctic-liquid-freezer-iii-pro-360-black-acfre00180a",
+      "name": "ARCTIC Liquid Freezer III Pro 360 Black",
+      "sku": "ACFRE00180A",
+      "category": "refroidissement",
+      "brand": "ARCTIC",
+      "tier": "Haut de gamme",
+      "description": "AIO noir de 360 mm avec trois ventilateurs P12 Pro, destiné à un boîtier acceptant le radiateur et son épaisseur.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "AIO",
+        "Socket vérifié dans les spécifications": "AM4 / AM5 / LGA1700 / LGA1851",
+        "Radiateur": "360 mm",
+        "Dimensions radiateur seul": "398 × 120 × 38 mm",
+        "Ventilateurs": "3 × P12 Pro",
+        "Vitesse ventilateur": "600–3000 tr/min",
+        "Vitesse pompe": "800–2800 tr/min PWM",
+        "Longueur tubes": "450 mm",
+        "Poids produit": "2020 g",
+        "Pâte incluse": "MX-6 0.8 g",
+        "Dimensions emballées": "414 × 167 × 142 mm",
+        "Poids emballé": "2.465 kg",
+        "Garantie fabricant annoncée": "6 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "ACFRE00180A",
+        "sources": [
+          {
+            "url": "https://www.arctic.de/en/Liquid-Freezer-III-Pro-360/ACFRE00180A",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat pour charge CPU prolongée, sous réserve de mesures et de compatibilité. Transporter dans son emballage et vérifier l’installation ; ne pas promettre une température ou un silence universels.",
+        "missing": [
+          "GTIN",
+          "Épaisseur radiateur avec ventilateurs",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Photo exacte autorisée avec alpha",
+          "Essais thermiques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 39844871658223,
+      "slug": "recherche-intel-core-ultra-9-285k-bx80768285k",
+      "name": "Intel Core Ultra 9 285K",
+      "sku": "BX80768285K",
+      "category": "processeurs",
+      "brand": "Intel",
+      "tier": "Haut de gamme",
+      "description": "Processeur à 8 cœurs Performance et 16 cœurs Efficient.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Cœurs": "24",
+        "Threads": "24",
+        "Fréquence boost maximale": "5.7 GHz",
+        "Puissance de base": "125 W",
+        "Cœurs Performance": "8",
+        "Cœurs Efficient": "16",
+        "Mémoire": "DDR5",
+        "Fréquence de base P-core": "3.7 GHz",
+        "Cache Smart Cache": "36 MB",
+        "Puissance turbo maximale": "250 W",
+        "Graphique intégré": "Intel Graphics"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "BX80768285K",
+        "sources": [
+          {
+            "url": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/specifications.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          },
+          {
+            "url": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/ordering.html",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_reference"
+          }
+        ],
+        "rationale": "Alternative Intel pour travaux fortement parallèles ; choix à confirmer avec les logiciels visés et les prix fournisseurs.",
+        "missing": [
+          "GTIN",
+          "Prix revendeur France et TVA associée",
+          "Disponibilité fournisseur pour export",
+          "Conditions de garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha"
+        ]
+      }
+    },
+    {
+      "id": 125820097698555,
+      "slug": "recherche-g-skill-trident-z5-rgb-ddr5-96-go-2-48-go-6400-cl32-f5-6400j3239f48gx2-tz5rk",
+      "name": "G.SKILL Trident Z5 RGB DDR5 96 Go (2 × 48 Go) 6400 CL32",
+      "sku": "F5-6400J3239F48GX2-TZ5RK",
+      "category": "ram",
+      "brand": "G.SKILL",
+      "tier": "Haut de gamme",
+      "description": "Kit DDR5 96 Go avec profil Intel XMP 3.0, destiné aux usages qui nécessitent réellement cette capacité.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type mémoire": "DDR5",
+        "Capacité": "96 Go",
+        "Modules": "2 × 48 Go",
+        "Format": "UDIMM",
+        "Débit testé": "6400 MT/s",
+        "Latence": "CL32-39-39-102",
+        "Tension profil": "1.35 V",
+        "Profil": "Intel XMP 3.0",
+        "Débit JEDEC": "5600 MT/s",
+        "Tension JEDEC": "1.1 V",
+        "ECC": "Non",
+        "Éclairage": "RGB"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "F5-6400J3239F48GX2-TZ5RK",
+        "sources": [
+          {
+            "url": "https://www.gskill.com/specification/165/374/1681113538/F5-6400J3239F48GX2-TZ5RK-Specification",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Option de grande capacité pour création et machines virtuelles ; confirmer le support des modules 48 Go et consulter la QVL. Ne pas présenter 6400 MT/s comme garanti sur AM5.",
+        "missing": [
+          "GTIN",
+          "Hauteur",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Comparaison indépendante"
+        ]
+      }
+    },
+    {
+      "id": 191065973158676,
+      "slug": "recherche-kingston-fury-renegade-g5-2048-go-sfyr2s-2t0",
+      "name": "Kingston FURY Renegade G5 2048 Go",
+      "sku": "SFYR2S/2T0",
+      "category": "ssd",
+      "brand": "Kingston",
+      "tier": "Haut de gamme",
+      "description": "SSD NVMe PCIe 5.0 simple face de 2048 Go, destiné à une configuration compatible.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Capacité": "2048 Go",
+        "Format": "M.2",
+        "Interface": "PCIe 5.0 NVMe",
+        "Lecture séquentielle maximale": "14700 Mo/s",
+        "Écriture séquentielle maximale": "14000 Mo/s",
+        "Implantation": "Simple face"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "SFYR2S/2T0",
+        "sources": [
+          {
+            "url": "https://www.kingston.com/en/memory/search?partid=SFYR2S%2F2T0",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Alternative PCIe 5.0 au 9100 PRO ; préserver la capacité réelle 2048 Go et confirmer dimensions, endurance et besoin de refroidissement dans la fiche technique exacte.",
+        "missing": [
+          "GTIN",
+          "Dimensions exactes",
+          "Endurance",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Dimensions/poids emballés",
+          "Photo exacte autorisée avec alpha",
+          "Essais indépendants"
+        ]
+      }
+    },
+    {
+      "id": 208559953196574,
+      "slug": "recherche-be-quiet-dark-power-14-1000-w-eu-bp020eu",
+      "name": "be quiet! Dark Power 14 1000 W (EU)",
+      "sku": "BP020EU",
+      "category": "alimentations",
+      "brand": "be quiet!",
+      "tier": "Haut de gamme",
+      "description": "Alimentation ATX 3.1 modulaire de 1000 W, avec ventilateur de 135 mm et refroidissement actif ou semi-passif.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Puissance": "1000 W",
+        "Format": "ATX",
+        "Version ATX": "3.1",
+        "Certification rendement": "80 PLUS Titanium / Cybenetics Titanium",
+        "Modularité": "Modulaire",
+        "Tension entrée": "100–240 V AC",
+        "Fréquence entrée": "50–60 Hz",
+        "Ventilateur": "135 mm FDB",
+        "Mode ventilation": "Actif ou semi-passif",
+        "Puissance câble 12V-2x6": "600 W",
+        "PCIe 6+2": "4",
+        "Dimensions": "175 × 150 × 86 mm",
+        "Dimensions emballées": "355 × 230 × 126 mm",
+        "Poids emballé": "4.51 kg",
+        "Garantie fabricant annoncée": "10 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "BP020EU",
+        "sources": [
+          {
+            "url": "https://www.bequiet.com/fr/powersupply/5789",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Candidat premium à comparer par mesures de bruit et régulation. Le volume et les 4.51 kg emballés sont une contrainte de transport à intégrer au coût complet.",
+        "missing": [
+          "Prix détaillant France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Photo exacte autorisée avec alpha",
+          "Essais électriques indépendants"
+        ]
+      }
+    },
+    {
+      "id": 269788991548966,
+      "slug": "recherche-corsair-nautilus-360-rs-black-cw-9060089-ww",
+      "name": "Corsair NAUTILUS 360 RS Black",
+      "sku": "CW-9060089-WW",
+      "category": "refroidissement",
+      "brand": "Corsair",
+      "tier": "Haut de gamme",
+      "description": "AIO de 360 mm avec commande PWM directement depuis la carte mère, sans contrôleur supplémentaire.",
+      "image": "",
+      "price": null,
+      "stock": false,
+      "purchasable": false,
+      "attributes": {
+        "Type": "AIO",
+        "Socket": "AM4 / AM5 / LGA1700 / LGA1851",
+        "Radiateur": "360 mm",
+        "Ventilateurs": "RS120",
+        "Vitesse ventilateur maximale": "2100 tr/min",
+        "Commande ventilateur": "PWM avec mode Zero RPM",
+        "Matériau radiateur": "Aluminium",
+        "Matériau plaque froide": "Cuivre",
+        "Longueur tubes": "450 mm",
+        "Couleur": "Noir",
+        "Garantie fabricant annoncée": "5 ans, conditions territoriales à vérifier"
+      },
+      "uses": [],
+      "variations": [],
+      "catalogSource": "research",
+      "research": {
+        "manufacturerPartNumber": "CW-9060089-WW",
+        "sources": [
+          {
+            "url": "https://www.corsair.com/uk/en/p/cpu-coolers/cw-9060089-ww/nautilus-360-rs-liquid-cpu-cooler-cw-90",
+            "verifiedAt": "2026-10-01",
+            "kind": "manufacturer_specs"
+          }
+        ],
+        "rationale": "Alternative 360 mm avec raccordement PWM simple. Ne pas confondre avec les modèles RS ARGB, LCD ou blancs ; les dimensions ambiguës de la fiche ne sont pas utilisées comme encombrement réel du radiateur.",
+        "missing": [
+          "GTIN",
+          "Nombre de ventilateurs confirmé",
+          "Dimensions radiateur vérifiées",
+          "Prix France et régime de TVA",
+          "Disponibilité fournisseur export",
+          "Garantie territoriale",
+          "Poids emballé",
+          "Photo exacte autorisée avec alpha",
+          "Essais thermiques indépendants"
+        ]
+      }
+    }
+  ]
+}

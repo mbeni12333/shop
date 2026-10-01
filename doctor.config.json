@@ -3,10 +3,7 @@
   "ignore": {
     "overrides": [
       {
-        "files": [
-          "src/pages/**",
-          "src/components/User/withAuth.component.tsx"
-        ],
+        "files": ["src/pages/**", "src/components/User/withAuth.component.tsx"],
         "rules": ["react-doctor/only-export-components"]
       },
       {

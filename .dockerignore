@@ -1,0 +1,17 @@
+node_modules
+.next
+.next-catalog-test
+.next-research-test
+.lighthouseci
+lighthouse-reports
+lighthouse-research-reports
+.git
+.env*
+.npm-cache
+.sync-state
+.local-archive
+test-results
+playwright-report
+catalog
+screenshots
+shop

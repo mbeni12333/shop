@@ -1,0 +1,452 @@
+[
+  {
+    "model": "nh-d15-g2",
+    "url": "https://www.noctua.at/en/products/nh-d15-g2",
+    "title": "NH-D15 G2 | Noctua",
+    "blocked": false,
+    "assets": [
+      {
+        "alt": "logo",
+        "url": "https://cdn.noctua.at/static/images/logo.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Ffans.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fcoolers.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Faccessories-1.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fhome.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fmerch.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fpartner.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Findustry.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fe0215787%2Fnl-pna1_pump_noise_absorber_thumbnail.jpg&w=384&q=75"
+      },
+      {
+        "alt": "Antec Flux Pro Noctua Edition noise measurement process",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2F4b200085%2Fantec_flux_pro_further_reading.png&w=384&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fcompatibility.png&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_lbc_5.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fmounting%20kits.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fcontact.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/next_generation_performance_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/asymmetrical_fin_stack_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/dual_fan_set_a14x25_g2_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_11-improved.png&w=640&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/next_generation_performance_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/asymmetrical_fin_stack_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/dual_fan_set_a14x25_g2_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_5.jpg&w=640&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_6.jpg&w=640&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_7.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_2.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_3.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_4.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "TechPowerUp.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Frecommended-1.gif&w=3840&q=75"
+      },
+      {
+        "alt": "European Hardware Award 2026 Best CPU Cooler (Air)",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2F40632674%2FEHA-2026-15.png&w=3840&q=75"
+      },
+      {
+        "alt": "EHA Best Air Cooler Award",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fee4d3bbe%2FEHA-2025-Best-Air-Cooler-15.png&w=3840&q=75"
+      },
+      {
+        "alt": "PC Gamer logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FPC%20Gamer%20recommended.png&w=3840&q=75"
+      },
+      {
+        "alt": "eTeknix.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FeTeknix-Editors-Choice.png&w=3840&q=75"
+      },
+      {
+        "alt": "Tech4Gamers.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FTech4Gamers-Performance-Award-150x150.png&w=3840&q=75"
+      },
+      {
+        "alt": "FunkyKit.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FEDITORS_CHOICE_AWARD.png&w=3840&q=75"
+      },
+      {
+        "alt": "PC Games Hardware logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FPCGH_Award_Noctua_0924.png&w=3840&q=75"
+      },
+      {
+        "alt": "ThinkComputers.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Frating9_10.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FNext-generation_performance_NH-D15_G2-1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2F8_heatpipes_for_superior_performance_NH-D15_G2-1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FTwo_NF-A14x25r_G2_fans-1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FTorx_screwdriver.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh-d15_g2_showcase_thumbnail.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh-d15_g2_base_convexity_explained_thumbnail.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Ffeature_walk-through_nf-a14x25_g2_thumbnail.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fa14x25-g2_d15-g2_build_thumbnail.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_thumbnail.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "Overlapping frequencies of 10 Hz and 9 Hz, shifting in and out of phase",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fbeat_frequency_thumbnail4-1.png&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fg2_thumbnail_2.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FAM5_offset_thumbnail_2.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FLGA1851_offset_thumbnail_2.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nt_h2_3_5_g_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nt_h2_10g_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnm_imb8_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnm_i2011_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nm_i3_2.jpg&w=3840&q=75"
+      }
+    ],
+    "inspectedAt": "2026-10-01T15:31:08.243Z"
+  },
+  {
+    "model": "nh-u12s-chromax-black",
+    "url": "https://www.noctua.at/en/products/nh-u12s-chromax-black",
+    "title": "NH-U12S chromax.black | Noctua",
+    "blocked": false,
+    "assets": [
+      {
+        "alt": "logo",
+        "url": "https://cdn.noctua.at/static/images/logo.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Ffans.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fcoolers.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Faccessories-1.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fhome.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fmerch.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fpartner.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Findustry.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fe0215787%2Fnl-pna1_pump_noise_absorber_thumbnail.jpg&w=384&q=75"
+      },
+      {
+        "alt": "Antec Flux Pro Noctua Edition noise measurement process",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2F4b200085%2Fantec_flux_pro_further_reading.png&w=384&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fcompatibility.png&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_d15_g2_lbc_5.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fmounting%20kits.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fcontact.jpg&w=256&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_u12s_chromax_black_1.png&w=640&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/award_winning_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/nf_f12_fan_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://cdn.noctua.at/media/chromax_black_light.svg"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_u12s_chromax_black_6.jpg&w=640&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_u12s_chromax_black_1.jpg&w=640&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_u12s_chromax_black_2.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_u12s_chromax_black_3.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_u12s_chromax_black_5.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_u12s_chromax_black_11.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh_u12s_chromax_black_12.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "CowcotLand.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FGold.gif&w=128&q=75"
+      },
+      {
+        "alt": "reTEST.com.pl logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FreTEST-4.9.jpg&w=128&q=75"
+      },
+      {
+        "alt": "Unboxing Treatment logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Frecommendation-badge-300x300.png&w=128&q=75"
+      },
+      {
+        "alt": "EnosTech.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FEnosTech-Recommended-Award.png&w=128&q=75"
+      },
+      {
+        "alt": "eTeknix.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FeTeknix-Editors-Choice.png&w=128&q=75"
+      },
+      {
+        "alt": "Vmodtech.com logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fvmod-award-performance-best_0.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "LanOC.org logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FLanOC-Recommended.webp&w=3840&q=75"
+      },
+      {
+        "alt": "Game2Gether.de logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Faward_92_12_2020_0.png&w=3840&q=75"
+      },
+      {
+        "alt": "modding.fr logo",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FModding-fr-5-stars.png&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FNH-U12S_chromax.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FNH-U12S_chromax_RAM.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FNF-F12_chromax_cooler.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2FColour-customisable_U12S_chromax.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "Showcase of Noctua chromax.black CPU coolers: NH-D15, NH-U12S, and NH-L9i, highlighting their sleek all-black design.",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnh-d15_nh-u12s_nh-l9i_chromax_showcase_thumbnail.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2F120mm_cooler_thumbnail.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnf_f12_pwm_chromax_black_swap_3.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fna_hc1_chromax_black_swap_3.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fna_hc2_chromax_black_3.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fna_hc2_chromax_white_3.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nt_h1_3_5_g_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nt_h2_3_5_g_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nt_h1_10g_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nt_h2_10g_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fna_stpg1_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nm_m1_mp78_chromax_black_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnm_i2011_1.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nm_i3_2.jpg&w=3840&q=75"
+      },
+      {
+        "alt": "",
+        "url": "https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnm_sd2_1_amazon.jpg&w=3840&q=75"
+      }
+    ],
+    "inspectedAt": "2026-10-01T15:31:14.154Z"
+  }
+]

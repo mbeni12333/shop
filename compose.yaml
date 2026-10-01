@@ -1,0 +1,43 @@
+services:
+  storefront:
+    image: ${STOREFRONT_IMAGE:?Set a tested GHCR commit tag or digest}
+    restart: unless-stopped
+    environment:
+      GRAPHQL_URL: ${GRAPHQL_URL:?Required}
+      WORDPRESS_URL: ${WORDPRESS_URL:?Required}
+      SITE_URL: ${NEXT_PUBLIC_SITE_URL:?Required}
+      CHECKOUT_SECRET: ${CHECKOUT_SECRET:?Required}
+      REVALIDATE_SECRET: ${REVALIDATE_SECRET:?Required}
+      WOOCOMMERCE_ACCOUNT_URL: ${WOOCOMMERCE_ACCOUNT_URL:-}
+    expose: ['3000']
+    volumes: [next-cache:/app/.next/cache]
+    security_opt: [no-new-privileges:true]
+  search:
+    image: getmeili/meilisearch:v1.37.0
+    restart: unless-stopped
+    environment:
+      MEILI_ENV: production
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:?Required}
+      MEILI_NO_ANALYTICS: 'true'
+      MEILI_SCHEDULE_SNAPSHOT: '86400'
+      MEILI_SNAPSHOT_DIR: /meili_data/snapshots
+    expose: ['7700']
+    volumes: [search-data:/meili_data]
+    security_opt: [no-new-privileges:true]
+  search-sync:
+    image: ${STOREFRONT_IMAGE:?Set a tested GHCR commit tag or digest}
+    restart: unless-stopped
+    command: ['node', 'scripts/sync-search.mjs', '--watch']
+    healthcheck:
+      disable: true
+    environment:
+      GRAPHQL_URL: ${GRAPHQL_URL:?Required}
+      MEILI_URL: http://search:7700
+      MEILI_ADMIN_KEY: ${MEILI_INDEX_KEY:?Required}
+    volumes: [sync-state:/app/.sync-state]
+    depends_on: [search]
+    security_opt: [no-new-privileges:true]
+volumes:
+  next-cache:
+  search-data:
+  sync-state:

@@ -1,0 +1,147 @@
+{
+  "status": "valid_partial_research",
+  "target": 126,
+  "researched": 45,
+  "remaining": 81,
+  "categories": [
+    {
+      "category": "pc-fixes",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    },
+    {
+      "category": "portables",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    },
+    {
+      "category": "processeurs",
+      "count": 9,
+      "tiers": {
+        "entree": 3,
+        "milieu": 3,
+        "haut": 3
+      }
+    },
+    {
+      "category": "cartes-graphiques",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    },
+    {
+      "category": "cartes-meres",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    },
+    {
+      "category": "ram",
+      "count": 9,
+      "tiers": {
+        "entree": 3,
+        "milieu": 3,
+        "haut": 3
+      }
+    },
+    {
+      "category": "ssd",
+      "count": 9,
+      "tiers": {
+        "entree": 3,
+        "milieu": 3,
+        "haut": 3
+      }
+    },
+    {
+      "category": "boitiers",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    },
+    {
+      "category": "alimentations",
+      "count": 9,
+      "tiers": {
+        "entree": 3,
+        "milieu": 3,
+        "haut": 3
+      }
+    },
+    {
+      "category": "refroidissement",
+      "count": 9,
+      "tiers": {
+        "entree": 3,
+        "milieu": 3,
+        "haut": 3
+      }
+    },
+    {
+      "category": "ecrans",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    },
+    {
+      "category": "claviers",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    },
+    {
+      "category": "souris",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    },
+    {
+      "category": "casques",
+      "count": 0,
+      "tiers": {
+        "entree": 0,
+        "milieu": 0,
+        "haut": 0
+      }
+    }
+  ],
+  "manufacturerReferencesMissing": [
+    "EDO-PSU-MSI-MAG-A550BN",
+    "EDO-PSU-MSI-MAG-A750GL-PCIE5-II",
+    "EDO-PSU-SEASONIC-FOCUS-GX-1000-V5",
+    "EDO-COOL-THERMALRIGHT-AX120-REFINED-SE",
+    "EDO-COOL-THERMALRIGHT-PHANTOM-SPIRIT-120-SE"
+  ],
+  "gtinMissing": 39,
+  "withoutPriceObservation": 42,
+  "withoutProductImages": 43,
+  "provisionalSelections": 45,
+  "failures": [],
+  "limitations": "Ce contrôle valide les données de recherche, pas les caractéristiques dans les sources, les droits des images, leur transparence, les CSV ou un import WooCommerce. Le catalogue final n’est pas livré."
+}

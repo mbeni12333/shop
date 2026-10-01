@@ -3,6 +3,7 @@
 ## 1. Architecture & State Management
 
 ### Global State Management
+
 - **Replace Context API with Redux Toolkit or Zustand**
   - Gain: Better state management, dev tools, middleware support
   - Example: Move cart state to Redux with proper slices and actions
@@ -18,12 +19,13 @@ const cartSlice = createSlice({
     },
     removeFromCart: (state, action) => {
       // Automatic handling of immutability
-    }
-  }
+    },
+  },
 });
 ```
 
 ### Service Layer
+
 - **API Abstraction**
   - Gain: Better separation of concerns, easier testing and maintenance
   - Example: Create dedicated service classes for API operations
@@ -31,7 +33,7 @@ const cartSlice = createSlice({
 ```typescript
 class ProductService {
   private api: ApiClient;
-  
+
   async getProducts(filters: ProductFilters): Promise<Product[]> {
     // Centralized error handling and response mapping
   }
@@ -41,6 +43,7 @@ class ProductService {
 ## 2. Performance Optimizations
 
 ### Code Splitting
+
 - **Dynamic Imports**
   - Gain: Smaller initial bundle size, faster page loads
   - Example: Lazy load product filters on mobile
@@ -53,6 +56,7 @@ const ProductFilters = dynamic(() => import('./ProductFilters'), {
 ```
 
 ### Caching Strategy
+
 - **Apollo Client Caching**
   - Gain: Faster data access, reduced server load
   - Example: Implement field-level caching policies
@@ -65,17 +69,18 @@ const cache = new InMemoryCache({
         price: {
           read(price) {
             // Custom cache reading logic
-          }
-        }
-      }
-    }
-  }
+          },
+        },
+      },
+    },
+  },
 });
 ```
 
 ## 3. Testing & Quality Assurance
 
 ### Unit Testing
+
 - **Jest/React Testing Library**
   - Gain: Catch bugs early, ensure component behavior
   - Example: Test hooks like useProductFilters in isolation
@@ -89,14 +94,15 @@ describe('useProductFilters', () => {
     });
     expect(result.current.filterProducts(mockProducts)).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ price: expect.any(Number) })
-      ])
+        expect.objectContaining({ price: expect.any(Number) }),
+      ]),
     );
   });
 });
 ```
 
 ### E2E Testing
+
 - **Expand Playwright Tests**
   - Gain: Ensure critical user flows work end-to-end
   - Example: Add comprehensive checkout flow testing
@@ -113,6 +119,7 @@ test('complete checkout process', async ({ page }) => {
 ## 4. WooCommerce Integration Enhancements
 
 ### Session Management
+
 - **Improve WooCommerce Session Handling**
   - Gain: Better cart persistence, reduced errors
   - Example: Enhanced session token management
@@ -124,8 +131,8 @@ const enhancedMiddleware = new ApolloLink((operation, forward) => {
   if (session && !isExpired(session)) {
     operation.setContext({
       headers: {
-        'woocommerce-session': `Session ${session.token}`
-      }
+        'woocommerce-session': `Session ${session.token}`,
+      },
     });
   }
   return forward(operation);
@@ -133,6 +140,7 @@ const enhancedMiddleware = new ApolloLink((operation, forward) => {
 ```
 
 ### Cart Improvements
+
 - **Enhanced Cart Features**
   - Gain: Better user experience with cart functionality
   - Example: Add cart total, copy billing address to shipping
@@ -140,6 +148,7 @@ const enhancedMiddleware = new ApolloLink((operation, forward) => {
 ## 5. Developer Experience
 
 ### Documentation
+
 - **Storybook Integration**
   - Gain: Better component documentation, easier UI development
   - Example: Document all variants of ProductCard
@@ -152,13 +161,14 @@ export const WithDiscount = {
       name: 'Test Product',
       price: '100',
       salePrice: '80',
-      onSale: true
-    }
-  }
+      onSale: true,
+    },
+  },
 };
 ```
 
 ### TypeScript Improvements
+
 - **Stricter Configuration**
   - Gain: Catch more bugs at compile time
   - Example: Enable strict mode, add proper generics
@@ -177,6 +187,7 @@ export const WithDiscount = {
 ## 6. Monitoring & Analytics
 
 ### Error Tracking
+
 - **Sentry Integration**
   - Gain: Better error tracking, faster bug fixing
   - Example: Add proper error boundaries with Sentry
@@ -190,6 +201,7 @@ class ErrorBoundary extends React.Component {
 ```
 
 ### Performance Monitoring
+
 - **Core Web Vitals**
   - Gain: Track and improve user experience metrics
   - Example: Implement proper performance monitoring
@@ -197,6 +209,7 @@ class ErrorBoundary extends React.Component {
 ## 7. Code Quality & Maintainability
 
 ### Design Patterns
+
 - **Implement Factory Pattern**
   - Gain: Better code organization, easier maintenance
   - Example: Create product factory for different types
@@ -217,6 +230,7 @@ class ProductFactory {
 ```
 
 ### Code Organization
+
 - **Feature-based Structure**
   - Gain: Better code organization, easier navigation
   - Example: Reorganize code by feature instead of type
@@ -239,6 +253,7 @@ src/
 ## Implementation Priority Matrix
 
 ### High Impact, Low Effort (Do First)
+
 1. **TypeScript Strict Mode**
    - Simply update tsconfig.json
    - Immediate impact on code quality
@@ -255,6 +270,7 @@ src/
    - Relatively simple change
 
 ### High Impact, High Effort (Plan Carefully)
+
 1. **State Management Refactor**
    - Requires significant refactoring
    - Major architectural improvement
@@ -266,6 +282,7 @@ src/
    - Requires team coordination
 
 ### Low Impact, Low Effort (Quick Wins)
+
 1. **Storybook Documentation**
    - Can be added gradually
    - Improves developer experience
@@ -277,6 +294,7 @@ src/
    - Quick setup process
 
 ### Low Impact, High Effort (Consider Later)
+
 1. **Expand Test Coverage**
    - Build upon existing Playwright E2E tests
    - Already have basic homepage tests
@@ -318,6 +336,7 @@ src/
    - Focus on core user experience
 
 This prioritization ensures:
+
 - Quick delivery of high-impact improvements
 - Minimal disruption to ongoing development
 - Measurable progress at each stage

@@ -1,29 +1,12 @@
-// Imports
-import Router from 'next/router';
-import NProgress from 'nprogress';
-import { ApolloProvider } from '@apollo/client';
-
-import client from '@/utils/apollo/ApolloClient';
-import CartInitializer from '@/components/Cart/CartInitializer.component';
-
-// Types
+import { BasketProvider } from '@/edoctor/Basket';
 import type { AppProps } from 'next/app';
-
-// Styles
-import '@/styles/globals.css';
-import 'nprogress/nprogress.css';
-
-// NProgress
-Router.events.on('routeChangeStart', () => NProgress.start());
-Router.events.on('routeChangeComplete', () => NProgress.done());
-Router.events.on('routeChangeError', () => NProgress.done());
+import '@/styles/edoctor.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={client}>
-      <CartInitializer />
+    <BasketProvider>
       <Component {...pageProps} />
-    </ApolloProvider>
+    </BasketProvider>
   );
 }
 

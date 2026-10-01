@@ -1,0 +1,4 @@
+interface:
+  display_name: 'EDoctor Storefront'
+  short_description: 'Boutique, catalogue et déploiement EDoctor'
+  default_prompt: 'Use $edoctor-storefront to improve the EDoctor store while preserving its design, WooGraphQL architecture and export workflow.'

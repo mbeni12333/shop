@@ -1,33 +1,58 @@
 {
   "ci": {
     "collect": {
-      "numberOfRuns": 1,
+      "startServerCommand": "npm run start -- --port 3109",
+      "startServerReadyPattern": "Ready",
+      "numberOfRuns": 3,
       "url": [
-        "http://localhost:3000/",
-        "http://localhost:3000/produkter",
-        "http://localhost:3000/kategorier"
+        "http://localhost:3109/",
+        "http://localhost:3109/categories",
+        "http://localhost:3109/guide"
       ],
-      "port": 3000,
-      "settings": {       
+      "settings": {
+        "formFactor": "mobile",
         "onlyCategories": [
           "performance",
           "accessibility",
           "best-practices",
           "seo"
         ],
-        "skipAudits": ["uses-http2"],
-        "throttling": {
-          "method": "simulate"
-        }
+        "skipAudits": ["uses-http2"]
       }
     },
-    "upload": { "target": "temporary-public-storage" },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "lighthouse-reports"
+    },
     "assert": {
       "assertions": {
-        "categories:performance": ["warn", { "minScore": 0.8 }],
-        "categories:accessibility": ["warn", { "minScore": 0.9 }],
-        "categories:best-practices": ["warn", { "minScore": 0.9 }],
-        "categories:seo": ["warn", { "minScore": 0.9 }],
+        "categories:performance": [
+          "error",
+          {
+            "minScore": 0.9,
+            "aggregationMethod": "median"
+          }
+        ],
+        "largest-contentful-paint": [
+          "error",
+          {
+            "maxNumericValue": 2500,
+            "aggregationMethod": "median"
+          }
+        ],
+        "cumulative-layout-shift": [
+          "error",
+          {
+            "maxNumericValue": 0.1,
+            "aggregationMethod": "median"
+          }
+        ],
+        "categories:accessibility": [
+          "error",
+          {
+            "minScore": 0.9
+          }
+        ],
         "uses-http2": "off"
       }
     }
