@@ -1,5 +1,7 @@
 # État des vérifications EDoctor
 
+La [révision UX suivante](./UX-REVISION.md) remplace la recherche modale et documente le nouvel accueil, les offres et le diagnostic WordPress réel.
+
 ## État actuel — 2 octobre 2026
 
 Le bilan courant est [DESIGN-READINESS.md](./DESIGN-READINESS.md) : interface shadcn/Radix et GSAP intégrée, 27 tests unitaires et 48 tests navigateur réussis, TypeScript, constructions, formatage et syntaxe PHP validés. Les neuf mesures Lighthouse mobiles donnent un CLS de 0 à 0,004 et des scores accessibilité, bonnes pratiques et SEO de 100 ; performance et LCP échouent encore aux seuils du projet.

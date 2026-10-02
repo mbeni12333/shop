@@ -17,6 +17,13 @@ export default defineConfig({
     url: 'http://localhost:3107/api/health',
     reuseExistingServer: false,
     timeout: 120000,
-    env: { SITE_URL: 'http://localhost:3107' },
+    env: {
+      SITE_URL: 'http://localhost:3107',
+      GRAPHQL_URL: '',
+      NEXT_PUBLIC_GRAPHQL_URL: '',
+      WORDPRESS_URL: '',
+      CHECKOUT_SECRET: '',
+      REVALIDATE_SECRET: '',
+    },
   },
 });

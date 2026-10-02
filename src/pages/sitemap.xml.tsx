@@ -43,6 +43,7 @@ export async function getServerSideProps({
       '/',
       '/categories',
       '/produits',
+      '/offres',
       '/blog',
       '/livraison',
       '/paiement',

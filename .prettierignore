@@ -1,5 +1,6 @@
 node_modules/
 .next/
+.next-ui-review/
 .next-catalog-test/
 .next-research-test/
 .git/

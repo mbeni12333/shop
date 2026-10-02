@@ -1,5 +1,26 @@
 import { test, expect, type Page } from '@playwright/test';
 
+test('home prioritizes real sale products and the shipping animation can be paused', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await expect(page.locator('#offres .product-card')).toHaveCount(1);
+  await expect(page.locator('#offres')).toContainText('Processeur test AM5');
+  const hero = await page.locator('.hero').boundingBox();
+  expect(hero?.height).toBeLessThan(410);
+  const pause = page.getByRole('button', {
+    name: 'Mettre l’animation en pause',
+  });
+  await pause.click();
+  await expect(
+    page.getByRole('button', { name: 'Reprendre l’animation' }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Reprendre l’animation' }).click();
+  await expect(pause).toHaveAttribute('aria-pressed', 'false');
+  await page.goto('/offres');
+  await expect(page.locator('.product-card')).toHaveCount(1);
+});
+
 test('the design remains usable at 390, 768, 1024 and 1440 pixels', async ({
   page,
 }) => {
@@ -136,7 +157,7 @@ test('reduced motion and rapid panel reversal leave navigation operable', async 
       .press('Escape');
     await expect(trigger).toBeFocused();
   }
-  await page.getByRole('link', { name: 'Explorer la boutique' }).click();
+  await page.locator('.home-universes .text-link').click();
   await expect(page).toHaveURL(/\/categories$/);
 });
 

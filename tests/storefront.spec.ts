@@ -16,7 +16,7 @@ test('homepage retains the fourteen editorial universes during setup', async ({
   await expect(
     page.getByRole('heading', { name: /Votre prochain/, level: 1 }),
   ).toBeVisible();
-  await page.getByRole('link', { name: 'Explorer la boutique' }).click();
+  await page.locator('.home-universes .text-link').click();
   await expect(page).toHaveURL(/\/categories$/);
   await expect(page.locator('.category-directory>a')).toHaveCount(14);
   expect(errors).toEqual([]);

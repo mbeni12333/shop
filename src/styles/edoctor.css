@@ -436,10 +436,10 @@
     @apply text-primary;
   }
   .universe-grid {
-    @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-4;
+    @apply grid grid-cols-2 gap-3 lg:grid-cols-4;
   }
   .universe-card {
-    @apply relative flex min-h-80 flex-col overflow-hidden rounded-2xl border border-border bg-muted px-6 pt-6;
+    @apply relative flex flex-col overflow-hidden rounded-2xl border-0 bg-muted p-4 shadow-none;
   }
   .universe-card h3 {
     @apply mb-2 text-lg;
@@ -448,13 +448,10 @@
     @apply text-sm text-muted-foreground;
   }
   .universe-card img {
-    @apply mx-auto mt-4 h-56 w-full object-contain transition-transform duration-ed;
-  }
-  .universe-card:hover img {
-    @apply -translate-y-1;
+    @apply mx-auto mb-3 h-28 w-full object-contain;
   }
   .round-arrow {
-    @apply absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-card text-lg text-primary;
+    @apply absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-card text-lg text-primary;
   }
   .selection {
     @apply pt-0;
@@ -517,16 +514,16 @@
     @apply flex flex-wrap justify-between gap-4 border-t border-border py-6 text-xs text-muted-foreground;
   }
   .category-directory {
-    @apply mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3;
+    @apply mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4;
   }
   .category-directory > a {
-    @apply rounded-2xl border border-border bg-card p-6 transition-colors duration-ed hover:border-primary hover:bg-muted;
+    @apply rounded-2xl border-0 bg-muted p-4 shadow-none transition-colors duration-ed hover:bg-accent;
   }
   .category-directory-picture {
-    @apply mb-6 h-40 w-full object-contain sm:h-44;
+    @apply mb-3 h-24 w-full object-contain sm:h-28;
   }
   .category-directory h2 {
-    @apply mb-3 flex items-center justify-between gap-4 text-xl;
+    @apply mb-2 flex items-center justify-between gap-2 text-base;
   }
   .category-directory p {
     @apply m-0 text-sm text-muted-foreground;
@@ -809,9 +806,6 @@
   .announcement a {
     display: none;
   }
-  .hero h1 {
-    font-size: 2.6rem;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -953,5 +947,234 @@
   .announcement {
     padding: 8px 12px;
     font-size: 10px;
+  }
+}
+
+@layer components {
+  .hero-compact {
+    @apply mt-3 md:mt-4;
+  }
+  .hero-compact .hero-copy {
+    @apply px-5 py-6 lg:px-8 lg:py-8;
+  }
+  .hero-compact h1 {
+    @apply my-3;
+    font-size: clamp(30px, 3.6vw, 52px);
+    line-height: 1.04;
+  }
+  .hero-compact .actions {
+    @apply my-4 gap-3;
+  }
+  .hero-compact .hero-visual {
+    @apply p-4;
+  }
+  .hero-compact .hardware-scene {
+    max-width: 400px;
+  }
+  .hero-compact .hero-copy > p {
+    @apply mb-0 max-w-lg text-sm;
+  }
+  .home-offers {
+    @apply scroll-mt-24 pt-6;
+  }
+  .home-offers .section-heading {
+    @apply mb-4;
+  }
+  .budget-discovery {
+    @apply grid gap-3 md:grid-cols-3;
+  }
+  .budget-discovery > a {
+    @apply flex items-center gap-3 overflow-hidden rounded-2xl bg-muted p-4;
+  }
+  .budget-discovery img {
+    @apply h-24 w-28 shrink-0 object-contain;
+  }
+  .budget-discovery h3 {
+    @apply mb-1 text-base;
+  }
+  .budget-discovery p {
+    @apply mb-0 text-sm text-muted-foreground;
+  }
+  .budget-discovery .text-link {
+    @apply min-h-8;
+  }
+  .home-universes {
+    @apply py-8;
+  }
+  .home-universes .section-heading {
+    @apply mb-4;
+  }
+  .universe-card h3 {
+    @apply mb-1 text-base;
+  }
+  .universe-card div > span {
+    @apply text-xs;
+  }
+  .nav-offers {
+    color: hsl(var(--primary)) !important;
+    font-weight: 700 !important;
+  }
+  .offer-badge {
+    @apply absolute left-3 top-3 z-10;
+  }
+  .advisor-choice {
+    @apply flex-row items-center gap-5 p-5 md:gap-8 md:px-8 md:py-6;
+  }
+  .advisor-choice img {
+    @apply m-0 h-44 w-28 shrink-0 object-contain md:h-60 md:w-40;
+  }
+  .advisor-choice h2 {
+    @apply mb-3 text-xl md:text-2xl;
+  }
+  .advisor-choice p {
+    @apply mb-4 text-sm;
+  }
+  .shipping-journey {
+    @apply my-8 rounded-3xl bg-muted p-5 md:p-8;
+  }
+  .shipping-journey .section-heading {
+    @apply mb-2;
+  }
+  .delivery-estimate {
+    @apply flex flex-col gap-1 rounded-xl bg-card px-4 py-3 text-sm;
+  }
+  .delivery-estimate strong {
+    @apply text-primary;
+  }
+  .delivery-estimate > span {
+    @apply text-xs text-muted-foreground;
+  }
+  .journey-diagram {
+    @apply mx-auto block h-auto w-full;
+    max-height: 220px;
+  }
+  .journey-steps {
+    @apply m-0 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-4;
+  }
+  .journey-steps li {
+    @apply flex items-start gap-3;
+  }
+  .journey-number {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-card text-xs font-semibold text-primary;
+  }
+  .journey-steps h3 {
+    @apply mb-1 text-base;
+  }
+  .journey-steps p {
+    @apply m-0 text-sm text-muted-foreground;
+  }
+  .journey-footer {
+    @apply mt-5 flex flex-wrap items-center justify-between gap-3;
+  }
+  .page-section > h1 {
+    @apply mb-4 text-2xl md:text-3xl;
+  }
+  .page-section > .intro {
+    @apply mb-5 mt-3 text-base;
+  }
+  .basket-lines {
+    @apply mt-6;
+  }
+  .product-detail > div {
+    @apply min-w-0;
+  }
+}
+@media (max-width: 1023px) and (min-width: 640px) {
+  .hero-compact {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+@media (max-width: 639px) {
+  .hero-compact {
+    display: block;
+  }
+  .hero-compact .hero-copy {
+    padding: 20px;
+  }
+  .hero-compact .hero-visual {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 132px;
+    padding: 8px;
+    pointer-events: none;
+  }
+  .hero-compact .hero-visual .hero-orbit {
+    display: none;
+  }
+  .hero-compact .actions {
+    margin: 16px 0 0;
+    padding-right: 108px;
+  }
+  .hero-compact .actions .text-link,
+  .hero-compact .hero-note {
+    display: none;
+  }
+  .hero-compact .actions > a {
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+  .hero-compact .eyebrow {
+    font-size: 9px;
+  }
+  .hero-compact .hero-copy > p {
+    font-size: 13px;
+  }
+  .category-directory p {
+    display: none;
+  }
+  .category-directory h2 {
+    font-size: 14px;
+  }
+  .category-directory h2 svg {
+    width: 16px;
+    flex-shrink: 0;
+  }
+  .universe-card div > span {
+    display: none;
+  }
+  .advisor-choice {
+    gap: 12px;
+    padding: 16px;
+  }
+  .advisor-choice img {
+    width: 72px;
+    height: 144px;
+  }
+  .advisor-choice h2 {
+    font-size: 18px;
+  }
+  .advisor-choice .eyebrow {
+    display: none;
+  }
+  .advisor-choice a {
+    font-size: 12px;
+    padding-inline: 12px;
+  }
+  .journey-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 12px;
+  }
+  .journey-steps li {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .journey-steps h3 {
+    font-size: 14px;
+  }
+  .journey-steps p {
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-toggle {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .hero-compact .hero-visual {
+    width: 96px;
+    right: 4px;
+    bottom: 4px;
   }
 }

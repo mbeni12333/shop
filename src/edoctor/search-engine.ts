@@ -1,5 +1,6 @@
 import type { Product } from './model';
 import { attributeKey } from './filters';
+import { OFFER_FILTER, isCurrentOffer } from './offers';
 
 export type SearchDocument = Product & {
   objectID: string;
@@ -80,10 +81,11 @@ export function searchSnapshot(
     .trim()
     .split(/\s+/)
     .filter(Boolean);
-  const category = p.filters?.match(/^categories\s*=\s*"(.*)"$/)?.[1];
+  const category = p.filters?.match(/^categories\s*=\s*"([^"]*)"/)?.[1];
   const base = documents.filter(
     (doc) =>
       (!category || doc.categories.includes(category)) &&
+      (!p.filters?.includes(OFFER_FILTER) || isCurrentOffer(doc)) &&
       terms.every((term) =>
         fold(
           [

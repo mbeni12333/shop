@@ -11,7 +11,7 @@ const pages: Record<string, { title: string; sections: [string, string][] }> = {
       ],
       [
         'Votre expédition, confirmée ensemble',
-        'La destination, le transport, les formalités et les frais inclus sont précisés dans votre proposition. Les délais dépendent du produit et de votre adresse : aucun délai n’est garanti avant confirmation.',
+        'L’expédition vers l’Algérie s’effectue avec Colissimo International. Comptez 4 jours ouvrés estimés après remise du colis au transporteur. Le temps de préparation est distinct ; la destination, les formalités et les frais sont précisés avant votre règlement.',
       ],
       [
         'Avant de commander',

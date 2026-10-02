@@ -28,7 +28,11 @@ const products = [
     price: 100,
     attributes: { Socket: 'AM4', Cœurs: '6', TDP: '65 W' },
   }),
-  node(2, 'Processeur test AM5', ['processeurs'], { price: 230 }),
+  node(2, 'Processeur test AM5', ['processeurs'], {
+    price: 230,
+    onSale: true,
+    publishedAt: '2026-10-01T10:00:00Z',
+  }),
   node(3, 'Processeur test LGA', ['processeurs'], {
     brand: 'Autre marque test',
     tier: 'Haut de gamme',

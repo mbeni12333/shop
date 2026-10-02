@@ -145,6 +145,8 @@ export async function syncSearch({
           'tier',
           'price',
           'stock',
+          'onSale',
+          'purchasable',
           ...attributes,
         ],
         sortableAttributes: ['price', 'name'],

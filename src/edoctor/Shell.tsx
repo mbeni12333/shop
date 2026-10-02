@@ -104,7 +104,7 @@ export default function Shell({
         Aller au contenu
       </a>
       <div className="announcement">
-        Une entreprise française. À vos côtés, jusqu’en Algérie.{' '}
+        Votre prochain équipement. Notre conseil, jusqu’en Algérie.{' '}
         <Link href="/livraison">
           Notre accompagnement export <span aria-hidden>↗</span>
         </Link>

@@ -90,6 +90,10 @@ function ed_details($id)
             ),
         ),
         'price' => $p->is_type('variable') ? null : ed_price($p),
+        'onSale' => $p->is_on_sale(),
+        'publishedAt' => $p->get_date_created()
+            ? $p->get_date_created()->date(DATE_ATOM)
+            : '',
         'stock' => $p->is_in_stock(),
         'purchasable' =>
             $p->is_purchasable() && $p->is_type(['simple', 'variable']),

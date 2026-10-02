@@ -166,6 +166,8 @@ export type Product = {
   description: string;
   image: string;
   price: number | null;
+  onSale?: boolean;
+  publishedAt?: string;
   stock: boolean;
   purchasable: boolean;
   attributes: Record<string, string>;

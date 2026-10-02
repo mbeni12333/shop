@@ -28,6 +28,9 @@ export function ProductCard({
         onClick={() => trackConversion('product_open', { source: 'catalog' })}
       >
         <div className="product-picture">
+          {product.onSale && product.price !== null && (
+            <Badge className="offer-badge">Offre du moment</Badge>
+          )}
           {product.image ? (
             <Image
               src={product.image}
@@ -113,6 +116,7 @@ export function Catalog({
   emptyState,
   singleCategory = false,
   categorySlug,
+  offersOnly = false,
 }: {
   products: Product[];
   categoriesBySlug: Map<string, Category>;
@@ -123,6 +127,7 @@ export function Catalog({
   };
   singleCategory?: boolean;
   categorySlug?: string;
+  offersOnly?: boolean;
 }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -153,6 +158,7 @@ export function Catalog({
     );
   return (
     <InstantCatalog
+      offersOnly={offersOnly}
       products={products}
       categoriesBySlug={categoriesBySlug}
       categorySlug={

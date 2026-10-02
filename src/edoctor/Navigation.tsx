@@ -112,20 +112,18 @@ export default function Navigation({
         </Link>
       )}
       <Link
-        className="nav-item"
-        href="/blog"
-        aria-current={path.startsWith('/blog') ? 'page' : undefined}
+        className="nav-item nav-offers"
+        href="/offres"
+        aria-current={path === '/offres' ? 'page' : undefined}
       >
-        <Icon name="book" />
-        Le journal ED
+        Les offres du moment
       </Link>
       <Link
-        className="nav-item nav-export"
-        href="/livraison"
-        aria-current={path === '/livraison' ? 'page' : undefined}
+        className="nav-item"
+        href="/contact"
+        aria-current={path === '/contact' ? 'page' : undefined}
       >
-        <Icon name="export" />
-        France → Algérie
+        Un conseil pour choisir ?
       </Link>
     </>
   );

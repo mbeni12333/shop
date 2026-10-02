@@ -17,6 +17,7 @@ import singletonRouter from 'next/router';
 import type { Category, Product } from './model';
 import type { SearchDocument } from './search-engine';
 import { attributeKey } from './filters';
+import { OFFER_FILTER } from './offers';
 import { createSearchClient, SEARCH_INDEX } from './search-client';
 import {
   routeFromURL,
@@ -547,10 +548,12 @@ export default function InstantCatalog({
   products,
   categoriesBySlug,
   categorySlug,
+  offersOnly = false,
 }: {
   products: Product[];
   categoriesBySlug: Map<string, Category>;
   categorySlug?: string;
+  offersOnly?: boolean;
 }) {
   const client = useMemo(() => createSearchClient(products), [products]);
   const routing = useMemo(
@@ -578,9 +581,12 @@ export default function InstantCatalog({
     >
       <Configure
         hitsPerPage={24}
-        {...(categorySlug
-          ? { filters: `categories = ${JSON.stringify(categorySlug)}` }
-          : {})}
+        filters={[
+          categorySlug ? `categories = ${JSON.stringify(categorySlug)}` : '',
+          offersOnly ? OFFER_FILTER : '',
+        ]
+          .filter(Boolean)
+          .join(' AND ')}
       />
       <Results
         products={products}

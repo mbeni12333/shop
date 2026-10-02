@@ -1,5 +1,7 @@
 # EDoctor — bilan du design et de la préparation au lancement
 
+**Révision suivante :** voir [UX-REVISION.md](./UX-REVISION.md) pour la recherche inline, l’en-tête sur une ligne, les univers compacts, les offres et le parcours SVG Colissimo. La configuration WordPress a depuis été ajoutée ; l’API répond mais WooGraphQL manque. Les mesures ci-dessous précèdent cette nouvelle composition.
+
 État vérifié le 2 octobre 2026. L’interface est implémentée et les parcours locaux passent les tests fonctionnels. Le lancement commercial reste à valider : les performances mobiles n’atteignent pas encore les objectifs du projet et les services commerciaux réels ne sont pas configurés dans cet environnement.
 
 ## Interface livrée
