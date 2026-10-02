@@ -12,6 +12,7 @@ const node = (id, name, categories, overrides = {}) => ({
   image: null,
   edoctorDetails: JSON.stringify({
     categories,
+    tags: [{ slug: 'gaming', name: 'Gaming' }],
     brand: 'Marque test',
     tier: 'Milieu de gamme',
     price: 200,
@@ -104,9 +105,7 @@ const server = createServer(async (request, response) => {
     const { query, variables = {} } = JSON.parse(body);
     queries++;
     let data;
-    if (query.includes('query StorefrontCapabilities'))
-      data = { products: { nodes: [] }, productCategories: { nodes: [] } };
-    else if (query.includes('query Categories'))
+    if (query.includes('query Categories'))
       data = { productCategories: { nodes: categories } };
     else if (query.includes('query Catalog'))
       data = {
@@ -149,6 +148,7 @@ const env = {
   NEXT_PUBLIC_MEILI_SEARCH_KEY: '',
   GRAPHQL_URL: 'http://127.0.0.1:3111/graphql',
   NEXT_PUBLIC_SITE_URL: 'http://127.0.0.1:3112',
+  SITE_URL: 'http://127.0.0.1:3112',
   CHECKOUT_SECRET: '',
   WORDPRESS_URL: '',
 };

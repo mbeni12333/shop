@@ -134,6 +134,19 @@ export default function ProductPage({
               </ul>
             </nav>
             <h1>{p.name}</h1>
+            {!!p.tags?.length && (
+              <div className="active-filters">
+                {p.tags.map((tag) => (
+                  <Link
+                    className="badge"
+                    key={tag.slug}
+                    href={`/produits?tag=${encodeURIComponent(tag.name)}`}
+                  >
+                    {tag.name}
+                  </Link>
+                ))}
+              </div>
+            )}
             <p className="intro">{p.description}</p>
             <p className="detail-price">
               {money(price)}

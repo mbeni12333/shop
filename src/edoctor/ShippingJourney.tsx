@@ -105,7 +105,7 @@ export default function ShippingJourney() {
       >
         <path
           d="M110 142H800"
-          stroke="#ddd7e6"
+          stroke="hsl(var(--border))"
           strokeWidth="4"
           strokeDasharray="5 9"
           fill="none"
@@ -114,71 +114,78 @@ export default function ShippingJourney() {
           data-route
           d="M110 142H800"
           pathLength="1"
-          stroke="#6840c6"
+          stroke="hsl(var(--primary))"
           strokeWidth="4"
           strokeDasharray="1"
           fill="none"
         />
         <g data-stop transform="translate(110 80)">
-          <circle r="54" fill="#e8dff9" />
+          <circle r="54" fill="hsl(var(--accent))" />
           <rect
             x="-30"
             y="-26"
             width="60"
             height="42"
             rx="5"
-            fill="#fff"
-            stroke="#6840c6"
+            fill="hsl(var(--card))"
+            stroke="hsl(var(--primary))"
             strokeWidth="3"
           />
           <path
             d="M-16 28H16M0 17V28M-16 -8L-5 2 16-16"
-            stroke="#6840c6"
+            stroke="hsl(var(--primary))"
             strokeWidth="4"
             strokeLinecap="round"
             fill="none"
           />
         </g>
         <g data-stop transform="translate(340 80)">
-          <circle r="54" fill="#e8dff9" />
+          <circle r="54" fill="hsl(var(--accent))" />
           <path
             d="M-30-14L0-29 30-14V21L0 36-30 21Z"
-            fill="#a58bcf"
-            stroke="#6840c6"
+            fill="hsl(var(--primary))"
+            stroke="hsl(var(--primary))"
             strokeWidth="3"
           />
           <path
             d="M-30-14L0 1 30-14M0 1V36M-15-22L15-7V6"
             fill="none"
-            stroke="#fff"
+            stroke="hsl(var(--card))"
             strokeWidth="3"
             strokeLinejoin="round"
           />
         </g>
         <g data-stop transform="translate(570 80)">
-          <circle r="54" fill="#e8dff9" />
+          <circle r="54" fill="hsl(var(--accent))" />
           <path
             d="M-36 3L-7-6 2-32 14-32 9-6 33-1Q42 3 33 7L8 11 13 34 2 34-8 12-31 17-39 9Z"
-            fill="#6840c6"
+            fill="hsl(var(--primary))"
           />
           <path
             d="M-39-18H-23M-45 28H-29"
-            stroke="#a58bcf"
+            stroke="hsl(var(--primary))"
             strokeWidth="3"
             strokeLinecap="round"
           />
         </g>
         <g data-stop transform="translate(800 80)">
-          <circle r="54" fill="#e8dff9" />
+          <circle r="54" fill="hsl(var(--accent))" />
           <path
             d="M-34-3L0-31 34-3M-25-9V30H25V-9"
-            stroke="#6840c6"
-            fill="#fff"
+            stroke="hsl(var(--primary))"
+            fill="hsl(var(--card))"
             strokeWidth="4"
             strokeLinejoin="round"
           />
-          <rect x="-8" y="7" width="16" height="23" rx="2" fill="#6840c6" />
-          <circle cx="31" cy="22" r="16" fill="#27634b" />
+          <rect
+            x="-8"
+            y="7"
+            width="16"
+            height="23"
+            rx="2"
+            fill="hsl(var(--primary))"
+          />
+          <circle cx="31" cy="22" r="16" fill="hsl(var(--success))" />
           <path
             d="M23 22L29 28 39 17"
             stroke="white"
@@ -186,21 +193,32 @@ export default function ShippingJourney() {
             fill="none"
           />
         </g>
-        <g data-parcel transform="translate(110 142)">
-          <circle r="10" fill="#6840c6" stroke="white" strokeWidth="4" />
+        <g transform="translate(0 142)">
+          <g data-parcel transform="translate(110 0)">
+            <circle
+              r="10"
+              fill="hsl(var(--primary))"
+              stroke="white"
+              strokeWidth="4"
+            />
+          </g>
         </g>
         <g
-          fill="#686274"
+          fill="hsl(var(--muted-foreground))"
           fontSize="13"
           fontFamily="inherit"
           textAnchor="middle"
         >
-          <text x="340" y="188">
-            FRANCE
-          </text>
-          <text x="800" y="188">
-            ALGÉRIE
-          </text>
+          {[
+            'Commande',
+            'Préparation · France',
+            'Colissimo International',
+            'Réception · Algérie',
+          ].map((label, i) => (
+            <text key={label} x={110 + i * 230} y="184">
+              {label}
+            </text>
+          ))}
         </g>
       </svg>
       <ol className="journey-steps">

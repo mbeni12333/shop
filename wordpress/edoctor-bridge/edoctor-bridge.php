@@ -1,12 +1,11 @@
 <?php
 /**
  * Plugin Name: EDoctor Storefront Bridge
- * Description: WooGraphQL HT metadata, signed basket handoff, advice requests and export checkout.
- * Version: 1.0.0
+ * Description: WPGraphQL public catalog and HT metadata, signed basket handoff, advice requests and export checkout.
+ * Version: 1.1.0
  * License: AGPL-3.0-or-later
  */
 defined('ABSPATH') || exit();
-
 function ed_secret()
 {
     return defined('EDOCTOR_CHECKOUT_SECRET') ? EDOCTOR_CHECKOUT_SECRET : '';
@@ -46,6 +45,7 @@ function ed_details($id)
         }
     }
     $cats = wp_get_post_terms($id, 'product_cat', ['fields' => 'slugs']);
+    $tags = wp_get_post_terms($id, 'product_tag');
     $variants = [];
     if ($p->is_type('variable')) {
         foreach ($p->get_children() as $vid) {
@@ -73,6 +73,12 @@ function ed_details($id)
     $categories = !is_wp_error($cats) ? array_values($cats) : [];
     return wp_json_encode([
         'categories' => $categories,
+        'tags' => array_map(
+            function ($t) {
+                return ['slug' => $t->slug, 'name' => $t->name];
+            },
+            is_wp_error($tags) ? [] : $tags,
+        ),
         'brand' =>
             $p->get_attribute('pa_marque') ?: $p->get_attribute('Marque'),
         'tier' => $p->get_attribute('pa_gamme') ?: $p->get_attribute('Gamme'),
@@ -100,18 +106,7 @@ function ed_details($id)
         'variations' => $variants,
     ]);
 }
-
-add_action('graphql_register_types', function () {
-    register_graphql_field('Product', 'edoctorDetails', [
-        'type' => 'String',
-        'description' =>
-            'EDoctor normalized HT prices, attributes and published variations',
-        'resolve' => function ($source) {
-            return ed_details($source->databaseId);
-        },
-    ]);
-});
-
+require_once __DIR__ . '/catalog.php';
 function ed_decode_token($token)
 {
     if (strlen($token) > 16000 || strlen(ed_secret()) < 32) {
@@ -173,6 +168,7 @@ function ed_decode_token($token)
             $p->get_status() !== 'publish' ||
             !$parent->is_type(['simple', 'variable']) ||
             !$p->is_purchasable() ||
+            ed_price($p) === null ||
             !$p->is_in_stock()
         ) {
             throw new Exception('Un produit n’est plus disponible.');
@@ -274,7 +270,6 @@ add_action('template_redirect', function () {
         ]);
     }
 });
-
 add_action('plugins_loaded', function () {
     if (!class_exists('WC_Payment_Gateway')) {
         return;
@@ -421,7 +416,6 @@ add_action('wp_enqueue_scripts', function () {
         );
     }
 });
-
 add_action('init', function () {
     register_post_type('edoctor_request', [
         'label' => 'Demandes EDoctor',
@@ -488,7 +482,6 @@ add_action('rest_api_init', function () {
         },
     ]);
 });
-
 // Debounced invalidation; failed deliveries are retried by WordPress cron.
 function ed_schedule_slug_refresh($slug)
 {

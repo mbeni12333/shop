@@ -1,5 +1,4 @@
 import { pathToFileURL } from 'node:url';
-
 export const attributeKey = (label) =>
   `spec_${label
     .normalize('NFD')
@@ -48,7 +47,6 @@ export function documentFromWoo(node) {
     ),
   };
 }
-
 export async function syncSearch({
   graphqlURL,
   meiliURL,
@@ -141,6 +139,7 @@ export async function syncSearch({
         ],
         filterableAttributes: [
           'categories',
+          'tags.name',
           'brand',
           'tier',
           'price',
@@ -181,7 +180,6 @@ export async function syncSearch({
     }
   }
 }
-
 async function main() {
   const run = () =>
     syncSearch({

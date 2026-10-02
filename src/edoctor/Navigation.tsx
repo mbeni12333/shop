@@ -19,13 +19,6 @@ import {
   NavigationMenuTrigger,
 } from './ui/navigation-menu';
 
-const labels = {
-  univers: 'Tous les univers',
-  composants: 'Composants',
-  peripheriques: 'Périphériques',
-};
-type Section = keyof typeof labels;
-
 function CategoryLinks({
   items,
   path,
@@ -94,17 +87,22 @@ export default function Navigation({
   const sorted = [...categories].sort(
     (a, b) => artFor(a.slug).order - artFor(b.slug).order,
   );
-  const groups = (['univers', 'composants', 'peripheriques'] as Section[])
-    .map((section) => ({
-      section,
-      items:
-        section === 'univers'
-          ? sorted
-          : sorted.filter((c) => artFor(c.slug).nav === section),
-    }))
-    .filter((group) => group.items.length);
+  const roots = sorted.filter(
+    (c) => !c.parent || !sorted.some((p) => p.slug === c.parent),
+  );
+  const groups = [
+    { section: 'univers', label: 'Tous les univers', items: sorted },
+    ...roots.map((root) => ({
+      section: root.slug,
+      label: root.name,
+      items: sorted.filter((c) => c.parent === root.slug),
+    })),
+  ].filter((g) => g.items.length);
   const links = (
     <>
+      <Link className="nav-item" href="/compte">
+        Mon compte
+      </Link>
       {!categories.length && (
         <Link className="nav-item" href="/categories">
           <Icon name="univers" />
@@ -135,13 +133,13 @@ export default function Navigation({
         aria-label="Navigation principale"
       >
         <Accordion type="single" collapsible>
-          {groups.map(({ section, items }) => (
+          {groups.map(({ section, label, items }) => (
             <AccordionItem
               value={section}
               key={section}
               id={`${idPrefix}-${section}`}
             >
-              <AccordionTrigger>{labels[section]}</AccordionTrigger>
+              <AccordionTrigger>{label}</AccordionTrigger>
               <AccordionContent>
                 <CategoryLinks items={items} path={path} mobile />
               </AccordionContent>
@@ -163,17 +161,17 @@ export default function Navigation({
         skipDelayDuration={250}
       >
         <NavigationMenuList className="main-nav-list">
-          {groups.map(({ section, items }) => (
+          {groups.map(({ section, label, items }) => (
             <NavigationMenuItem value={section} key={section}>
               <NavigationMenuTrigger className="nav-item">
-                {labels[section]}
+                {label}
               </NavigationMenuTrigger>
               <NavigationMenuContent
                 id={`${idPrefix}-${section}`}
                 className="nav-panel"
               >
                 <div className="nav-panel-heading">
-                  <h2>{labels[section]}</h2>
+                  <h2>{label}</h2>
                   <Link href="/categories">
                     Explorer les univers <Icon name="arrow" />
                   </Link>
@@ -183,7 +181,12 @@ export default function Navigation({
             </NavigationMenuItem>
           ))}
           {sorted
-            .filter((c) => artFor(c.slug).nav === 'standalone')
+            .filter(
+              (c) =>
+                roots.includes(c) &&
+                !sorted.some((child) => child.parent === c.slug),
+            )
+            .slice(0, 3)
             .map((category) => (
               <NavigationMenuItem key={category.slug}>
                 <NavigationMenuLink asChild>

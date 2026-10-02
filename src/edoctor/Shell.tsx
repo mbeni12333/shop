@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Footer from './Footer';
+import CatalogStatus from './CatalogStatus';
 import Image from 'next/image';
 import Link from './Link';
 import { useRouter } from 'next/router';
@@ -128,55 +130,18 @@ export default function Shell({
             <span className="basket-label">Panier</span>
             <span className="basket-count">{count}</span>
           </Link>
+          <Link className="header-account" href="/compte">
+            Mon compte
+          </Link>
           <MobileNav categories={categories} />
         </div>
         <Navigation categories={categories} />
       </header>
-      <main id="contenu">{children}</main>
-      <footer className="site-footer">
-        <div className="wrap footer-grid">
-          <div>
-            <Link className="footer-brand" href="/">
-              EDoctor<span>.</span>
-            </Link>
-            <p>
-              Le bon matériel.
-              <br />
-              Un vrai interlocuteur.
-              <br />
-              De la France à l’Algérie.
-            </p>
-          </div>
-          <div>
-            <h2>Votre boutique</h2>
-            <Link href="/categories">Tous les univers</Link>
-            <Link href="/blog">Conseils & découvertes</Link>
-          </div>
-          <div>
-            <h2>À vos côtés</h2>
-            <Link href="/livraison">Livraison & export</Link>
-            <Link href="/paiement">Moyens de paiement</Link>
-            <Link href="/garanties">Garanties & retours</Link>
-            <Link href="/contact">Parlons de votre projet</Link>
-          </div>
-          <div>
-            <h2>Informations</h2>
-            <Link href="/compte">Mon compte</Link>
-            <Link href="/mentions-legales">Mentions légales</Link>
-            <Link href="/confidentialite">Confidentialité</Link>
-            <Link href="/conditions">Conditions de vente</Link>
-            <a href="https://github.com/mbeni12333/shop">
-              Code source · AGPL-3.0
-            </a>
-          </div>
-        </div>
-        <div className="wrap footer-bottom">
-          © {new Date().getFullYear()} EDoctor{' '}
-          <span>
-            Prix en euros · modalités d’export confirmées avant règlement
-          </span>
-        </div>
-      </footer>
+      <main id="contenu">
+        <CatalogStatus />
+        {children}
+      </main>
+      <Footer categories={categories} />
     </>
   );
 }

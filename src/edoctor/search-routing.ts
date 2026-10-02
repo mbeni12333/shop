@@ -3,21 +3,25 @@ import { SEARCH_INDEX } from './search-client';
 
 export type SearchRoute = Record<string, string | string[] | undefined>;
 const publicKey = (attr: string) =>
-  attr === 'categories'
-    ? 'categorie'
-    : attr === 'brand'
-      ? 'marque'
-      : attr === 'tier'
-        ? 'gamme'
-        : attr.replace(/^facets\./, '');
+  attr === 'tags.name'
+    ? 'tag'
+    : attr === 'categories'
+      ? 'categorie'
+      : attr === 'brand'
+        ? 'marque'
+        : attr === 'tier'
+          ? 'gamme'
+          : attr.replace(/^facets\./, '');
 const indexKey = (key: string) =>
-  key === 'categorie'
-    ? 'categories'
-    : key === 'marque'
-      ? 'brand'
-      : key === 'gamme'
-        ? 'tier'
-        : `facets.${key}`;
+  key === 'tag'
+    ? 'tags.name'
+    : key === 'categorie'
+      ? 'categories'
+      : key === 'marque'
+        ? 'brand'
+        : key === 'gamme'
+          ? 'tier'
+          : `facets.${key}`;
 export const searchStateMapping = {
   stateToRoute(ui: UiState): SearchRoute {
     const state = ui[SEARCH_INDEX] ?? {};
@@ -40,7 +44,7 @@ export const searchStateMapping = {
     for (const [key, value] of Object.entries(route))
       if (
         value &&
-        (['categorie', 'marque', 'gamme'].includes(key) ||
+        (['categorie', 'marque', 'gamme', 'tag'].includes(key) ||
           key.startsWith('spec_'))
       )
         refinementList[indexKey(key)] = Array.isArray(value) ? value : [value];

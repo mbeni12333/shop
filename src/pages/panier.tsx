@@ -7,7 +7,7 @@ import BasketQuantity from '@/edoctor/BasketQuantity';
 import { Button } from '@/edoctor/ui/button';
 import Icon from '@/edoctor/Icon';
 export default function Basket() {
-  const { lines, ready, quantity } = useBasket();
+  const { lines, ready, quantity, clear } = useBasket();
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   async function checkout() {
@@ -36,6 +36,7 @@ export default function Basket() {
       input.value = data.token;
       form.append(input);
       document.body.append(form);
+      window.addEventListener('pagehide', clear, { once: true });
       form.submit();
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Réessayez dans un instant.');

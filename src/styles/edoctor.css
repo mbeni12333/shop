@@ -1178,3 +1178,19 @@
     bottom: 4px;
   }
 }
+
+.account-form {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+  max-width: 440px;
+}
+.header-account {
+  white-space: nowrap;
+  font-size: 14px;
+}
+@media (max-width: 1279px) {
+  .header-account {
+    display: none;
+  }
+}

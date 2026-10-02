@@ -346,6 +346,7 @@ function Results({
   return (
     <>
       <PersistentFacet attribute="brand" />
+      <PersistentFacet attribute="tags.name" />
       {!categorySlug && categoryValues.length > 1 && (
         <PersistentFacet attribute="categories" />
       )}
@@ -403,6 +404,13 @@ function Results({
                 knownValues={unique(products.map((p) => p.tier))}
               />
             )}
+            <Facet
+              attribute="tags.name"
+              label="Sélections"
+              knownValues={unique(
+                products.flatMap((p) => (p.tags || []).map((t) => t.name)),
+              )}
+            />
             {!!prices.length && <PriceRange prices={prices} />}
             {attrs.map((label) => (
               <Facet

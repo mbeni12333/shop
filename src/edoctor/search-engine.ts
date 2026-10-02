@@ -48,6 +48,7 @@ const fold = (text: string) =>
     .replace(/œ/g, 'oe');
 function facetValues(doc: SearchDocument, attr: string): string[] {
   if (attr.startsWith('facets.')) return doc.facets[attr.slice(7)] ?? [];
+  if (attr === 'tags.name') return (doc.tags || []).map((tag) => tag.name);
   if (attr === 'categories') return doc.categories;
   if (attr === 'brand') return doc.brand ? [doc.brand] : [];
   if (attr === 'tier') return doc.tier ? [doc.tier] : [];
@@ -139,6 +140,7 @@ export function searchSnapshot(
   const facetNames = p.facets?.includes('*')
     ? [
         'categories',
+        'tags.name',
         'brand',
         'tier',
         ...new Set(

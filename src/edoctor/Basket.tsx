@@ -61,7 +61,12 @@ export function BasketProvider({ children }: { children: ReactNode }) {
       value={{
         lines,
         ready,
-        clear: () => setLines([]),
+        clear: () => {
+          try {
+            localStorage.removeItem(BASKET_STORAGE_KEY);
+          } catch {}
+          setLines([]);
+        },
         quantity: (index, n) => {
           if (!Number.isInteger(n) || n < 0 || n > 20) return;
           setLines((current) =>

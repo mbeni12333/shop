@@ -71,6 +71,36 @@ export function useDiscoveryMotion(scope: RefObject<HTMLElement | null>) {
               '[data-interactive-art]',
             ) ?? [];
           const cleanup: (() => void)[] = [];
+          scope.current
+            ?.querySelectorAll<HTMLElement>('[data-hero-part]')
+            .forEach((part, index) => {
+              const enter = () => {
+                if (gsap.isTweening(part)) return;
+                gsap.to(part, {
+                  y: -18,
+                  scale: 1.1,
+                  rotation: index % 2 ? 5 : -5,
+                  duration: 0.35,
+                  ease: 'back.out(2)',
+                  overwrite: 'auto',
+                });
+              };
+              const leave = () => {
+                gsap.to(part, {
+                  y: 0,
+                  scale: 1,
+                  rotation: 0,
+                  duration: 0.45,
+                  overwrite: 'auto',
+                });
+              };
+              part.addEventListener('pointerenter', enter);
+              part.addEventListener('pointerleave', leave);
+              cleanup.push(() => {
+                part.removeEventListener('pointerenter', enter);
+                part.removeEventListener('pointerleave', leave);
+              });
+            });
           nodes.forEach((node) => {
             const art = node.querySelector('[data-art-layer]');
             if (!art) return;
