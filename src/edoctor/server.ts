@@ -1,9 +1,51 @@
-import { ApolloClient, InMemoryCache, HttpLink, gql } from '@apollo/client';
-import type { Product } from './model';
-import { researchCatalog, researchPreviewEnabled } from './research-catalog';
+import {
+  ApolloClient,
+  ApolloError,
+  InMemoryCache,
+  HttpLink,
+  gql,
+} from '@apollo/client';
+import type { Category, Product } from './model';
+import { previewUniverses } from './preview-universes';
 
 export const configured = () =>
   Boolean(process.env.GRAPHQL_URL || process.env.NEXT_PUBLIC_GRAPHQL_URL);
+
+let capability: { expires: number; available: boolean } | undefined;
+let capabilityRequest: Promise<boolean> | undefined;
+/** Missing WooGraphQL is a setup state; transport/server errors still propagate. */
+export async function commerceConfigured(): Promise<boolean> {
+  if (!configured()) return false;
+  if (capability && capability.expires > Date.now())
+    return capability.available;
+  if (!capabilityRequest) {
+    capabilityRequest = query(
+      'query StorefrontCapabilities { products(first: 1) { nodes { databaseId } } productCategories(first: 1) { nodes { slug } } }',
+    )
+      .then(() => true)
+      .catch((error: unknown) => {
+        if (
+          error instanceof ApolloError &&
+          error.graphQLErrors.some((item) =>
+            /Cannot query field "(?:products|productCategories)" on type "RootQuery"/.test(
+              item.message,
+            ),
+          )
+        )
+          return false;
+        throw error;
+      })
+      .then((available) => {
+        capability = { available, expires: Date.now() + 60_000 };
+        return available;
+      })
+      .finally(() => {
+        capabilityRequest = undefined;
+      });
+  }
+  return capabilityRequest;
+}
+
 export async function query<T>(
   source: string,
   variables: Record<string, unknown> = {},
@@ -31,6 +73,48 @@ export async function query<T>(
   });
   return result.data;
 }
+
+/** WooCommerce is the single source of truth for the taxonomy. */
+export async function categories(): Promise<Category[]> {
+  // Preserve the illustrated local design preview without seeding fake products.
+  // Never substitute this presentation list for a connected WooCommerce store.
+  if (!(await commerceConfigured())) return previewUniverses;
+  const result: {
+    productCategories: {
+      nodes: {
+        slug: string;
+        name: string;
+        description: string | null;
+        count: number;
+        image?: { sourceUrl: string } | null;
+      }[];
+    };
+  } = await query(`
+    query Categories {
+      productCategories(first: 100, where: { hideEmpty: false }) {
+        nodes { slug name description count image { sourceUrl } }
+      }
+    }
+  `);
+  return result.productCategories.nodes.map((node) => ({
+    slug: node.slug,
+    name: node.name,
+    description: plainText(node.description || ''),
+    count: node.count,
+    image: node.image?.sourceUrl || '',
+  }));
+}
+
+/**
+ * Categories indexed by slug. Callers that need a display name must read it
+ * from here rather than from a hardcoded table.
+ */
+export async function categoryIndex(): Promise<Map<string, Category>> {
+  return new Map(
+    (await categories()).map((category) => [category.slug, category]),
+  );
+}
+
 // edoctorDetails extends WooGraphQL Product with normalized HT prices and all variants.
 const fields = `databaseId slug name sku description(format: RAW) image { sourceUrl } edoctorDetails`;
 type Node = {
@@ -46,6 +130,7 @@ export function normalize(node: Node): Product {
   const detail = JSON.parse(node.edoctorDetails);
   return {
     ...detail,
+    categories: detail.categories ?? [],
     id: node.databaseId,
     slug: node.slug,
     name: node.name,
@@ -55,10 +140,7 @@ export function normalize(node: Node): Product {
   };
 }
 export async function catalog(): Promise<Product[]> {
-  if (!configured())
-    return researchPreviewEnabled()
-      ? researchCatalog().map(({ research: _details, ...product }) => product)
-      : [];
+  if (!(await commerceConfigured())) return [];
   let after: string | null = null;
   const all: Product[] = [];
   for (let page = 0; page < 100; page++) {
@@ -78,10 +160,7 @@ export async function catalog(): Promise<Product[]> {
   throw new Error('Pagination du catalogue trop volumineuse');
 }
 export async function productBySlug(slug: string): Promise<Product | null> {
-  if (!configured())
-    return researchPreviewEnabled()
-      ? researchCatalog().find((product) => product.slug === slug) || null
-      : null;
+  if (!(await commerceConfigured())) return null;
   const result = await query<{ product: Node | null }>(
     `query Product($slug:ID!){product(id:$slug,idType:SLUG){${fields}}}`,
     { slug },
@@ -95,7 +174,6 @@ export type Post = {
   content: string;
   excerpt: string;
   date: string;
-  edoctorLanguage: string;
 };
 export async function posts(): Promise<Post[]> {
   if (!configured()) return [];
@@ -108,7 +186,7 @@ export async function posts(): Promise<Post[]> {
         pageInfo: { hasNextPage: boolean; endCursor: string };
       };
     } = await query(
-      `query Posts($after:String){posts(first:100,after:$after,where:{status:PUBLISH}){nodes{databaseId slug title content excerpt date edoctorLanguage} pageInfo{hasNextPage endCursor}}}`,
+      `query Posts($after:String){posts(first:100,after:$after,where:{status:PUBLISH}){nodes{databaseId slug title content excerpt date} pageInfo{hasNextPage endCursor}}}`,
       { after },
     );
     all.push(...result.posts.nodes);

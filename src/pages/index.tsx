@@ -1,16 +1,35 @@
+import { Button } from '@/edoctor/ui/button';
+import { useMemo, useRef } from 'react';
 import Image from 'next/image';
 import Link from '@/edoctor/Link';
 import Shell from '@/edoctor/Shell';
 import { ProductGrid } from '@/edoctor/Catalog';
-import { categories, type Product } from '@/edoctor/model';
-import { catalog } from '@/edoctor/server';
-export default function Home({ products }: { products: Product[] }) {
+import { artFor, type Category, type Product } from '@/edoctor/model';
+import { catalog, categories as wooCategories } from '@/edoctor/server';
+import HardwareHero from '@/edoctor/HardwareHero';
+import { useDiscoveryMotion } from '@/edoctor/motion';
+export default function Home({
+  products,
+  categories,
+}: {
+  products: Product[];
+  categories: Category[];
+}) {
+  const scope = useRef<HTMLDivElement>(null);
+  useDiscoveryMotion(scope);
+  const index = useMemo(
+    () => new Map(categories.map((item) => [item.slug, item])),
+    [categories],
+  );
+  const featured = categories
+    .filter((category) => artFor(category.slug).featured)
+    .sort((a, b) => artFor(a.slug).order - artFor(b.slug).order);
   return (
     <Shell
       title="Votre prochain équipement commence ici"
-      noindex={products.some((product) => product.catalogSource === 'research')}
+      categories={categories}
     >
-      <div className="wrap">
+      <div className="wrap" ref={scope}>
         <section className="hero">
           <div className="hero-copy">
             <span className="eyebrow pill">
@@ -26,10 +45,10 @@ export default function Home({ products }: { products: Product[] }) {
               ressemble, avec un expert à vos côtés, de la France à l’Algérie.
             </p>
             <div className="actions">
-              <Link className="button" href="/categories">
-                Explorer la boutique ↗
-              </Link>
-              <Link className="text-link" href="/guide">
+              <Button asChild>
+                <Link href="/categories">Explorer la boutique ↗</Link>
+              </Button>
+              <Link className="text-link" href="/contact">
                 Je me laisse guider →
               </Link>
             </div>
@@ -38,16 +57,9 @@ export default function Home({ products }: { products: Product[] }) {
               éclairés.
             </div>
           </div>
-          <div className="hero-visual">
+          <div className="hero-visual" data-interactive-art>
             <div className="hero-orbit" />
-            <Image
-              src="/brand/hardware-setup.svg"
-              alt="Illustration d’un ordinateur, d’un écran, d’un clavier et d’une souris"
-              width={760}
-              height={560}
-              priority
-              sizes="(max-width:1023px) 90vw, 48vw"
-            />
+            <HardwareHero />
             <span className="floating-note">
               ✦ Bien équipé.
               <br />
@@ -76,32 +88,37 @@ export default function Home({ products }: { products: Product[] }) {
             </p>
           </div>
         </div>
-        <section className="section">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">À CHAQUE ENVIE, SON ÉQUIPEMENT</span>
-              <h2>
-                Entrez dans votre univers<span>.</span>
-              </h2>
+        {!!featured.length && (
+          <section className="section">
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow">À CHAQUE ENVIE, SON ÉQUIPEMENT</span>
+                <h2>
+                  Entrez dans votre univers<span>.</span>
+                </h2>
+              </div>
+              <Link className="text-link" href="/categories">
+                Tous les univers ↗
+              </Link>
             </div>
-            <Link className="text-link" href="/categories">
-              Tous les univers ↗
-            </Link>
-          </div>
-          <div className="universe-grid">
-            {[categories[0], categories[1], categories[3], categories[10]].map(
-              (c) => (
+            <div className="universe-grid">
+              {featured.map((category) => (
                 <Link
                   className="universe-card"
-                  key={c[0]}
-                  href={`/categorie/${c[0]}`}
+                  data-discover
+                  data-interactive-art
+                  key={category.slug}
+                  href={`/categorie/${category.slug}`}
                 >
                   <div>
-                    <h3>{c[1]}</h3>
-                    <span>{c[2]}</span>
+                    <h3>{category.name}</h3>
+                    <span>
+                      {category.description || artFor(category.slug).tagline}
+                    </span>
                   </div>
                   <Image
-                    src={`/univers/${c[3]}`}
+                    data-art-layer
+                    src={`/univers/${artFor(category.slug).art}`}
                     alt=""
                     width={400}
                     height={290}
@@ -111,28 +128,30 @@ export default function Home({ products }: { products: Product[] }) {
                     ↗
                   </span>
                 </Link>
-              ),
-            )}
-          </div>
-          <p className="caption">
-            Illustrations d’univers — les références exactes figurent sur les
-            fiches produits.
-          </p>
-        </section>
-        <section className="section selection">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">PENSÉ POUR VOUS</span>
-              <h2>
-                À découvrir chez EDoctor<span>.</span>
-              </h2>
+              ))}
             </div>
-            <Link className="text-link" href="/produits">
-              Voir la sélection ↗
-            </Link>
-          </div>
-          <ProductGrid products={products} />
-        </section>
+            <p className="caption">
+              Illustrations d’univers — les références exactes figurent sur les
+              fiches produits.
+            </p>
+          </section>
+        )}
+        {!!products.length && (
+          <section className="section selection">
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow">PENSÉ POUR VOUS</span>
+                <h2>
+                  À découvrir chez EDoctor<span>.</span>
+                </h2>
+              </div>
+              <Link className="text-link" href="/produits">
+                Voir la sélection ↗
+              </Link>
+            </div>
+            <ProductGrid products={products} categoriesBySlug={index} />
+          </section>
+        )}
         <section className="advice-banner">
           <div>
             <span className="eyebrow">PAS BESOIN D’ÊTRE UN EXPERT</span>
@@ -145,9 +164,9 @@ export default function Home({ products }: { products: Product[] }) {
               <br />
               On part de vous pour trouver le bon équipement.
             </p>
-            <Link className="button" href="/guide">
-              Trouver mon équipement ↗
-            </Link>
+            <Button asChild>
+              <Link href="/contact">Trouver mon équipement ↗</Link>
+            </Button>
           </div>
           <Image
             src="/brand/ed-welcome.png"
@@ -182,8 +201,12 @@ export default function Home({ products }: { products: Product[] }) {
   );
 }
 export async function getStaticProps() {
+  const [products, categories] = await Promise.all([
+    catalog(),
+    wooCategories(),
+  ]);
   return {
-    props: { products: (await catalog()).slice(0, 4) },
+    props: { products: products.slice(0, 4), categories },
     revalidate: 300,
   };
 }

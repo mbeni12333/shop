@@ -1,116 +1,100 @@
-import { useMemo } from 'react';
-import { instantMeiliSearch } from '@meilisearch/instant-meilisearch';
-import {
-  InstantSearch,
-  SearchBox,
-  Hits,
-  RefinementList,
-  Pagination,
-  Stats,
-  ClearRefinements,
-  useInstantSearch,
-} from 'react-instantsearch';
-import { ProductCard } from './Catalog';
-import type { Product } from './model';
-import { categoryName } from './model';
-import FilterPanel from './FilterPanel';
-function SearchStatus() {
-  const { status, error } = useInstantSearch({ catchError: true });
+import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+import { trackConversion } from './analytics';
+import { Command, CommandInput, CommandList } from './ui/command';
+
+const SearchResults = dynamic(() => import('./SearchResults'), {
+  ssr: false,
+  loading: () => (
+    <CommandList>
+      <p className="search-feedback" role="status">
+        Recherche…
+      </p>
+    </CommandList>
+  ),
+});
+
+export default function Search() {
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState('');
+  const input = useRef<HTMLInputElement>(null);
+  const root = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const shortcut = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+        event.preventDefault();
+        input.current?.focus();
+        setOpen(true);
+      }
+    };
+    const outside = (event: PointerEvent) => {
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const close = () => setOpen(false);
+    document.addEventListener('keydown', shortcut);
+    document.addEventListener('pointerdown', outside);
+    router.events.on('routeChangeStart', close);
+    return () => {
+      document.removeEventListener('keydown', shortcut);
+      document.removeEventListener('pointerdown', outside);
+      router.events.off('routeChangeStart', close);
+    };
+  }, [router.events]);
+  const go = (path: string) => {
+    trackConversion('search', { source: 'header' });
+    setOpen(false);
+    input.current?.blur();
+    void router.push(path);
+  };
   return (
-    <p role="status">
-      {status === 'error'
-        ? 'La recherche est momentanément indisponible. Consultez les catégories ou réessayez.'
-        : status === 'stalled'
-          ? 'Recherche en cours…'
-          : error
-            ? 'Une erreur est survenue.'
-            : ''}
-    </p>
-  );
-}
-export default function Search({ initialQuery }: { initialQuery: string }) {
-  const host = process.env.NEXT_PUBLIC_MEILI_URL;
-  const key = process.env.NEXT_PUBLIC_MEILI_SEARCH_KEY;
-  const client = useMemo(
-    () =>
-      host && key
-        ? instantMeiliSearch(host, key, {
-            primaryKey: 'id',
-            finitePagination: true,
-            httpClient: undefined,
-            requestInit: undefined,
-          }).searchClient
-        : null,
-    [host, key],
-  );
-  if (!client)
-    return (
-      <div className="notice">
-        La recherche se prépare. En attendant, explorez les univers depuis le
-        menu.
-      </div>
-    );
-  return (
-    <InstantSearch
-      searchClient={client}
-      indexName="products"
-      initialUiState={{ products: { query: initialQuery } }}
-      future={{ preserveSharedStateOnUnmount: true }}
+    <Command
+      ref={root}
+      shouldFilter={false}
+      loop
+      className="inline-search"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node))
+          setOpen(false);
+      }}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setOpen(false);
+        }
+      }}
     >
-      <span id="catalog-search-label" className="sr-only">
-        Rechercher dans le catalogue
-      </span>
-      <SearchBox
-        inputProps={{ 'aria-labelledby': 'catalog-search-label' }}
-        searchAsYouType
-        placeholder="Rechercher un produit, une marque, une référence…"
-        translations={{
-          submitButtonTitle: 'Rechercher',
-          resetButtonTitle: 'Effacer',
+      <CommandInput
+        ref={input}
+        value={query}
+        onValueChange={(value) => {
+          setQuery(value);
+          setOpen(true);
+        }}
+        onFocus={() => setOpen(true)}
+        onClick={() => setOpen(true)}
+        placeholder="Rechercher…"
+        aria-label="Rechercher un produit"
+        aria-expanded={open}
+        onKeyDown={(event) => {
+          if (
+            event.key === 'Enter' &&
+            query.trim() &&
+            (!open ||
+              !root.current?.querySelector('[cmdk-item][data-selected="true"]'))
+          ) {
+            event.preventDefault();
+            event.stopPropagation();
+            go('/recherche?q=' + encodeURIComponent(query.trim()));
+          }
         }}
       />
-      <div className="catalog-layout search-layout">
-        <FilterPanel>
-          <fieldset className="search-facet">
-            <legend>Catégorie</legend>
-            <RefinementList
-              attribute="category"
-              transformItems={(items) =>
-                items.map((item) => ({
-                  ...item,
-                  label: categoryName(item.value),
-                }))
-              }
-            />
-          </fieldset>
-          <fieldset className="search-facet">
-            <legend>Marque</legend>
-            <RefinementList attribute="brand" />
-          </fieldset>
-          <fieldset className="search-facet">
-            <legend>Gamme</legend>
-            <RefinementList attribute="tier" />
-          </fieldset>
-          <ClearRefinements
-            translations={{ resetButtonText: 'Effacer les filtres' }}
-          />
-        </FilterPanel>
-        <div className="catalog-results">
-          <SearchStatus />
-          <Stats
-            translations={{
-              rootElementText: ({ nbHits }) =>
-                `${nbHits} résultat${nbHits > 1 ? 's' : ''}`,
-            }}
-          />
-          <Hits
-            hitComponent={({ hit }) => (
-              <ProductCard product={hit as unknown as Product} />
-            )}
-          />
-          <Pagination />
+      {open && (
+        <div className="search-suggestions">
+          <SearchResults query={query} go={go} />
         </div>
-      </div>
-    </InstantSearch>
+      )}
+    </Command>
   );
 }

@@ -1,5 +1,15 @@
 # État des vérifications EDoctor
 
+## État actuel — 2 octobre 2026
+
+Le bilan courant est [DESIGN-READINESS.md](./DESIGN-READINESS.md) : interface shadcn/Radix et GSAP intégrée, 27 tests unitaires et 48 tests navigateur réussis, TypeScript, constructions, formatage et syntaxe PHP validés. Les neuf mesures Lighthouse mobiles donnent un CLS de 0 à 0,004 et des scores accessibilité, bonnes pratiques et SEO de 100 ; performance et LCP échouent encore aux seuils du projet.
+
+Les services commerciaux réels ne sont pas configurés localement. Le catalogue de validation est fictif ; aucun import, déploiement ou paiement réel n’a été effectué. Les 45 candidats recherchés restent bloqués à l’import. La page de recherche préparatoire, le Guide et le breadcrumb visible ont été supprimés.
+
+## Historique — ne décrit pas l’interface actuelle
+
+Les résultats ci-dessous sont conservés pour traçabilité. Les scénarios liés à l’ancien aperçu de recherche et à ses filtres ne sont plus des validations de la version courante.
+
 Vérifications locales du 1 octobre 2026, Windows, Node 24. Version actuelle : Next.js 16.3.8 ; les mesures historiques indiquées plus bas utilisent 16.2.12. Ce document distingue les résultats obtenus et les contrôles encore nécessaires.
 
 ## Résultats constatés

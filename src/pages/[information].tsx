@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { Button } from '@/edoctor/ui/button';
+import Link from '@/edoctor/Link';
 import Shell from '@/edoctor/Shell';
 const pages: Record<string, { title: string; sections: [string, string][] }> = {
   livraison: {
@@ -102,9 +103,9 @@ export default function Information({ slug }: { slug: string }) {
             <p>{text}</p>
           </section>
         ))}
-        <Link className="button" href="/contact">
-          Parlons de votre besoin ↗
-        </Link>
+        <Button asChild>
+          <Link href="/contact">Parlons de votre besoin ↗</Link>
+        </Button>
       </div>
     </Shell>
   );

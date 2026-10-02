@@ -1,141 +1,208 @@
-import { createHash } from 'node:crypto';
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-const host = process.env.MEILI_URL,
-  key = process.env.MEILI_ADMIN_KEY,
-  graphql = process.env.GRAPHQL_URL;
-const stateDir = process.env.SYNC_STATE_DIR || '.sync-state';
-if (!host || !key || !graphql)
-  throw new Error('MEILI_URL, MEILI_ADMIN_KEY and GRAPHQL_URL are required');
-async function api(path, method = 'GET', data) {
-  const r = await fetch(host + path, {
-    method,
-    headers: {
-      Authorization: `Bearer ${key}`,
-      'Content-Type': 'application/json',
-    },
-    ...(data ? { body: JSON.stringify(data) } : {}),
-    signal: AbortSignal.timeout(20000),
-  });
-  if (!r.ok) {
-    const e = new Error(`Meilisearch ${r.status}`);
-    e.status = r.status;
-    throw e;
-  }
-  return r.status === 204 ? {} : r.json();
+import { pathToFileURL } from 'node:url';
+
+export const attributeKey = (label) =>
+  `spec_${label
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/œ/g, 'oe')
+    .replace(/æ/g, 'ae')
+    .trim()
+    .replace(/[^a-z0-9]+/g, '_')}`;
+export function documentFromWoo(node) {
+  const detail = JSON.parse(node.edoctorDetails);
+  if (
+    !Number.isInteger(node.databaseId) ||
+    !node.slug ||
+    !node.name ||
+    !Array.isArray(detail.categories) ||
+    !detail.attributes ||
+    !(
+      detail.price === null ||
+      (Number.isFinite(detail.price) && detail.price >= 0)
+    )
+  )
+    throw new Error('Produit WooCommerce invalide : index précédent conservé');
+  return {
+    ...detail,
+    id: node.databaseId,
+    objectID: String(node.databaseId),
+    slug: node.slug,
+    name: node.name,
+    sku: node.sku || '',
+    description: (node.description || '').replace(/<[^>]*>/g, ''),
+    image: node.image?.sourceUrl || '',
+    facets: Object.fromEntries(
+      Object.entries(detail.attributes)
+        .filter(
+          ([label]) =>
+            !['marque', 'gamme', 'usage'].includes(label.toLowerCase()),
+        )
+        .map(([label, value]) => [
+          attributeKey(label),
+          String(value)
+            .split(',')
+            .map((item) => item.trim())
+            .filter(Boolean),
+        ]),
+    ),
+  };
 }
-async function wait(task) {
-  if (task.taskUid === undefined) return;
-  for (let i = 0; i < 120; i++) {
-    const t = await api(`/tasks/${task.taskUid}`);
-    if (t.status === 'succeeded') return;
-    if (t.status === 'failed' || t.status === 'canceled')
-      throw new Error(`Index task ${t.status}`);
-    await new Promise((r) => setTimeout(r, 500));
-  }
-  throw new Error('Index task timeout');
-}
-async function ensure(uid) {
-  try {
-    await api(`/indexes/${uid}`);
-  } catch (e) {
-    if (e.status !== 404) throw e;
-    await wait(await api('/indexes', 'POST', { uid, primaryKey: 'id' }));
-  }
-}
-async function products() {
-  const rows = [];
+
+export async function syncSearch({
+  graphqlURL,
+  meiliURL,
+  key,
+  fetcher = fetch,
+}) {
+  if (!graphqlURL || !meiliURL || !key)
+    throw new Error('Configurer GRAPHQL_URL, MEILI_URL et MEILI_ADMIN_KEY');
+  const api = async (path, method = 'GET', body) => {
+    const response = await fetcher(`${meiliURL.replace(/\/$/, '')}${path}`, {
+      method,
+      headers: {
+        Authorization: `Bearer ${key}`,
+        'Content-Type': 'application/json',
+      },
+      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!response.ok) {
+      const error = new Error(`Meilisearch : HTTP ${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
+    return response.status === 204 ? null : response.json();
+  };
+  const wait = async (task) => {
+    if (!Number.isInteger(task?.taskUid))
+      throw new Error('Tâche Meilisearch invalide');
+    for (let attempt = 0; attempt < 120; attempt++) {
+      const result = await api(`/tasks/${task.taskUid}`);
+      if (result.status === 'succeeded') return;
+      if (['failed', 'canceled'].includes(result.status))
+        throw new Error('Indexation échouée : index précédent conservé');
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    }
+    throw new Error('Indexation trop longue : index précédent conservé');
+  };
+  const documents = [];
   let after = null;
-  for (let page = 0; page < 100; page++) {
-    const r = await fetch(graphql, {
+  for (let page = 0; ; page++) {
+    if (page >= 100) throw new Error('Pagination WooGraphQL incomplète');
+    const response = await fetcher(graphqlURL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         query:
-          'query Index($after:String){products(first:100,after:$after,where:{status:"publish"}){nodes{databaseId slug name sku description(format:RAW) image{sourceUrl} edoctorDetails} pageInfo{hasNextPage endCursor}}}',
+          'query Catalog($after:String){products(first:100,after:$after,where:{status:"publish"}){nodes{databaseId slug name sku description image{sourceUrl} edoctorDetails} pageInfo{hasNextPage endCursor}}}',
         variables: { after },
       }),
-      signal: AbortSignal.timeout(20000),
+      signal: AbortSignal.timeout(15000),
     });
-    if (!r.ok) throw new Error(`GraphQL ${r.status}`);
-    const result = await r.json();
-    if (result.errors) throw new Error('GraphQL schema or backend error');
-    for (const p of result.data.products.nodes) {
-      if (!p.edoctorDetails) continue;
-      rows.push({
-        ...JSON.parse(p.edoctorDetails),
-        id: p.databaseId,
-        slug: p.slug,
-        name: p.name,
-        sku: p.sku || '',
-        description: p.description.replace(/<[^>]*>/g, ''),
-        image: p.image?.sourceUrl || '',
-      });
-    }
-    if (!result.data.products.pageInfo.hasNextPage) return rows;
-    after = result.data.products.pageInfo.endCursor;
+    if (!response.ok)
+      throw new Error('WooGraphQL indisponible : index précédent conservé');
+    const payload = await response.json();
+    if (
+      payload.errors?.length ||
+      !payload.data?.products?.pageInfo ||
+      !Array.isArray(payload.data.products.nodes)
+    )
+      throw new Error('Réponse WooGraphQL invalide');
+    documents.push(...payload.data.products.nodes.map(documentFromWoo));
+    const info = payload.data.products.pageInfo;
+    if (!info.hasNextPage) break;
+    if (!info.endCursor || info.endCursor === after)
+      throw new Error('Pagination WooGraphQL invalide');
+    after = info.endCursor;
   }
-  throw new Error('Catalog pagination limit');
-}
-async function sync() {
-  const rows = await products();
-  const digest = createHash('sha256')
-    .update(JSON.stringify(rows))
-    .digest('hex');
-  let previous = '';
+  if (new Set(documents.map((doc) => doc.id)).size !== documents.length)
+    throw new Error('Identifiants produits dupliqués');
+  const staging = `products_build_${Date.now()}`;
   try {
-    previous = await readFile(`${stateDir}/digest`, 'utf8');
-  } catch {}
-  await ensure('products');
-  // A saved digest can survive loss of the search volume. Check the live index
-  // before skipping, so unchanged WordPress data can rebuild an empty index.
-  const stats = await api('/indexes/products/stats');
-  if (
-    previous === digest &&
-    stats.numberOfDocuments === rows.length &&
-    !stats.isIndexing &&
-    !process.argv.includes('--force')
-  )
-    return;
-  await ensure('products_next');
-  await wait(await api('/indexes/products_next/documents', 'DELETE'));
-  await wait(
-    await api('/indexes/products_next/settings', 'PATCH', {
-      searchableAttributes: [
-        'name',
-        'sku',
-        'brand',
-        'description',
-        'attributes',
-      ],
-      filterableAttributes: ['category', 'brand', 'tier', 'stock', 'price'],
-      sortableAttributes: ['price', 'name'],
-      displayedAttributes: ['*'],
-    }),
-  );
-  for (let i = 0; i < rows.length; i += 100)
     await wait(
-      await api(
-        '/indexes/products_next/documents',
-        'POST',
-        rows.slice(i, i + 100),
-      ),
+      await api('/indexes', 'POST', { uid: staging, primaryKey: 'id' }),
     );
-  await wait(
-    await api('/swap-indexes', 'POST', [
-      { indexes: ['products', 'products_next'] },
-    ]),
-  );
-  await mkdir(stateDir, { recursive: true });
-  await writeFile(`${stateDir}/digest`, digest);
-  console.log(`Indexed ${rows.length} published products`);
-}
-do {
-  try {
-    await sync();
-  } catch (error) {
-    console.error('Search sync failed:', error.message);
-    if (!process.argv.includes('--watch')) process.exitCode = 1;
+    const attributes = [
+      ...new Set(
+        documents.flatMap((doc) =>
+          Object.keys(doc.facets).map((key) => `facets.${key}`),
+        ),
+      ),
+    ];
+    await wait(
+      await api(`/indexes/${staging}/settings`, 'PATCH', {
+        searchableAttributes: [
+          'name',
+          'sku',
+          'brand',
+          'description',
+          'attributes',
+        ],
+        filterableAttributes: [
+          'categories',
+          'brand',
+          'tier',
+          'price',
+          'stock',
+          ...attributes,
+        ],
+        sortableAttributes: ['price', 'name'],
+        pagination: { maxTotalHits: Math.max(1000, documents.length) },
+      }),
+    );
+    for (let offset = 0; offset < documents.length; offset += 500)
+      await wait(
+        await api(
+          `/indexes/${staging}/documents`,
+          'POST',
+          documents.slice(offset, offset + 500),
+        ),
+      );
+    try {
+      await api('/indexes/products');
+    } catch (error) {
+      if (error.status !== 404) throw error;
+      await wait(
+        await api('/indexes', 'POST', { uid: 'products', primaryKey: 'id' }),
+      );
+    }
+    await wait(
+      await api('/swap-indexes', 'POST', [{ indexes: ['products', staging] }]),
+    );
+    return { count: documents.length };
+  } finally {
+    try {
+      await wait(await api(`/indexes/${staging}`, 'DELETE'));
+    } catch {
+      /* Cleanup failure must not undo a successful swap. */
+    }
   }
-  if (process.argv.includes('--watch'))
-    await new Promise((r) => setTimeout(r, 60000));
-} while (process.argv.includes('--watch'));
+}
+
+async function main() {
+  const run = () =>
+    syncSearch({
+      graphqlURL: process.env.GRAPHQL_URL,
+      meiliURL: process.env.MEILI_URL,
+      key: process.env.MEILI_ADMIN_KEY,
+    });
+  do {
+    try {
+      const result = await run();
+      console.log(
+        `Index WooCommerce synchronisé : ${result.count} produits publiés.`,
+      );
+    } catch (error) {
+      console.error(error.message);
+      if (!process.argv.includes('--watch')) {
+        process.exitCode = 1;
+        break;
+      }
+    }
+    if (!process.argv.includes('--watch')) break;
+    await new Promise((resolve) => setTimeout(resolve, 60000));
+  } while (true);
+}
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href)
+  void main();

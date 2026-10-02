@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { Button } from '@/edoctor/ui/button';
+import Link from '@/edoctor/Link';
 import Shell from '@/edoctor/Shell';
 export default function Missing() {
   return (
@@ -7,9 +8,9 @@ export default function Missing() {
         <span className="eyebrow">404</span>
         <h1>On vous remet sur la bonne voie.</h1>
         <p>Cette page n’existe plus ou son adresse a changé.</p>
-        <Link className="button" href="/categories">
-          Explorer les univers ↗
-        </Link>
+        <Button asChild>
+          <Link href="/categories">Explorer les univers ↗</Link>
+        </Button>
       </div>
     </Shell>
   );

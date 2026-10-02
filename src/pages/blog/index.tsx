@@ -13,11 +13,7 @@ export default function Blog({ articles }: { articles: Post[] }) {
         <div className="blog-list">
           {articles.length ? (
             articles.map((p) => (
-              <article
-                key={p.databaseId}
-                lang={p.edoctorLanguage || 'fr'}
-                dir={p.edoctorLanguage === 'ar' ? 'rtl' : 'ltr'}
-              >
+              <article key={p.databaseId}>
                 <time dateTime={p.date}>
                   {new Date(p.date).toLocaleDateString('fr-FR', {
                     timeZone: 'Europe/Paris',

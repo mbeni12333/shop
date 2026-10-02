@@ -4,7 +4,7 @@ Boutique française de matériel informatique neuf, avec accompagnement export v
 
 ## Développement
 
-Node.js 24 et npm sont requis. Le verrou utilisé est `package-lock.json`. Le verrou pnpm historique est conservé avec ses modifications préexistantes, mais n’est pas utilisé par la construction EDoctor.
+Node.js 24 et npm sont requis. Le verrou utilisé est `package-lock.json`.
 
 ```sh
 npm ci --ignore-scripts
@@ -14,9 +14,17 @@ npm run dev
 
 Renseigner les variables selon [le guide de configuration](DOCS/EDOCTOR-SETUP.md). Sans backend configuré, les pages présentent des états vides explicites. Elles ne créent pas de faux produits, prix ou stocks.
 
-Pour examiner la boutique avec les références déjà étudiées, activer `EDOCTOR_RESEARCH_PREVIEW=1` dans `.env.local`, sans URL GraphQL, puis reconstruire. L’aperçu contient actuellement 45 références dans cinq catégories et deux photos fabricant autorisées. Les autres visuels restent signalés comme manquants. Aucun prix de vente ni stock n’est inventé ; le paiement et l’indexation sont désactivés. Un backend GraphQL configuré garde toujours la priorité.
+## Interface et recherche
 
-`npm run seed:generate` reconstruit cet aperçu à partir des fichiers de recherche et copie les photos dont la provenance a été validée. `npm run seed:check` vérifie que les données et photos correspondent aux sources. Ce mécanisme n’importe rien dans WooCommerce.
+Les composants shadcn/Radix partagent la palette, les rayons et les contrôles de 48 px d’EDoctor. La référence interne `/interne/design-system` est hors navigation et non indexée. Les illustrations d’univers restent des SVG EDoctor ; les commandes utilisent Lucide.
+
+GSAP anime la composition matérielle, les illustrations au pointeur, les apparitions de catégories et la confirmation panier. Les effets se nettoient au démontage et respectent la réduction des mouvements. Les panneaux Radix gardent leurs transitions CSS courtes ; aucune propriété n’est animée simultanément par CSS et GSAP.
+
+Une recherche globale fournit les suggestions. React InstantSearch gère les filtres, les budgets et le tri, avec une URL partageable et l’historique Next.js. Avec les deux variables publiques Meilisearch configurées, l’adaptateur officiel est utilisé. Sinon, les mêmes widgets interrogent exclusivement un instantané WooGraphQL ; le header passe par `/api/search`. Une panne Meilisearch affiche une erreur sans inventer de résultats.
+
+Le worker `node scripts/sync-search.mjs --watch` reconstruit un index temporaire à partir des produits WooCommerce publiés, attend les tâches et échange l’index atomiquement. La clé serveur reste hors navigateur.
+
+Les événements `edoctor:conversion` restent locaux et inactifs sans consentement explicite (`edoctor-analytics-consent=granted`). Brancher l’outil de mesure et son gestionnaire de consentement avant le suivi des conversions. Aucun texte de recherche ni identifiant client n’est envoyé.
 
 ## Vérifications
 
@@ -27,8 +35,6 @@ npm test
 npm run build
 npm run test:e2e
 npm run test:catalog
-npm run test:research
-npm run seed:check
 npm run catalog:audit
 ```
 
@@ -38,9 +44,7 @@ Le bridge PHP est également formaté. [Le suivi des dépendances](DOCS/DEPENDEN
 
 Les tests du catalogue construisent des fixtures fictives dans `.next-catalog-test`, séparément de la production. Ils ne certifient pas les paiements réels. [Le compte rendu de validation](DOCS/VALIDATION.md) précise les résultats et les vérifications encore nécessaires.
 
-Les tests de l’aperçu recherché construisent `.next-research-test` et contrôlent les filtres immédiats, les références, la recherche locale, le paiement fermé et la disposition ordinateur/mobile.
-
-Après construction de l’aperçu, `npm run lhci:research` mesure trois fois l’accueil, une catégorie peuplée et une fiche avec photo. Le contrôle refuse une construction sans données de recherche ; les rapports restent dans `lighthouse-research-reports`. Utiliser `CHROME_PATH` pour choisir le Chromium isolé de mesure.
+`node scripts/test-catalog.mjs --serve` fournit un aperçu isolé avec des références fictives clairement identifiées. `--skip-build` réutilise la construction de test. `--measure` mesure trois passages mobiles de l’accueil, d’une catégorie et d’un produit ; rapports dans `lighthouse-catalog-reports`.
 
 ## Organisation
 

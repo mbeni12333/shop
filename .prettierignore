@@ -8,8 +8,10 @@ node_modules/
 .sync-state/
 .local-archive/
 test-results/
+test-results-catalog/
 playwright-report/
 lighthouse-reports/
+lighthouse-catalog-reports/
 lighthouse-research-reports/
 screenshots/
 catalog/media-research/

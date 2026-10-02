@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   testMatch: '**/*.spec.ts',
-  testIgnore: ['**/catalog.spec.ts', '**/research-preview.spec.ts'],
+  testIgnore: ['**/catalog.spec.ts'],
   timeout: 30000,
   workers: 2,
   retries: process.env.CI ? 1 : 0,

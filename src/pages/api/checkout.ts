@@ -1,17 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { createHmac, randomBytes } from 'node:crypto';
 import { sameOrigin, validateLines } from '@/edoctor/security';
-import { researchPreviewEnabled } from '@/edoctor/research-catalog';
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
   if (!sameOrigin(req, res)) return;
-  if (researchPreviewEnabled())
-    return res.status(503).json({
-      error:
-        'Le paiement est désactivé dans cet aperçu. Contactez EDoctor pour confirmer votre sélection.',
-    });
   if (!validateLines(req.body?.lines))
     return res.status(400).json({
       error: 'Le panier contient des lignes invalides. Actualisez-le.',

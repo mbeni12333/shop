@@ -2,6 +2,11 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Shell from '@/edoctor/Shell';
 import Image from 'next/image';
+import { Button } from '@/edoctor/ui/button';
+import { Checkbox } from '@/edoctor/ui/checkbox';
+import { Input } from '@/edoctor/ui/input';
+import { Label } from '@/edoctor/ui/label';
+import { Textarea } from '@/edoctor/ui/textarea';
 export default function Contact() {
   const router = useRouter();
   const [status, setStatus] = useState('');
@@ -47,28 +52,31 @@ export default function Contact() {
                 }
               }}
             >
-              <label>
-                Votre nom
-                <input
+              <div className="filter-field">
+                <Label htmlFor="contact-name">Votre nom</Label>
+                <Input
+                  id="contact-name"
                   name="name"
                   autoComplete="name"
                   required
                   maxLength={100}
                 />
-              </label>
-              <label>
-                Votre adresse e-mail
-                <input
+              </div>
+              <div className="filter-field">
+                <Label htmlFor="contact-email">Votre adresse e-mail</Label>
+                <Input
+                  id="contact-email"
                   name="email"
                   type="email"
                   autoComplete="email"
                   required
                   maxLength={200}
                 />
-              </label>
-              <label>
-                Votre projet
-                <textarea
+              </div>
+              <div className="filter-field">
+                <Label htmlFor="contact-message">Votre projet</Label>
+                <Textarea
+                  id="contact-message"
                   name="message"
                   required
                   maxLength={4000}
@@ -80,19 +88,26 @@ export default function Contact() {
                   }
                   key={String(router.query.produit || '')}
                 />
-              </label>
+              </div>
               <label className="honeypot" aria-hidden>
                 Site internet
                 <input name="website" tabIndex={-1} autoComplete="off" />
               </label>
-              <label>
-                <input type="checkbox" name="consent" value="yes" required />
-                J’accepte l’utilisation de ces informations pour répondre à ma
-                demande.
-              </label>
-              <button className="button" disabled={busy}>
+              <div className="filter-choice">
+                <Checkbox
+                  id="contact-consent"
+                  name="consent"
+                  value="yes"
+                  required
+                />
+                <Label htmlFor="contact-consent" className="font-normal">
+                  J’accepte l’utilisation de ces informations pour répondre à ma
+                  demande.
+                </Label>
+              </div>
+              <Button disabled={busy}>
                 {busy ? 'Envoi en cours…' : 'Envoyer ma demande ↗'}
-              </button>
+              </Button>
               <p role="status">{status}</p>
             </form>
             {process.env.NEXT_PUBLIC_WHATSAPP && (

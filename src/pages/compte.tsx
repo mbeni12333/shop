@@ -1,3 +1,4 @@
+import { Button } from '@/edoctor/ui/button';
 import Shell from '@/edoctor/Shell';
 export default function Account({ url }: { url: string }) {
   return (
@@ -9,9 +10,9 @@ export default function Account({ url }: { url: string }) {
           WooCommerce sécurisé.
         </p>
         {url ? (
-          <a className="button" href={url}>
-            Accéder à mon compte ↗
-          </a>
+          <Button asChild>
+            <a href={url}>Accéder à mon compte ↗</a>
+          </Button>
         ) : (
           <p className="notice">
             L’espace client sera disponible à l’ouverture de la boutique.

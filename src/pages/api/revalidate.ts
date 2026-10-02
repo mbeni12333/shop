@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { equalSecret } from '@/edoctor/security';
-import { categories } from '@/edoctor/model';
+import { categories } from '@/edoctor/server';
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -22,15 +23,16 @@ export default async function handler(
     )
   )
     return res.status(400).json({ error: 'Slugs invalides' });
-  const paths = [
-    '/',
-    '/produits',
-    '/guide',
-    '/blog',
-    ...categories.map((c) => `/categorie/${c[0]}`),
-    ...slugs.flatMap((s) => [`/produit/${s}`, `/blog/${s}`]),
-  ];
   try {
+    const arts = await categories();
+    const paths = [
+      '/',
+      '/produits',
+      '/blog',
+      '/categories',
+      ...arts.map((c) => `/categorie/${c.slug}`),
+      ...slugs.flatMap((s) => [`/produit/${s}`, `/blog/${s}`]),
+    ];
     for (const path of paths) await res.revalidate(path);
     return res.json({ ok: true });
   } catch {

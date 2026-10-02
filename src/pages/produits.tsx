@@ -1,20 +1,34 @@
+import { useMemo } from 'react';
 import Shell from '@/edoctor/Shell';
 import { Catalog } from '@/edoctor/Catalog';
-import { catalog } from '@/edoctor/server';
-import type { Product } from '@/edoctor/model';
-export default function Products({ products }: { products: Product[] }) {
+import { catalog, categories as wooCategories } from '@/edoctor/server';
+import type { Category, Product } from '@/edoctor/model';
+
+export default function Products({
+  products,
+  categories,
+}: {
+  products: Product[];
+  categories: Category[];
+}) {
+  const index = useMemo(
+    () => new Map(categories.map((item) => [item.slug, item])),
+    [categories],
+  );
   return (
-    <Shell
-      title="Tous les produits"
-      noindex={products.some((product) => product.catalogSource === 'research')}
-    >
+    <Shell title="Tous les produits" categories={categories}>
       <div className="wrap page-section">
         <h1>Votre prochain équipement.</h1>
-        <Catalog products={products} />
+        <Catalog products={products} categoriesBySlug={index} />
       </div>
     </Shell>
   );
 }
+
 export async function getStaticProps() {
-  return { props: { products: await catalog() }, revalidate: 300 };
+  const [products, categories] = await Promise.all([
+    catalog(),
+    wooCategories(),
+  ]);
+  return { props: { products, categories }, revalidate: 300 };
 }

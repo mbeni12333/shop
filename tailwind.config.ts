@@ -1,34 +1,66 @@
 import type { Config } from 'tailwindcss';
 
-/** EDoctor tokens mirror website/edoctor-design-system/theme.css. */
+/**
+ * EDoctor tokens. The hex values live once, as HSL channels in
+ * src/styles/edoctor.css `:root`; this file only wires them to semantic names.
+ * Palette mirrors website/edoctor-design-system/theme.css.
+ */
 const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: '1.5rem 2rem',
+      screens: { '2xl': '1920px' },
+    },
     extend: {
       colors: {
-        ed: {
-          bg: '#FCFBFE',
-          surface: '#FFFFFF',
-          soft: '#F2EDFC',
-          ink: '#242033',
-          muted: '#686274',
-          purple: '#6840C6',
-          'purple-hover': '#5330A6',
-          pale: '#E8DFF9',
-          border: '#DDD7E6',
-          control: '#898092',
-          green: '#27634B',
-          'green-bg': '#E9F3ED',
-          red: '#AC3045',
-          'red-bg': '#FFF0F2',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+          strong: 'hsl(var(--primary-strong))',
         },
-        // Aliases retain compatibility with the repository's shared components.
-        primary: { DEFAULT: '#6840C6', light: '#E8DFF9', dark: '#5330A6' },
-        surface: { DEFAULT: '#FFFFFF', alt: '#F2EDFC' },
-        border: '#DDD7E6',
-        text: { DEFAULT: '#242033', muted: '#686274' },
-        success: '#27634B',
-        error: '#AC3045',
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          foreground: 'hsl(var(--success-foreground))',
+          surface: 'hsl(var(--success-surface))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+      },
+      // --radius 12px gives: sm 8px (controls), md 10px, lg 12px,
+      // 2xl 16px (cards), 3xl 24px (sections) from Tailwind defaults.
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: { sans: ['Segoe UI', 'Arial', 'sans-serif'] },
       fontSize: {
@@ -42,12 +74,41 @@ const config: Config = {
         hero: ['clamp(2.6rem, 4.6vw, 4.5rem)', { lineHeight: '1.08' }],
       },
       maxWidth: { page: '1920px', reading: '700px' },
-      minHeight: { touch: '44px', control: '48px' },
-      borderRadius: { control: '8px', card: '16px', section: '24px' },
-      transitionDuration: { ed: '160ms' },
-      boxShadow: { float: '0 12px 32px rgb(36 32 51 / 8%)' },
+      spacing: { touch: 'var(--control-size)' },
+      minHeight: {
+        touch: 'var(--control-size)',
+        control: 'var(--control-size)',
+      },
+      transitionDuration: { ed: 'var(--motion-fast)' },
+      boxShadow: { float: '0 12px 32px hsl(var(--shadow) / 8%)' },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+        'slide-in-from-left': {
+          from: { transform: 'translateX(-100%)' },
+          to: { transform: 'translateX(0)' },
+        },
+        'slide-in-from-right': {
+          from: { transform: 'translateX(100%)' },
+          to: { transform: 'translateX(0)' },
+        },
+        'fade-in': { from: { opacity: '0' }, to: { opacity: '1' } },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 200ms ease-out',
+        'accordion-up': 'accordion-up 200ms ease-out',
+        'slide-in-from-left': 'slide-in-from-left 240ms ease-out',
+        'slide-in-from-right': 'slide-in-from-right 240ms ease-out',
+        'fade-in': 'fade-in 160ms ease-out',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 };
 export default config;

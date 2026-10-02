@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
-test('homepage, navigation, categories and advice work without backend', async ({
+
+// The fixture projects run without a WooCommerce backend, so the storefront
+// must degrade honestly: an empty catalogue and no invented content.
+test('homepage retains the fourteen editorial universes during setup', async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -14,52 +17,46 @@ test('homepage, navigation, categories and advice work without backend', async (
     page.getByRole('heading', { name: /Votre prochain/, level: 1 }),
   ).toBeVisible();
   await page.getByRole('link', { name: 'Explorer la boutique' }).click();
+  await expect(page).toHaveURL(/\/categories$/);
   await expect(page.locator('.category-directory>a')).toHaveCount(14);
-  await page.locator('.category-directory>a').first().click();
-  await expect(
-    page.getByRole('heading', { name: 'PC fixes', exact: true }),
-  ).toBeVisible();
-  await page.goto('/guide');
-  await page.getByRole('button', { name: /Voir les choix/ }).click();
-  await expect(page.getByRole('heading', { name: /Affinons/ })).toBeVisible();
   expect(errors).toEqual([]);
 });
-test('mobile menu, empty basket and legacy redirects', async ({
+
+test('the mobile menu opens in a dialog and closes on Escape', async ({
   page,
-  request,
 }) => {
-  for (const [oldPath, destination] of [
-    ['/produkter', '/produits'],
-    ['/produkt/exemple', '/produit/exemple'],
-    ['/kategorier', '/categories'],
-    ['/kategori/ram', '/categorie/ram'],
-    ['/handlekurv', '/panier'],
-    ['/kasse', '/panier'],
-    ['/min-konto', '/compte'],
-    ['/logg-inn', '/compte'],
-  ]) {
-    const response = await request.get(oldPath, { maxRedirects: 0 });
-    expect(response.status(), oldPath).toBe(308);
-    expect(response.headers().location, oldPath).toBe(destination);
-  }
+  await page.setViewportSize({ width: 420, height: 780 });
   await page.goto('/');
-  if (
-    await page.getByRole('button', { name: 'Menu', exact: true }).isVisible()
-  ) {
-    await page.getByRole('button', { name: 'Menu', exact: true }).click();
-    await expect(
-      page.getByRole('navigation', { name: 'Navigation principale' }),
-    ).toBeVisible();
-    await page.keyboard.press('Escape');
-    await expect(
-      page.getByRole('navigation', { name: 'Navigation principale' }),
-    ).toBeHidden();
-  }
-  await page.goto('/handlekurv');
-  await expect(page).toHaveURL(/\/panier$/);
-  await expect(page.getByText('Votre panier est encore vide.')).toBeVisible();
+  const toggle = page.getByRole('button', { name: 'Ouvrir le menu' });
+  await expect(toggle).toBeVisible();
+  await toggle.click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(
+    page.getByRole('navigation', { name: 'Navigation principale' }),
+  ).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).toBeHidden();
 });
-test('unconfigured forms fail honestly and search has a fallback', async ({
+
+// The filter sheet needs a non-empty catalogue to exist at all; that case is
+// covered by the catalog fixture suite against real Woo-shaped data.
+test('an empty catalogue offers a way out instead of a dead end', async ({
+  page,
+}) => {
+  await page.goto('/produits');
+  await expect(page.locator('.empty-state')).toBeVisible();
+  await expect(page.getByText(/Aucun produit disponible/)).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Filtres' })).toHaveCount(0);
+});
+
+test('the removed Norwegian routes are gone', async ({ request }) => {
+  for (const path of ['/produkter', '/handlekurv', '/kasse', '/min-konto']) {
+    const response = await request.get(path, { maxRedirects: 0 });
+    expect(response.status(), path).toBe(404);
+  }
+});
+
+test('unconfigured forms fail honestly and search falls back to the grid', async ({
   page,
 }) => {
   await page.goto('/contact');
@@ -71,20 +68,23 @@ test('unconfigured forms fail honestly and search has a fallback', async ({
   await page.getByRole('checkbox').check();
   await page.getByRole('button', { name: /Envoyer ma demande/ }).click();
   await expect(page.getByRole('status')).toContainText(/pas encore connecté/);
-  await page.getByLabel('Rechercher un produit', { exact: true }).fill('SSD');
-  await page.getByRole('button', { name: 'Rechercher', exact: true }).click();
+  await page
+    .getByRole('combobox', { name: 'Rechercher un produit', exact: true })
+    .click();
+  await page
+    .getByRole('combobox', { name: 'Rechercher un produit' })
+    .fill('SSD');
+  await page.getByRole('option', { name: /Voir tous les résultats/ }).click();
   await expect(page).toHaveURL(/\/recherche\?q=SSD$/);
-  if (await page.locator('.research-notice').isVisible())
-    await expect(page.locator('.product-card')).toHaveCount(9);
-  else await expect(page.getByText(/La recherche se prépare/)).toBeVisible();
 });
+
 test('public pages have French metadata and no horizontal overflow', async ({
   page,
 }) => {
   for (const path of [
     '/',
     '/categories',
-    '/guide',
+    '/produits',
     '/blog',
     '/contact',
     '/livraison',

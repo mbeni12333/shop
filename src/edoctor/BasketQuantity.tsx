@@ -1,5 +1,8 @@
 import { useEffect, useId, useState } from 'react';
 
+import { Input } from '@/edoctor/ui/input';
+import { Label } from '@/edoctor/ui/label';
+
 export default function BasketQuantity({
   name,
   value,
@@ -12,6 +15,7 @@ export default function BasketQuantity({
   const [draft, setDraft] = useState(String(value));
   const [error, setError] = useState('');
   const errorId = useId();
+  const inputId = useId();
   useEffect(() => {
     setDraft(String(value));
   }, [value]);
@@ -19,9 +23,10 @@ export default function BasketQuantity({
     /^\d+$/.test(text) && Number(text) >= 1 && Number(text) <= 20;
   return (
     <div className="basket-quantity">
-      <label>
-        Quantité
-        <input
+      <div className="filter-field">
+        <Label htmlFor={inputId}>Quantité</Label>
+        <Input
+          id={inputId}
           aria-label={`Quantité ${name}`}
           type="number"
           inputMode="numeric"
@@ -47,7 +52,7 @@ export default function BasketQuantity({
             if (event.key === 'Enter') event.currentTarget.blur();
           }}
         />
-      </label>
+      </div>
       {error && (
         <p id={errorId} role="status" className="quantity-error">
           {error}

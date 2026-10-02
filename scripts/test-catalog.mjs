@@ -3,7 +3,7 @@ import { spawn } from 'node:child_process';
 import { readFile, writeFile } from 'node:fs/promises';
 
 // Deliberately fictional fixtures, used only by this loopback test backend.
-const node = (id, name, category, overrides = {}) => ({
+const node = (id, name, categories, overrides = {}) => ({
   databaseId: id,
   slug: `test-${id}`,
   name,
@@ -11,7 +11,7 @@ const node = (id, name, category, overrides = {}) => ({
   description: 'Référence fictive réservée aux tests. Aucun prix commercial.',
   image: null,
   edoctorDetails: JSON.stringify({
-    category,
+    categories,
     brand: 'Marque test',
     tier: 'Milieu de gamme',
     price: 200,
@@ -24,22 +24,22 @@ const node = (id, name, category, overrides = {}) => ({
   }),
 });
 const products = [
-  node(1, 'Processeur test AM4', 'processeurs', {
+  node(1, 'Processeur test AM4', ['processeurs'], {
     price: 100,
     attributes: { Socket: 'AM4', Cœurs: '6', TDP: '65 W' },
   }),
-  node(2, 'Processeur test AM5', 'processeurs', { price: 230 }),
-  node(3, 'Processeur test LGA', 'processeurs', {
+  node(2, 'Processeur test AM5', ['processeurs'], { price: 230 }),
+  node(3, 'Processeur test LGA', ['processeurs'], {
     brand: 'Autre marque test',
     tier: 'Haut de gamme',
     price: 500,
     attributes: { Socket: 'LGA1851', Cœurs: '24', TDP: '125 W' },
   }),
-  node(4, 'Processeur test sur demande', 'processeurs', {
+  node(4, 'Processeur test sur demande', ['processeurs'], {
     price: null,
     purchasable: false,
   }),
-  node(5, 'Portable test configurable', 'portables', {
+  node(5, 'Portable test configurable', ['portables'], {
     price: null,
     attributes: { RAM: '16 Go, 32 Go', Stockage: '1 To' },
     variations: [
@@ -48,21 +48,48 @@ const products = [
       { id: 53, name: '64 Go — 2 To', price: 1400, stock: false },
     ],
   }),
-  node(6, 'Portable test indisponible', 'portables', {
+  node(6, 'Portable test indisponible', ['portables'], {
     stock: false,
     price: 600,
   }),
+  // A product filed under two WooCommerce categories at once.
+  node(7, 'Processeur test polyvalent', ['processeurs', 'pc-fixes'], {
+    price: 300,
+  }),
+];
+// WooCommerce owns the taxonomy; the storefront only maps slugs to artwork.
+const categories = [
+  {
+    slug: 'pc-fixes',
+    name: 'PC fixes',
+    description: 'Un ordinateur à votre mesure',
+    count: 1,
+    image: null,
+  },
+  {
+    slug: 'portables',
+    name: 'Portables',
+    description: 'La puissance vous accompagne',
+    count: 2,
+    image: null,
+  },
+  {
+    slug: 'processeurs',
+    name: 'Processeurs',
+    description: 'Le cœur de votre configuration',
+    count: 5,
+    image: null,
+  },
 ];
 const posts = [
   {
     databaseId: 101,
-    slug: 'article-arabe-test',
-    title: 'اختيار المعالج',
+    slug: 'article-test',
+    title: 'Choisir son processeur',
     date: '2026-10-01T10:00:00',
-    edoctorLanguage: 'ar',
-    excerpt: '<p>دليل تجريبي</p>',
+    excerpt: '<p>Guide fictif de test.</p>',
     content:
-      '<p>معالج <bdi dir="ltr">Ryzen 7 — 32 Go — 120 Hz</bdi> يناسب استخدامك.</p><script>window.fixtureUnsafe=true</script>',
+      '<p>Un processeur <bdi dir="ltr">Ryzen 7 — 32 Go — 120 Hz</bdi> convient à votre usage.</p><script>window.fixtureUnsafe=true</script>',
   },
 ];
 let queries = 0;
@@ -73,7 +100,11 @@ const server = createServer(async (request, response) => {
     const { query, variables = {} } = JSON.parse(body);
     queries++;
     let data;
-    if (query.includes('query Catalog'))
+    if (query.includes('query StorefrontCapabilities'))
+      data = { products: { nodes: [] }, productCategories: { nodes: [] } };
+    else if (query.includes('query Categories'))
+      data = { productCategories: { nodes: categories } };
+    else if (query.includes('query Catalog'))
       data = {
         products: {
           nodes: products,
@@ -109,13 +140,13 @@ const previousNextEnv = await readFile('next-env.d.ts', 'utf8').catch(
 );
 const env = {
   ...process.env,
-  EDOCTOR_TEST_BUILD: '1',
+  EDOCTOR_BUILD_DIR: '.next-catalog-test',
+  NEXT_PUBLIC_MEILI_URL: '',
+  NEXT_PUBLIC_MEILI_SEARCH_KEY: '',
   GRAPHQL_URL: 'http://127.0.0.1:3111/graphql',
   NEXT_PUBLIC_SITE_URL: 'http://127.0.0.1:3112',
   CHECKOUT_SECRET: '',
   WORDPRESS_URL: '',
-  NEXT_PUBLIC_MEILI_URL: 'http://127.0.0.1:3111',
-  NEXT_PUBLIC_MEILI_SEARCH_KEY: 'fixture-search-only-key',
 };
 function run(script, args) {
   return new Promise((resolve, reject) => {
@@ -130,11 +161,28 @@ function run(script, args) {
   });
 }
 try {
-  await run('node_modules/next/dist/bin/next', ['build', '--webpack']);
-  await run('node_modules/@playwright/test/cli.js', [
-    'test',
-    '--config=playwright.catalog.config.ts',
-  ]);
+  if (!process.argv.includes('--skip-build'))
+    await run('node_modules/next/dist/bin/next', ['build', '--webpack']);
+  if (process.argv.includes('--serve')) {
+    console.log('Catalogue fictif de vérification : http://127.0.0.1:3112');
+    await run('node_modules/next/dist/bin/next', [
+      'start',
+      '--hostname',
+      '127.0.0.1',
+      '--port',
+      '3112',
+    ]);
+  } else if (process.argv.includes('--measure')) {
+    env.CHROME_PATH = (await import('playwright')).chromium.executablePath();
+    await run('node_modules/@lhci/cli/src/cli.js', [
+      'autorun',
+      '--config=lighthouserc.catalog.cjs',
+    ]);
+  } else
+    await run('node_modules/@playwright/test/cli.js', [
+      'test',
+      '--config=playwright.catalog.config.ts',
+    ]);
   if (!queries) throw new Error('The fixture backend was never queried');
   console.log(
     `Catalog fixture suite completed with ${queries} GraphQL requests. No real WooCommerce was modified.`,

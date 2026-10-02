@@ -39,9 +39,11 @@ yarn-error.log*
 *.tsbuildinfo
 .lighthouseci/
 lighthouse-reports/
+lighthouse-catalog-reports/
 lighthouse-research-reports/
 next-env.d.ts
 /test-results/
+/test-results-catalog/
 /playwright-report/
 /playwright/.cache/
 src/pages/registrer.tsx

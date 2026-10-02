@@ -12,7 +12,7 @@ Meilisearch est un index de recherche public dérivé du catalogue GraphQL, pas 
 
 1. Copier `.env.example` vers `.env.local`, sans versionner de secrets. Renseigner `GRAPHQL_URL`, `WORDPRESS_URL`, `SITE_URL` et les paramètres publics. `SITE_URL` doit être l'origine exacte du navigateur, protocole et port compris.
 2. Installer WooCommerce, WPGraphQL, WooGraphQL et le plugin EDoctor sur un WordPress de test. Vérifier la compatibilité de leurs versions et du champ `Product.edoctorDetails` dans l'éditeur GraphQL.
-3. Créer les quatorze catégories avec les slugs de `src/edoctor/model.ts`. Créer les attributs Marque, Gamme, Usage et les attributs techniques homogènes. Les usages du guide sont les valeurs utilisées par ses règles.
+3. Créer les quatorze catégories avec les slugs de `src/edoctor/model.ts`. Créer les attributs Marque, Gamme, Usage et les attributs techniques homogènes. Le Guide ED a été retiré.
 4. Configurer une page de paiement WooCommerce classique avec le shortcode `[woocommerce_checkout]`. L'intégration du paiement accompagné aux blocs Checkout n'est pas fournie. Utiliser des comptes et passerelles de test.
 5. Ajouter dans `wp-config.php`, avant la fin de configuration, des constantes `EDOCTOR_CHECKOUT_SECRET`, `EDOCTOR_REVALIDATE_SECRET`, `EDOCTOR_STOREFRONT_URL`, `EDOCTOR_COMMERCE_READY` et `EDOCTOR_EXPORT_READY`. Les secrets doivent correspondre à ceux du serveur Next.js ; garder les deux drapeaux à `false` jusqu'à validation commerciale.
 6. Exécuter `npm ci`, `npm run build`, `npm test`, puis `npm run test:e2e`. Le dernier contrôle démarre sa propre version compilée sur le port 3107, sans backend commercial.
@@ -21,19 +21,15 @@ Le transfert de panier utilise un jeton HMAC court et à usage unique, envoyé p
 
 ## Paramètres et clés
 
-### Aperçu des références recherchées
+### Catalogue préparatoire
 
-`EDOCTOR_RESEARCH_PREVIEW=1` active le catalogue local préparatoire uniquement lorsque `GRAPHQL_URL` et `NEXT_PUBLIC_GRAPHQL_URL` sont absentes. Les pages sont générées lors de la construction : reconstruire après tout changement de mode et garder le même paramètre au démarrage. En mode normal, ne pas activer cette option sur la boutique commerciale.
-
-Le fichier `src/data/research-products.json` est généré depuis `catalog/research`. Il contient les 45 références actuellement documentées, leurs caractéristiques et les liens de provenance. Les deux photos validées sont copiées sans modification dans `public/research-products`. Les prix observés pendant la recherche ne deviennent pas des prix de vente ; stocks et achats restent désactivés. L’aperçu refuse le paiement, fournit `noindex` sur les pages produits et ferme sitemap/robots à l’indexation.
-
-Après ajout ou correction d’une recherche, lancer `npm run catalog:audit`, `npm run seed:generate`, puis `npm run seed:check`. Les produits doivent conserver des références distinctes et des données inconnues explicites. Aucun import WooCommerce n’est effectué.
+Les 45 références documentées dans `catalog/research` restent un travail de préparation. Elles ne sont plus injectées comme aperçu commercial. `npm run catalog:audit` bloque l’export tant que les identités, photos autorisées, prix et disponibilité restent incomplets. Le design se vérifie avec `npm run test:catalog`, sans modifier WooCommerce.
 
 ### Configuration commerciale
 
 `NEXT_PUBLIC_*` et `IMAGE_HOSTS` sont intégrés pendant la construction : reconstruire l'image après modification. `IMAGE_HOSTS` contient les hôtes HTTPS des photos séparés par des virgules. Les secrets et URL serveur sont fournis à l'exécution.
 
-La clé Meilisearch exposée au navigateur n'autorise que `search` sur `products`. La clé du worker autorise les opérations d'indexation, réglages, statistiques, tâches et échange (`indexes.swap`) sur `products` et `products_next`. La clé maître reste dans le service Meilisearch. Restreindre les clés, servir la recherche en HTTPS, ne jamais compiler une clé maître ou d'indexation dans Next.js. Voir les [droits des clés](https://specs.meilisearch.dev/specifications/text/0085-api-keys.html) et [l'échange d'index](https://www.meilisearch.com/blog/zero-downtime-index-deployment).
+La clé Meilisearch exposée au navigateur n'autorise que `search` sur `products`. La clé du worker autorise les opérations d'indexation, réglages, statistiques, tâches et échange (`indexes.swap`) sur `products` et `products_build_*`. La clé maître reste dans le service Meilisearch. Restreindre les clés, servir la recherche en HTTPS, ne jamais compiler une clé maître ou d'indexation dans Next.js. Voir les [droits des clés](https://specs.meilisearch.dev/specifications/text/0085-api-keys.html) et [l'échange d'index](https://www.meilisearch.com/blog/zero-downtime-index-deployment).
 
 ## Docker et Coolify
 

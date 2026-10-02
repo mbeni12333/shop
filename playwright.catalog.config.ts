@@ -2,6 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   testMatch: '**/catalog.spec.ts',
+  outputDir: 'test-results-catalog',
   timeout: 30000,
   workers: 2,
   reporter: [
@@ -20,7 +21,7 @@ export default defineConfig({
     reuseExistingServer: false,
     timeout: 120000,
     env: {
-      EDOCTOR_TEST_BUILD: '1',
+      EDOCTOR_BUILD_DIR: '.next-catalog-test',
       GRAPHQL_URL: 'http://127.0.0.1:3111/graphql',
       SITE_URL: 'http://127.0.0.1:3112',
     },

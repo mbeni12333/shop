@@ -1,9 +1,9 @@
-import { catalog, posts } from '@/edoctor/server';
-import { categories } from '@/edoctor/model';
-import { researchPreviewEnabled } from '@/edoctor/research-catalog';
+import { catalog, categories, posts } from '@/edoctor/server';
+
 export default function Sitemap() {
   return null;
 }
+
 const xml = (s: string) =>
   s.replace(
     /[<>&'\"]/g,
@@ -16,6 +16,7 @@ const xml = (s: string) =>
         '"': '&quot;',
       })[c]!,
   );
+
 export async function getServerSideProps({
   res,
 }: {
@@ -27,24 +28,27 @@ export async function getServerSideProps({
   };
 }) {
   const origin = process.env.NEXT_PUBLIC_SITE_URL;
-  if (!origin || researchPreviewEnabled()) {
+  if (!origin) {
     res.statusCode = 503;
     res.end();
     return { props: {} };
   }
   try {
-    const [products, articles] = await Promise.all([catalog(), posts()]);
+    const [products, arts, articles] = await Promise.all([
+      catalog(),
+      categories(),
+      posts(),
+    ]);
     const paths = [
       '/',
       '/categories',
       '/produits',
-      '/guide',
       '/blog',
       '/livraison',
       '/paiement',
       '/garanties',
       '/contact',
-      ...categories.map((c) => `/categorie/${c[0]}`),
+      ...arts.map((c) => `/categorie/${c.slug}`),
       ...products.map((p) => `/produit/${p.slug}`),
       ...articles.map((p) => `/blog/${p.slug}`),
     ];

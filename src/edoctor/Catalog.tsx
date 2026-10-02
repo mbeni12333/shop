@@ -1,13 +1,32 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import Link from './Link';
-import FilterPanel from './FilterPanel';
-import { useCatalogQuery } from './useCatalogQuery';
-import { catalogFacets, filterProducts, queryValue } from './filters';
-import { type Product, money, categoryName, categories } from './model';
-export function ProductCard({ product }: { product: Product }) {
+import dynamic from 'next/dynamic';
+import { type Category, type Product, money } from './model';
+import { Button } from './ui/button';
+import { Card } from './ui/card';
+import { Badge } from './ui/badge';
+import Icon from './Icon';
+import { trackConversion } from './analytics';
+
+const InstantCatalog = dynamic(() => import('./InstantCatalog'), {
+  ssr: false,
+  loading: () => <p role="status">Chargement des filtres…</p>,
+});
+export function ProductCard({
+  product,
+  categoriesBySlug,
+}: {
+  product: Product;
+  categoriesBySlug: Map<string, Category>;
+}) {
+  const category = categoriesBySlug.get(product.categories[0]);
   return (
-    <article className="product-card">
-      <Link href={`/produit/${product.slug}`}>
+    <Card className="product-card" role="article">
+      <Link
+        href={`/produit/${product.slug}`}
+        onClick={() => trackConversion('product_open', { source: 'catalog' })}
+      >
         <div className="product-picture">
           {product.image ? (
             <Image
@@ -22,224 +41,124 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
         <div className="product-copy">
           <span className="eyebrow">
-            {product.brand || categoryName(product.category)}
+            {product.brand || category?.name || ''}
           </span>
-          <h3>{product.name}</h3>
+          <h2>{product.name}</h2>
           <p>
             {Object.entries(product.attributes)
               .slice(0, 2)
               .map(([label, value]) => `${label} : ${value}`)
               .join(' · ') || product.description.slice(0, 85)}
           </p>
+          <Badge variant="secondary" className="product-availability">
+            {product.variations.length
+              ? 'Configurations disponibles'
+              : product.stock && product.purchasable
+                ? 'Disponible'
+                : 'Sur demande'}
+          </Badge>
           <div className="product-bottom">
             <strong>
               {money(product.price)}
               {product.price !== null && <small> HT</small>}
             </strong>
-            <span aria-hidden>↗</span>
+            <Icon name="arrow" />
           </div>
         </div>
       </Link>
-    </article>
+    </Card>
   );
 }
-export function ProductGrid({ products }: { products: Product[] }) {
+
+export function ProductGrid({
+  products,
+  categoriesBySlug,
+  onReset,
+}: {
+  products: Product[];
+  categoriesBySlug: Map<string, Category>;
+  onReset?: () => void;
+}) {
   if (!products.length)
     return (
       <div className="empty-state">
-        <h3>Votre prochain équipement se prépare.</h3>
+        <h3>Aucun produit avec ces critères.</h3>
         <p>
-          Notre sélection sera disponible ici dès sa publication. Parlez-nous de
-          votre besoin pour être accompagné.
+          Élargissez votre budget ou retirez un filtre pour retrouver la
+          sélection.
         </p>
-        <Link className="button secondary" href="/contact">
-          Contacter EDoctor ↗
-        </Link>
+        {onReset && (
+          <Button variant="secondary" onClick={onReset}>
+            Voir toute la sélection
+          </Button>
+        )}
       </div>
     );
   return (
     <div className="product-grid">
-      {products.map((p) => (
-        <ProductCard key={p.id} product={p} />
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          categoriesBySlug={categoriesBySlug}
+        />
       ))}
     </div>
   );
 }
+
 export function Catalog({
   products,
-  showSearch = false,
+  categoriesBySlug,
+  emptyState,
+  singleCategory = false,
+  categorySlug,
 }: {
   products: Product[];
-  showSearch?: boolean;
+  categoriesBySlug: Map<string, Category>;
+  emptyState?: {
+    title: string;
+    body: string;
+    cta?: { href: string; label: string };
+  };
+  singleCategory?: boolean;
+  categorySlug?: string;
 }) {
-  const { query, update, clear } = useCatalogQuery();
-  const selectedCategory = queryValue(query, 'categorie');
-  const categoryProducts = selectedCategory
-    ? products.filter((product) => product.category === selectedCategory)
-    : products;
-  const facets = catalogFacets(categoryProducts);
-  const hasPrices = categoryProducts.some((product) => product.price !== null);
-  const categoryChoices = categories.filter((category) =>
-    products.some((product) => product.category === category[0]),
-  );
-  const filtered = filterProducts(products, query);
-  const active = [
-    'marque',
-    'gamme',
-    'budget',
-    'tri',
-    'q',
-    'categorie',
-    ...facets.map((facet) => facet.key),
-  ].some((key) => queryValue(query, key));
-  return (
-    <>
-      {products.some((product) => product.catalogSource === 'research') && (
-        <div className="research-notice">
-          <strong>Sélection en préparation.</strong> Références étudiées, prix
-          et disponibilité à confirmer avec EDoctor.
-        </div>
-      )}
-      <div className="catalog-layout">
-        <FilterPanel>
-          {showSearch && (
-            <label>
-              Recherche dans la sélection
-              <input
-                type="search"
-                placeholder="Nom, marque, référence…"
-                value={queryValue(query, 'q')}
-                onChange={(event) => update('q', event.target.value)}
-              />
-            </label>
-          )}
-          {categoryChoices.length > 1 && (
-            <label>
-              Catégorie
-              <select
-                value={selectedCategory}
-                onChange={(event) => update('categorie', event.target.value)}
-              >
-                <option value="">Toutes les catégories</option>
-                {categoryChoices.map((category) => (
-                  <option value={category[0]} key={category[0]}>
-                    {category[1]}
-                  </option>
-                ))}
-              </select>
-            </label>
-          )}
-          <label>
-            Marque
-            <select
-              value={queryValue(query, 'marque')}
-              onChange={(event) => update('marque', event.target.value)}
-            >
-              <option value="">Toutes les marques</option>
-              {[
-                ...new Set(
-                  categoryProducts
-                    .map((product) => product.brand)
-                    .filter(Boolean),
-                ),
-              ]
-                .sort()
-                .map((brand) => (
-                  <option key={brand}>{brand}</option>
-                ))}
-            </select>
-          </label>
-          <label>
-            Gamme
-            <select
-              value={queryValue(query, 'gamme')}
-              onChange={(event) => update('gamme', event.target.value)}
-            >
-              <option value="">Toutes les gammes</option>
-              {[
-                ...new Set(
-                  categoryProducts
-                    .map((product) => product.tier)
-                    .filter(Boolean),
-                ),
-              ].map((tier) => (
-                <option key={tier}>{tier}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Budget maximum HT (€)
-            <input
-              type="number"
-              disabled={!hasPrices}
-              min="0"
-              placeholder="En euros"
-              value={queryValue(query, 'budget')}
-              onChange={(event) => update('budget', event.target.value)}
-            />
-            {!hasPrices && (
-              <small className="filter-help">
-                Les prix de vente sont à confirmer.
-              </small>
-            )}
-          </label>
-          <label>
-            Trier
-            <select
-              value={queryValue(query, 'tri')}
-              onChange={(event) => update('tri', event.target.value)}
-            >
-              <option value="">Nom</option>
-              <option value="croissant" disabled={!hasPrices}>
-                Prix croissant
-              </option>
-              <option value="decroissant" disabled={!hasPrices}>
-                Prix décroissant
-              </option>
-            </select>
-          </label>
-          {facets.map((facet) => (
-            <label key={facet.key}>
-              {facet.label}
-              <select
-                value={queryValue(query, facet.key)}
-                onChange={(event) => update(facet.key, event.target.value)}
-              >
-                <option value="">Tous les choix</option>
-                {facet.values.map((value) => (
-                  <option key={value}>{value}</option>
-                ))}
-              </select>
-            </label>
-          ))}
-        </FilterPanel>
-        <div className="catalog-results">
-          <div className="filter-summary">
-            <p className="muted" role="status">
-              {filtered.length} produit{filtered.length !== 1 ? 's' : ''}
-            </p>
-            {active && (
-              <button type="button" className="text-link" onClick={clear}>
-                Effacer les filtres
-              </button>
-            )}
-          </div>
-          {products.length > 0 && !filtered.length ? (
-            <div className="empty-state">
-              <h3>Aucun produit avec ces critères.</h3>
-              <p>
-                Élargissez votre budget ou retirez un filtre pour retrouver la
-                sélection.
-              </p>
-              <button className="button secondary" onClick={clear}>
-                Voir toute la sélection
-              </button>
-            </div>
-          ) : (
-            <ProductGrid products={filtered} />
-          )}
-        </div>
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!products.length)
+    return (
+      <div className="empty-state">
+        <h3>
+          {emptyState?.title ?? 'Aucun produit disponible pour le moment.'}
+        </h3>
+        <p>
+          {emptyState?.body ??
+            'Parlez-nous de votre besoin, nous vous aiderons à choisir votre équipement.'}
+        </p>
+        <Button asChild variant="outline">
+          <Link href={emptyState?.cta?.href ?? '/contact'}>
+            {emptyState?.cta?.label ?? 'Demander conseil'}
+            <Icon name="arrow" />
+          </Link>
+        </Button>
       </div>
-    </>
+    );
+  if (!mounted)
+    return (
+      <ProductGrid
+        products={products.slice(0, 24)}
+        categoriesBySlug={categoriesBySlug}
+      />
+    );
+  return (
+    <InstantCatalog
+      products={products}
+      categoriesBySlug={categoriesBySlug}
+      categorySlug={
+        categorySlug ??
+        (singleCategory ? products[0]?.categories[0] : undefined)
+      }
+    />
   );
 }

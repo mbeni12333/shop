@@ -1,69 +1,91 @@
-import Link from 'next/link';
+import { useMemo } from 'react';
+import Link from '@/edoctor/Link';
 import Image from 'next/image';
 import Shell from '@/edoctor/Shell';
 import { Catalog } from '@/edoctor/Catalog';
-import { catalog } from '@/edoctor/server';
-import { categories, type Product } from '@/edoctor/model';
+import { catalog, categories, categoryIndex } from '@/edoctor/server';
+import { artFor, type Category, type Product } from '@/edoctor/model';
 import Breadcrumbs from '@/edoctor/Breadcrumbs';
-export default function Category({
+
+export default function CategoryPage({
   products,
-  slug,
+  category,
+  categories,
 }: {
   products: Product[];
-  slug: string;
+  category: Category;
+  categories: Category[];
 }) {
-  const c = categories.find((c) => c[0] === slug)!;
+  const index = useMemo(
+    () => new Map(categories.map((item) => [item.slug, item])),
+    [categories],
+  );
+  const art = artFor(category.slug);
   return (
     <Shell
-      title={c[1]}
-      noindex={products.some((product) => product.catalogSource === 'research')}
+      title={category.name}
+      categories={categories}
+      noindex={!category.count}
     >
       <div className="wrap page-section">
         <Breadcrumbs
           items={[
             { name: 'Accueil', href: '/' },
             { name: 'Univers', href: '/categories' },
-            { name: c[1], href: `/categorie/${c[0]}` },
+            { name: category.name, href: `/categorie/${category.slug}` },
           ]}
         />
         <div className="category-hero">
           <div>
             <span className="eyebrow">L’UNIVERS EDOCTOR</span>
-            <h1>{c[1]}</h1>
+            <h1>{category.name}</h1>
             <p className="intro">
-              {c[2]}. Trouvez l’équipement adapté à votre usage et à votre
-              budget.
+              {category.description || art.tagline}. Trouvez l’équipement adapté
+              à votre usage et à votre budget.
             </p>
             <Link
               className="text-link"
-              href={`/contact?produit=${encodeURIComponent(c[1])}`}
+              href={`/contact?produit=${encodeURIComponent(category.name)}`}
             >
               Un conseil pour choisir ? ↗
             </Link>
           </div>
           <Image
-            src={`/univers/${c[3]}`}
-            alt={`Illustration de l’univers ${c[1]}`}
+            src={`/univers/${art.art}`}
+            alt={`Illustration de l’univers ${category.name}`}
             width={400}
             height={290}
             sizes="(max-width:767px) 240px, 270px"
           />
         </div>
-        <Catalog products={products} />
+        <Catalog
+          products={products}
+          categoriesBySlug={index}
+          singleCategory
+          categorySlug={category.slug}
+        />
       </div>
     </Shell>
   );
 }
-export const getStaticPaths = () => ({
-  paths: categories.map((c) => ({ params: { slug: c[0] } })),
-  fallback: false,
+
+export const getStaticPaths = async () => ({
+  paths: (await categories()).map((category) => ({
+    params: { slug: category.slug },
+  })),
+  // A category created in WordPress must be reachable without a rebuild.
+  fallback: 'blocking' as const,
 });
+
 export async function getStaticProps({ params }: { params: { slug: string } }) {
+  const index = await categoryIndex();
+  const category = index.get(params.slug);
+  if (!category) return { notFound: true, revalidate: 300 };
+  const products = (await catalog()).filter((product) =>
+    product.categories.includes(params.slug),
+  );
   return {
-    props: {
-      slug: params.slug,
-      products: (await catalog()).filter((p) => p.category === params.slug),
-    },
+    props: { category, products, categories: [...index.values()] },
     revalidate: 300,
   };
 }

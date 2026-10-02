@@ -1,16 +1,48 @@
+import { useEffect, useMemo, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from '@/edoctor/Link';
 import Shell from '@/edoctor/Shell';
 import { useBasket } from '@/edoctor/Basket';
-import { categoryName, money, type Product } from '@/edoctor/model';
-import { productBySlug } from '@/edoctor/server';
+import { money, type Category, type Product } from '@/edoctor/model';
+import { categories, productBySlug } from '@/edoctor/server';
 import Breadcrumbs from '@/edoctor/Breadcrumbs';
-export default function ProductPage({ product: p }: { product: Product }) {
+import { Button } from '@/edoctor/ui/button';
+import { Label } from '@/edoctor/ui/label';
+import Icon from '@/edoctor/Icon';
+import { trackConversion } from '@/edoctor/analytics';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/edoctor/ui/select';
+
+export default function ProductPage({
+  product: p,
+  categories,
+}: {
+  product: Product;
+  categories: Category[];
+}) {
   const { add } = useBasket();
   const [variation, setVariation] = useState(0);
   const [added, setAdded] = useState(false);
+  useEffect(() => {
+    setAdded(false);
+    setVariation(0);
+  }, [p.id]);
+  const index = useMemo(
+    () => new Map(categories.map((item) => [item.slug, item])),
+    [categories],
+  );
+  // WooCommerce files a product in as many categories as it deserves; only the
+  // categories that actually exist are linked, and none is dropped.
+  const productCategories = p.categories
+    .map((slug) => index.get(slug))
+    .filter((item): item is Category => Boolean(item));
+  const category = productCategories[0];
   const selected = p.variations.find((v) => v.id === variation);
   const price = selected ? selected.price : p.price;
   const available =
@@ -44,7 +76,8 @@ export default function ProductPage({ product: p }: { product: Product }) {
     <Shell
       title={p.name}
       description={p.description.slice(0, 160)}
-      noindex={p.catalogSource === 'research'}
+      categories={categories}
+      noindex={price === null}
     >
       <Head>
         <script
@@ -58,10 +91,18 @@ export default function ProductPage({ product: p }: { product: Product }) {
         <Breadcrumbs
           items={[
             { name: 'Accueil', href: '/' },
-            {
-              name: categoryName(p.category),
-              href: `/categorie/${p.category}`,
-            },
+            ...(category
+              ? [
+                  {
+                    name: category.name,
+                    href: `/categorie/${category.slug}`,
+                  },
+                ]
+              : []),
+            ...productCategories.slice(1).map((item) => ({
+              name: item.name,
+              href: `/categorie/${item.slug}`,
+            })),
             { name: p.name, href: `/produit/${p.slug}` },
           ]}
         />
@@ -81,39 +122,50 @@ export default function ProductPage({ product: p }: { product: Product }) {
           </div>
           <div>
             <span className="eyebrow">
-              {p.brand} · {p.tier}
+              {[p.brand, p.tier].filter(Boolean).join(' · ')}
             </span>
+            <nav className="detail-categories" aria-label="Catégories">
+              <ul>
+                {productCategories.map((item) => (
+                  <li key={item.slug}>
+                    <Link href={`/categorie/${item.slug}`}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
             <h1>{p.name}</h1>
             <p className="intro">{p.description}</p>
-            {p.catalogSource === 'research' && (
-              <p className="research-notice">
-                Référence étudiée pour la sélection EDoctor. Prix, disponibilité
-                et modalités de commande à confirmer avec un conseiller.
-              </p>
-            )}
             <p className="detail-price">
               {money(price)}
               {price !== null && <small> HT</small>}
             </p>
             {p.variations.length > 0 && (
-              <label>
-                Configuration
-                <select
-                  value={variation}
-                  onChange={(e) => {
-                    setVariation(Number(e.target.value));
+              <div className="detail-variation">
+                <Label htmlFor="variation">Configuration</Label>
+                <Select
+                  value={String(variation)}
+                  onValueChange={(value) => {
+                    setVariation(Number(value));
                     setAdded(false);
                   }}
                 >
-                  <option value="0">Choisir une configuration</option>
-                  {p.variations.map((v) => (
-                    <option key={v.id} value={v.id} disabled={!v.stock}>
-                      {v.name} — {money(v.price)}
-                      {!v.stock ? ' · indisponible' : ''}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                  <SelectTrigger id="variation">
+                    <SelectValue placeholder="Choisir une configuration" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {p.variations.map((v) => (
+                      <SelectItem
+                        key={v.id}
+                        value={String(v.id)}
+                        disabled={!v.stock}
+                      >
+                        {v.name} — {money(v.price)}
+                        {!v.stock ? ' · indisponible' : ''}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             )}
             <p>
               {available
@@ -123,8 +175,7 @@ export default function ProductPage({ product: p }: { product: Product }) {
                   : 'Disponibilité à confirmer'}
             </p>
             <div className="actions">
-              <button
-                className="button"
+              <Button
                 disabled={!available}
                 onClick={() => {
                   add({
@@ -135,10 +186,15 @@ export default function ProductPage({ product: p }: { product: Product }) {
                     price,
                   });
                   setAdded(true);
+                  trackConversion('add_to_cart', {
+                    source: 'product',
+                    count: 1,
+                  });
                 }}
               >
-                Ajouter au panier
-              </button>
+                <Icon name={added ? 'check' : 'cart'} />
+                {added ? 'Ajouté au panier' : 'Ajouter au panier'}
+              </Button>
               <Link
                 className="text-link"
                 href={`/contact?produit=${encodeURIComponent(p.name)}`}
@@ -160,44 +216,25 @@ export default function ProductPage({ product: p }: { product: Product }) {
             </p>
           </div>
         </div>
-        <section className="section">
-          <h2>Dans le détail.</h2>
-          <dl className="specs">
-            {Object.entries(p.attributes).map(([k, v]) => (
-              <div key={k}>
-                <dt>{k}</dt>
-                <dd>
-                  <bdi>{v}</bdi>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-        {p.research && (
-          <section className="section research-sources">
-            <h2>Référence et sources.</h2>
-            <p>
-              Référence fabricant :{' '}
-              <bdi>{p.research.manufacturerPartNumber || 'À confirmer'}</bdi>
-            </p>
-            <p>{p.research.rationale}</p>
-            <ul>
-              {p.research.sources.map((source) => (
-                <li key={source.url}>
-                  <a
-                    href={source.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Consulter la fiche fabricant ↗
-                  </a>{' '}
-                  <span>
-                    · vérifiée le{' '}
-                    {new Date(source.verifiedAt).toLocaleDateString('fr-FR', {
-                      timeZone: 'UTC',
-                    })}
-                  </span>
-                </li>
+        {!!Object.keys(p.attributes).length && (
+          <section className="section">
+            <h2>Dans le détail.</h2>
+            <dl className="specs">
+              {Object.entries(p.attributes).map(([k, v]) => (
+                <div key={k}>
+                  <dt>{k}</dt>
+                  <dd>{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
+        {!!p.uses.length && (
+          <section className="section">
+            <h2>Pour quels usages.</h2>
+            <ul className="use-list">
+              {p.uses.map((use) => (
+                <li key={use}>{use}</li>
               ))}
             </ul>
           </section>
@@ -206,10 +243,12 @@ export default function ProductPage({ product: p }: { product: Product }) {
     </Shell>
   );
 }
+
 export const getStaticPaths = () => ({ paths: [], fallback: 'blocking' });
+
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const product = await productBySlug(params.slug);
   return product
-    ? { props: { product }, revalidate: 300 }
+    ? { props: { product, categories: await categories() }, revalidate: 300 }
     : { notFound: true, revalidate: 60 };
 }

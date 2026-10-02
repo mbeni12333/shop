@@ -6,43 +6,84 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useBasket } from './Basket';
 import Icon from './Icon';
 import Navigation from './Navigation';
+import Search from './Search';
+import { Button } from '@/edoctor/ui/button';
+import { useBasketMotion } from './motion';
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetDescription,
+  SheetTrigger,
+} from '@/edoctor/ui/sheet';
+import type { Category } from './model';
+import { useCategories } from './useCategories';
+
+/** On small screens the primary navigation moves into a sheet. */
+function MobileNav({ categories }: { categories: Category[] }) {
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const trigger = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const close = () => setOpen(false);
+    router.events.on('routeChangeStart', close);
+    return () => router.events.off('routeChangeStart', close);
+  }, [router.events]);
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button
+          ref={trigger}
+          variant="ghost"
+          size="icon"
+          className="menu-toggle"
+        >
+          <Icon name="menu" />
+          <span className="sr-only">Ouvrir le menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent
+        side="right"
+        className="mobile-nav-sheet"
+        onCloseAutoFocus={(event) => {
+          event.preventDefault();
+          trigger.current?.focus();
+        }}
+      >
+        <SheetTitle>Menu</SheetTitle>
+        <SheetDescription className="sr-only">
+          Explorez les catégories et les services EDoctor.
+        </SheetDescription>
+        <Navigation categories={categories} mobileOpen idPrefix="nav-mobile" />
+      </SheetContent>
+    </Sheet>
+  );
+}
 
 export default function Shell({
   children,
   title,
   description = 'Matériel informatique neuf, conseil personnalisé et accompagnement export de la France vers l’Algérie.',
+  categories: initialCategories,
   noindex = false,
 }: {
   children: ReactNode;
   title: string;
   description?: string;
+  categories?: Category[];
   noindex?: boolean;
 }) {
   const router = useRouter();
-  const [menu, setMenu] = useState(false);
-  const menuToggle = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    const close = () => setMenu(false);
-    const escape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && menu) {
-        close();
-        menuToggle.current?.focus();
-      }
-    };
-    router.events.on('routeChangeStart', close);
-    document.addEventListener('keydown', escape);
-    return () => {
-      router.events.off('routeChangeStart', close);
-      document.removeEventListener('keydown', escape);
-    };
-  }, [router.events, menu]);
-  const { lines } = useBasket();
+  const { lines, ready } = useBasket();
+  const count = lines.reduce((sum, line) => sum + line.quantity, 0);
+  const basketRef = useBasketMotion(count, ready);
+  const categories = useCategories(initialCategories);
   const base = process.env.NEXT_PUBLIC_SITE_URL || '';
   const path = router.asPath.split('?')[0];
   return (
     <>
       <Head>
-        <title>{title} | EDoctor</title>
+        <title>{`${title} | EDoctor`}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#6840c6" />
@@ -76,52 +117,20 @@ export default function Shell({
               EDoctor<small>LE MATÉRIEL. LE CONSEIL EN PLUS.</small>
             </span>
           </Link>
-          <form className="header-search" action="/recherche">
-            <label className="sr-only" htmlFor="header-q">
-              Rechercher un produit
-            </label>
-            <input
-              id="header-q"
-              name="q"
-              placeholder="Un produit, une marque, une envie…"
-            />
-            <button aria-label="Rechercher">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                aria-hidden="true"
-              >
-                <circle cx="10.5" cy="10.5" r="6.5" />
-                <path d="m16 16 5 5" />
-              </svg>
-            </button>
-          </form>
+          <div className="header-search">
+            <Search />
+          </div>
           <Link className="header-advice" href="/contact">
             Un conseil ? <strong>On vous écoute ↗</strong>
           </Link>
-          <Link className="basket-link" href="/panier">
+          <Link ref={basketRef} className="basket-link" href="/panier">
             <Icon name="cart" />
             <span className="basket-label">Panier</span>
-            <span className="basket-count">
-              {lines.reduce((sum, l) => sum + l.quantity, 0)}
-            </span>
+            <span className="basket-count">{count}</span>
           </Link>
-          <button
-            ref={menuToggle}
-            className="menu-toggle"
-            aria-expanded={menu}
-            aria-controls="main-nav"
-            onClick={() => setMenu(!menu)}
-          >
-            <Icon name={menu ? 'close' : 'menu'} />
-            <span>Menu</span>
-          </button>
+          <MobileNav categories={categories} />
         </div>
-        <Navigation mobileOpen={menu} />
+        <Navigation categories={categories} />
       </header>
       <main id="contenu">{children}</main>
       <footer className="site-footer">
@@ -141,7 +150,6 @@ export default function Shell({
           <div>
             <h2>Votre boutique</h2>
             <Link href="/categories">Tous les univers</Link>
-            <Link href="/guide">Le guide ED</Link>
             <Link href="/blog">Conseils & découvertes</Link>
           </div>
           <div>

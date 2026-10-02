@@ -3,6 +3,7 @@ import Shell from '@/edoctor/Shell';
 import { posts, plainText, type Post } from '@/edoctor/server';
 import sanitizeHtml from 'sanitize-html';
 import Breadcrumbs from '@/edoctor/Breadcrumbs';
+
 export default function Article({
   article: p,
   html,
@@ -16,16 +17,9 @@ export default function Article({
       description={plainText(p.excerpt).slice(0, 160)}
     >
       <Head>
-        <meta
-          property="og:locale"
-          content={p.edoctorLanguage === 'ar' ? 'ar_DZ' : 'fr_FR'}
-        />
+        <meta property="og:locale" content="fr_FR" />
       </Head>
-      <article
-        className="wrap page-section prose"
-        lang={p.edoctorLanguage || 'fr'}
-        dir={p.edoctorLanguage === 'ar' ? 'rtl' : 'ltr'}
-      >
+      <article className="wrap page-section prose" lang="fr">
         <Breadcrumbs
           items={[
             { name: 'Accueil', href: '/' },
@@ -44,10 +38,9 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
   const article = (await posts()).find((p) => p.slug === params.slug);
   if (!article) return { notFound: true, revalidate: 60 };
   const html = sanitizeHtml(article.content, {
-    allowedTags: [...sanitizeHtml.defaults.allowedTags, 'bdi', 'img'],
+    allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img'],
     allowedAttributes: {
       ...sanitizeHtml.defaults.allowedAttributes,
-      '*': ['lang', 'dir'],
       img: ['src', 'alt', 'width', 'height', 'loading'],
     },
     allowedSchemes: ['https', 'http', 'mailto'],

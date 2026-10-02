@@ -67,27 +67,12 @@ function ed_details($id)
             ];
         }
     }
-    $known = [
-        'pc-fixes',
-        'portables',
-        'processeurs',
-        'cartes-graphiques',
-        'cartes-meres',
-        'ram',
-        'ssd',
-        'boitiers',
-        'alimentations',
-        'refroidissement',
-        'ecrans',
-        'claviers',
-        'souris',
-        'casques',
-    ];
-    $category = !is_wp_error($cats)
-        ? array_values(array_intersect($cats, $known))
-        : [];
+    // WooCommerce owns the taxonomy: no storefront-side whitelist, every
+    // published product_cat slug is returned so facets stay in sync with the
+    // back office. The storefront only maps slugs to presentation metadata.
+    $categories = !is_wp_error($cats) ? array_values($cats) : [];
     return wp_json_encode([
-        'category' => $category[0] ?? '',
+        'categories' => $categories,
         'brand' =>
             $p->get_attribute('pa_marque') ?: $p->get_attribute('Marque'),
         'tier' => $p->get_attribute('pa_gamme') ?: $p->get_attribute('Gamme'),
@@ -121,67 +106,6 @@ add_action('graphql_register_types', function () {
             return ed_details($source->databaseId);
         },
     ]);
-    register_graphql_field('Post', 'edoctorLanguage', [
-        'type' => 'String',
-        'resolve' => function ($post) {
-            return get_post_meta(
-                $post->databaseId,
-                'edoctor_language',
-                true,
-            ) === 'ar'
-                ? 'ar'
-                : 'fr';
-        },
-    ]);
-});
-add_action('init', function () {
-    register_post_meta('post', 'edoctor_language', [
-        'type' => 'string',
-        'single' => true,
-        'show_in_rest' => true,
-        'default' => 'fr',
-        'sanitize_callback' => function ($v) {
-            return $v === 'ar' ? 'ar' : 'fr';
-        },
-        'auth_callback' => function () {
-            return current_user_can('edit_posts');
-        },
-    ]);
-});
-add_action('add_meta_boxes', function () {
-    add_meta_box(
-        'edoctor-language',
-        'Langue EDoctor',
-        function ($post) {
-            wp_nonce_field('ed_language', 'ed_language_nonce');
-            $v = get_post_meta($post->ID, 'edoctor_language', true);
-            echo '<select name="edoctor_language"><option value="fr">Français</option><option value="ar" ' .
-                selected($v, 'ar', false) .
-                '>العربية — RTL</option></select><p>Pour un terme français dans un article arabe : &lt;bdi dir="ltr"&gt;GeForce RTX&lt;/bdi&gt;.</p>';
-        },
-        'post',
-        'side',
-    );
-});
-add_action('save_post_post', function ($id) {
-    if (
-        isset($_POST['ed_language_nonce']) &&
-        wp_verify_nonce(
-            sanitize_text_field(wp_unslash($_POST['ed_language_nonce'])),
-            'ed_language',
-        ) &&
-        current_user_can('edit_post', $id) &&
-        !wp_is_post_revision($id)
-    ) {
-        update_post_meta(
-            $id,
-            'edoctor_language',
-            isset($_POST['edoctor_language']) &&
-            $_POST['edoctor_language'] === 'ar'
-                ? 'ar'
-                : 'fr',
-        );
-    }
 });
 
 function ed_decode_token($token)

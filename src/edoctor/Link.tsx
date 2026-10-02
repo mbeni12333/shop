@@ -1,8 +1,12 @@
 import NextLink from 'next/link';
-import type { ComponentProps } from 'react';
+import { forwardRef, type ComponentProps } from 'react';
 
 // Pages Router still prefetches on hover. Avoid loading every navigation/footer
 // destination merely because it enters the viewport on a slower connection.
-export default function Link(props: ComponentProps<typeof NextLink>) {
-  return <NextLink {...props} prefetch={props.prefetch ?? false} />;
-}
+const Link = forwardRef<HTMLAnchorElement, ComponentProps<typeof NextLink>>(
+  (props, ref) => (
+    <NextLink ref={ref} {...props} prefetch={props.prefetch ?? false} />
+  ),
+);
+Link.displayName = 'Link';
+export default Link;

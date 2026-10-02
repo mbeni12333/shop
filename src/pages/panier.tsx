@@ -1,9 +1,11 @@
-import Link from 'next/link';
+import Link from '@/edoctor/Link';
 import { useState } from 'react';
 import Shell from '@/edoctor/Shell';
 import { useBasket } from '@/edoctor/Basket';
 import { money } from '@/edoctor/model';
 import BasketQuantity from '@/edoctor/BasketQuantity';
+import { Button } from '@/edoctor/ui/button';
+import Icon from '@/edoctor/Icon';
 export default function Basket() {
   const { lines, ready, quantity } = useBasket();
   const [error, setError] = useState('');
@@ -51,9 +53,9 @@ export default function Basket() {
           <div className="empty-state">
             <h2>Une envie d’équipement ?</h2>
             <p>Votre panier est encore vide.</p>
-            <Link className="button" href="/categories">
-              Explorer les univers ↗
-            </Link>
+            <Button asChild>
+              <Link href="/categories">Explorer les univers ↗</Link>
+            </Button>
           </div>
         ) : (
           <>
@@ -74,12 +76,13 @@ export default function Basket() {
                     value={l.quantity}
                     onChange={(n) => quantity(i, n)}
                   />
-                  <button
+                  <Button
+                    variant="ghost"
                     onClick={() => quantity(i, 0)}
                     aria-label={`Retirer ${l.name}`}
                   >
                     Retirer
-                  </button>
+                  </Button>
                 </article>
               ))}
             </div>
@@ -102,11 +105,12 @@ export default function Basket() {
                 Si les modalités d’export nécessitent une confirmation,
                 choisissez l’accompagnement d’un conseiller.
               </p>
-              <button className="button" onClick={checkout} disabled={busy}>
+              <Button onClick={checkout} disabled={busy}>
                 {busy
                   ? 'Vérification du panier…'
-                  : 'Continuer vers le paiement ↗'}
-              </button>
+                  : 'Continuer vers le paiement'}
+                <Icon name="arrow" />
+              </Button>
               {error && <p role="alert">{error}</p>}
               <Link href="/contact">Besoin d’aide avec votre commande ?</Link>
             </div>
